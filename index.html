@@ -413,7 +413,7 @@
             </div>
         </section>
 
-        <!-- TAB 3: SORTING MINI-GAME (70 REVISED EXPLICIT ITEMS) -->
+        <!-- TAB 3: SORTING MINI-GAME (UNIFORM EVEN SIZED BUTTONS) -->
         <section id="tab-game" class="tab-content hidden">
             <div class="light-glass-card rounded-3xl p-6 md:p-8">
                 <div class="flex items-center justify-between mb-6 flex-wrap gap-4">
@@ -434,30 +434,30 @@
 
                     <div id="game-feedback" class="hidden mb-6 p-4 rounded-2xl bg-amberGold-100/60 border border-amberGold-500/40 text-slateNavy-800 text-sm font-bold"></div>
 
-                    <!-- 7 Comprehensive Categorization Buttons Matching All Master Items -->
-                    <div id="game-options-container" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2.5 mb-6">
-                        <button onclick="checkGameAnswer('أداة نصب')" class="game-btn p-3 rounded-2xl bg-white border border-slateNavy-700/20 hover:border-slateNavy-800 text-slateNavy-800 font-bold text-xs transition shadow-sm hover:shadow-md">
+                    <!-- Perfectly Uniform Categorization Buttons Grid -->
+                    <div id="game-options-container" class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+                        <button onclick="checkGameAnswer('أداة نصب')" class="game-btn p-3.5 rounded-2xl bg-white border border-slateNavy-700/20 hover:border-slateNavy-800 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
                             <i class="fa-solid fa-circle-arrow-up block mb-1 text-sm text-amberGold-600"></i> أداة نصب
                         </button>
-                        <button onclick="checkGameAnswer('أداة جزم')" class="game-btn p-3 rounded-2xl bg-white border border-royalMaroon-600/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs transition shadow-sm hover:shadow-md">
+                        <button onclick="checkGameAnswer('أداة جزم')" class="game-btn p-3.5 rounded-2xl bg-white border border-royalMaroon-600/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
                             <i class="fa-solid fa-circle-arrow-down block mb-1 text-sm text-royalMaroon-600"></i> أداة جزم
                         </button>
-                        <button onclick="checkGameAnswer('مضارع منصوب')" class="game-btn p-3 rounded-2xl bg-white border border-amberGold-500/30 hover:border-amberGold-500 text-slateNavy-800 font-bold text-xs transition shadow-sm hover:shadow-md">
+                        <button onclick="checkGameAnswer('مضارع منصوب')" class="game-btn p-3.5 rounded-2xl bg-white border border-amberGold-500/30 hover:border-amberGold-500 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
                             <i class="fa-solid fa-arrow-up-right-dots block mb-1 text-sm text-amberGold-600"></i> مضارع منصوب
                         </button>
-                        <button onclick="checkGameAnswer('مضارع مجزوم')" class="game-btn p-3 rounded-2xl bg-white border border-amberGold-500/30 hover:border-amberGold-500 text-slateNavy-800 font-bold text-xs transition shadow-sm hover:shadow-md">
+                        <button onclick="checkGameAnswer('مضارع مجزوم')" class="game-btn p-3.5 rounded-2xl bg-white border border-amberGold-500/30 hover:border-amberGold-500 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
                             <i class="fa-solid fa-bolt block mb-1 text-sm text-amberGold-500"></i> مضارع مجزوم
                         </button>
-                        <button onclick="checkGameAnswer('مبتدأ مرفوع')" class="game-btn p-3 rounded-2xl bg-white border border-slateNavy-700/20 hover:border-slateNavy-800 text-slateNavy-800 font-bold text-xs transition shadow-sm hover:shadow-md">
+                        <button onclick="checkGameAnswer('مبتدأ مرفوع')" class="game-btn p-3.5 rounded-2xl bg-white border border-slateNavy-700/20 hover:border-slateNavy-800 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
                             <i class="fa-solid fa-font block mb-1 text-sm text-amberGold-600"></i> مبتدأ مرفوع
                         </button>
-                        <button onclick="checkGameAnswer('خبر مرفوع')" class="game-btn p-3 rounded-2xl bg-white border border-amberGold-600/20 hover:border-amberGold-600 text-slateNavy-800 font-bold text-xs transition shadow-sm hover:shadow-md">
+                        <button onclick="checkGameAnswer('خبر مرفوع')" class="game-btn p-3.5 rounded-2xl bg-white border border-amberGold-600/20 hover:border-amberGold-600 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
                             <i class="fa-solid fa-check-double block mb-1 text-sm text-amberGold-700"></i> خبر مرفوع
                         </button>
-                        <button onclick="checkGameAnswer('فاعل مرفوع')" class="game-btn p-3 rounded-2xl bg-white border border-amberGold-600/20 hover:border-amberGold-600 text-slateNavy-800 font-bold text-xs transition shadow-sm hover:shadow-md">
+                        <button onclick="checkGameAnswer('فاعل مرفوع')" class="game-btn p-3.5 rounded-2xl bg-white border border-amberGold-600/20 hover:border-amberGold-600 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
                             <i class="fa-solid fa-user-shield block mb-1 text-sm text-royalMaroon-800"></i> فاعل مرفوع
                         </button>
-                        <button onclick="checkGameAnswer('نائب فاعل')" class="game-btn col-span-2 md:col-span-4 lg:col-span-7 p-3 rounded-2xl bg-white border border-royalMaroon-700/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs transition shadow-sm hover:shadow-md">
+                        <button onclick="checkGameAnswer('نائب فاعل')" class="game-btn p-3.5 rounded-2xl bg-white border border-royalMaroon-700/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
                             <i class="fa-solid fa-user-check block mb-1 text-sm text-royalMaroon-700"></i> نائب فاعل
                         </button>
                     </div>
@@ -588,7 +588,7 @@
         // 40 Full Interactive Quiz Questions
         const rawQuizQuestions = [
             { category: "الجملة الاسمية", question: "1. ما الركن الأساسي الأول الذي تبدأ به الجملة الاسمية؟", sentence: "العِلْمُ نُورٌ يَهْدِي القُلُوبَ", options: ["المبتدأ", "الفاعل", "الفعل الماضي", "نائب الفاعل"], explanation: "تبدأ الجملة الاسمية بالمبتدأ وهو اسم مرفوع تبتدأ به الجملة." },
-            { category: "الجملة الفعليّة", question: "2. حدد نوع الجملة التالية من حيث البداية:", sentence: "يَحْرِصُ المَعَلِّمُ عَلَى طُلاَّبِهِ", options: ["جملة فعلية", "جملة اسمية", "شبه جملة", "جملة ناسخة"], explanation: "بدأت بالفعل المضارع (يحرصُ) فهي جملة فعلية." },
+            { category: "الجملة الفعليّة", question: "2. حدد نوع الجملة التالية من حيث البداية:", sentence: "يَحْرِصُ المَعَلِّمُ عَلَى طُلاَّبِهِ", options: ["جملة فعلية", "جملة اسمية", "شبه جملة", "جملةناسخة"], explanation: "بدأت بالفعل المضارع (يحرصُ) فهي جملة فعلية." },
             { category: "الجملة الاسمية", question: "3. استخرج المبتدأ من الجملة التالية:", sentence: "المَاجِدُونَ مُخْلِصُونَ فِي عَمَلِهِمْ", options: ["المَاجِدُونَ", "مُخْلِصُونَ", "فِي عَمَلِهِمْ", "ضمير مستتر"], explanation: "(الماجدون) هو الاسم المرفوع الواقع في بداية الجملة ويعرب مبتدأً." },
             { category: "الجملة الاسمية", question: "4. ما علامة رفع المبتدأ والخبر إذا كان الاسم مثنى؟", sentence: "الطَّالِبَانِ مُتَفَوِّقَانِ", options: ["الألف", "الضمة الظاهرة", "الواو", "الكسرة"], explanation: "المثنى يُرفع بالألف نيابة عن الضمة." },
             { category: "الجملة الاسمية", question: "5. ما علامة رفع جمع المذكر السالم في المبتدأ أو الخبر؟", sentence: "المُعَلِّمُونَ مُخْلِصُونَ", options: ["الواو", "الضمة", "الألف", "الفتحة"], explanation: "جمع المذكر السالم يُرفع بالواو نيابة عن الضمة." },
