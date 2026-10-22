@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المراجعة الشاملة للوحدة النحوية | أ. عبدالعزيز الفيفي</title>
+    <title>الموسوعة الشاملة للوحدة النحوية | أ. عبدالعزيز الفيفي</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -61,13 +61,10 @@
             min-height: 100vh;
         }
         .light-glass-card {
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(139, 0, 0, 0.12);
             box-shadow: 0 10px 30px -5px rgba(139, 0, 0, 0.05), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
-        }
-        .gold-border {
-            border: 1px solid rgba(217, 119, 6, 0.3);
         }
         .royal-gradient-text {
             background: linear-gradient(135deg, #8B0000 0%, #B45309 100%);
@@ -111,7 +108,7 @@
                     <i class="fa-solid fa-book-quran"></i>
                 </div>
                 <div>
-                    <h1 class="text-lg md:text-xl font-black text-royalMaroon-700 font-cairo leading-tight">مراجعة الوحدة النحوية </h1>
+                    <h1 class="text-lg md:text-xl font-black text-royalMaroon-700 font-cairo leading-tight">الموسوعة النحوية الشاملة</h1>
                     <p class="text-xs text-amberGold-600 font-bold flex items-center gap-1.5">
                         <i class="fa-solid fa-graduation-cap"></i> إعداد: أ. عبدالعزيز الفيفي | ثانوية الأمير عبد المجيد
                     </p>
@@ -121,7 +118,7 @@
             <!-- Navigation Tabs -->
             <nav class="flex items-center gap-1 bg-creamDark p-1.5 rounded-2xl border border-royalMaroon-700/10 text-xs md:text-sm font-bold">
                 <button onclick="switchTab('reference')" id="tab-btn-reference" class="nav-tab px-3.5 py-2 rounded-xl transition-all bg-royalMaroon-700 text-white shadow-sm">
-                    <i class="fa-solid fa-book-bookmark ml-1"></i> ملخص القواعد
+                    <i class="fa-solid fa-book-bookmark ml-1"></i> الملخص الموسوعي الشامل
                 </button>
                 <button onclick="switchTab('quiz')" id="tab-btn-quiz" class="nav-tab px-3.5 py-2 rounded-xl transition-all text-slateNavy-700 hover:text-royalMaroon-700 hover:bg-white/60">
                     <i class="fa-solid fa-clipboard-question ml-1"></i> الاختبار التفاعلي (40)
@@ -137,116 +134,290 @@
 
         <!-- TAB 1: DETAILED REFERENCE SUMMARY -->
         <section id="tab-reference" class="tab-content">
+            <!-- Banner Card -->
             <div class="light-glass-card rounded-3xl p-6 md:p-8 mb-8 border-r-8 border-r-royalMaroon-700 relative overflow-hidden bg-gradient-to-l from-white via-amberGold-100/20 to-creamBg">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-6">
                     <div>
                         <span class="inline-block px-3.5 py-1 rounded-full bg-royalMaroon-50 text-royalMaroon-700 text-xs font-bold mb-3 border border-royalMaroon-700/10">
-                            <i class="fa-solid fa-book-open ml-1"></i> قسم الموسوعة والتلخيص النحوي الشامل
+                            <i class="fa-solid fa-book-open ml-1"></i> المرجع الموحد والكامل للوحدة النحوية
                         </span>
                         <h2 class="text-2xl md:text-4xl font-black mb-3 text-slateNavy-900 font-cairo leading-tight">
-                            الدليل الشامل والمركز <span class="royal-gradient-text">للوحدة النحوية</span>
+                            الشرح التفصيلي والتطبيقي الشامل <span class="royal-gradient-text">لجميع أبواب النحو المقررة</span>
                         </h2>
                         <p class="text-slateNavy-700 text-sm md:text-base leading-relaxed max-w-3xl">
-                            مرجع تفصيلي منظم يتضمن الجملتين الاسمية والفعلية، النواسخ (كان وإنَّ)، إعراب الفعل المضارع بالتفصيل، والنائب عن الفاعل مع نماذج إعرابية مبسطة أُعدت خصيصاً لطلاب ثانوية الأمير عبد المجيد.
+                            مرجع النحو المكتمل: يتضمن تفصيلاً عميقاً وشرحاً شاملاً للجملة الاسمية والفعلية، النواسخ (كان وإنَّ)، إعراب المضارع بكل حالاته وأنوَاعه، والفاعل ونائب الفاعل، مدعوماً بأمثلة إعرابية وتدريبات محلولة ومفصلة.
                         </p>
                     </div>
                     <div class="hidden lg:flex flex-col items-center bg-white/80 p-5 rounded-2xl border border-amberGold-500/30 text-center min-w-[210px] shadow-sm">
                         <i class="fa-solid fa-award text-4xl text-amberGold-500 mb-2"></i>
-                        <span class="text-xs font-bold text-slateNavy-700">إشراف وتنفيذ</span>
+                        <span class="text-xs font-bold text-slateNavy-700">إشراف وإعداد</span>
                         <span class="text-sm font-black text-royalMaroon-700">أ. عبدالعزيز الفيفي</span>
                     </div>
                 </div>
             </div>
 
             <div class="space-y-8">
-                <!-- LESSON 1 -->
+
+                <!-- SECTION 1: الجملة الاسمية والمبتدأ والخبر -->
                 <div class="light-glass-card rounded-3xl p-6 md:p-8">
                     <h3 class="text-xl md:text-2xl font-black text-royalMaroon-700 mb-6 flex items-center gap-3 border-b border-royalMaroon-700/10 pb-4 font-cairo">
-                        <i class="fa-solid fa-font text-amberGold-500"></i> الدرس الأول: الجملة الاسمية والجملة الفعلية
+                        <i class="fa-solid fa-font text-amberGold-500"></i> القسم الأول: الجملة الاسمية (المبتدأ والخبر)
                     </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div class="bg-creamBg/90 p-5 rounded-2xl border border-amberGold-500/20">
-                            <h4 class="text-lg font-bold text-royalMaroon-700 mb-3 flex items-center gap-2">
-                                <i class="fa-solid fa-circle-dot text-amberGold-500"></i> 1. الجملة الاسمية
-                            </h4>
-                            <p class="text-sm text-slateNavy-800 leading-relaxed mb-3">
-                                هي الجملة التي تبدأ بـ <strong>اسم</strong> وتتكون من ركنين أساسيين مرفوعين هما المبتدأ والخبر.
-                            </p>
-                            <div class="bg-white p-3.5 rounded-xl border border-royalMaroon-700/10 text-xs md:text-sm text-slateNavy-800">
-                                <strong class="text-royalMaroon-700">مثال إعرابي:</strong> <em>(العِلْمُ نُورٌ)</em><br/>
-                                📍 <strong>العلمُ:</strong> مبتدأ مرفوع وعلامة رفعه الضمة الظاهرة.<br/>
-                                📍 <strong>نورٌ:</strong> خبر المبتدأ مرفوع وعلامة رفعه الضمة الظاهرة.
+
+                    <!-- Detailed Explanation -->
+                    <div class="space-y-4 text-slateNavy-800 text-sm md:text-base leading-relaxed mb-6">
+                        <p>
+                            <strong>الجملة الاسمية:</strong> هي كل جملة تبدأ بـ <strong>اسم مرفوع (المبتدأ)</strong>، وتتكون من ركنين أساسيين لا تستغني الجملة عن أحدهما:
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+                            <div class="bg-creamBg p-4 rounded-2xl border border-amberGold-500/30">
+                                <h4 class="font-bold text-royalMaroon-700 mb-1">1. المبتدأ:</h4>
+                                <p class="text-xs md:text-sm">هو الاسم المرفوع المتحدث عنه والواقع في أول الجملة غالباً. وحكمه الإعرابي <strong>الرفع دائماً</strong>.</p>
+                            </div>
+                            <div class="bg-creamBg p-4 rounded-2xl border border-amberGold-500/30">
+                                <h4 class="font-bold text-royalMaroon-700 mb-1">2. الخبر:</h4>
+                                <p class="text-xs md:text-sm">هو الجزء المكمل والمتمم لمعنى الجملة والذي يتحدث به عن المبتدأ. وحكمه الإعرابي <strong>الرفع دائماً</strong>.</p>
                             </div>
                         </div>
-                        <div class="bg-creamBg/90 p-5 rounded-2xl border border-royalMaroon-700/20">
-                            <h4 class="text-lg font-bold text-royalMaroon-700 mb-3 flex items-center gap-2">
-                                <i class="fa-solid fa-circle-dot text-royalMaroon-600"></i> 2. الجملة الفعلية
-                            </h4>
-                            <p class="text-sm text-slateNavy-800 leading-relaxed mb-3">
-                                هي الجملة التي تبدأ بـ <strong>فعل</strong> وتتكون من فعل وفاعل ومفعول به إن وجد.
-                            </p>
-                            <div class="bg-white p-3.5 rounded-xl border border-royalMaroon-700/10 text-xs md:text-sm text-slateNavy-800">
-                                <strong class="text-royalMaroon-700">مثال إعرابي:</strong> <em>(حَضَرَ المَعَلِّمُ)</em><br/>
-                                📍 <strong>حضرَ:</strong> فعل ماضٍ مبني على الفتح.<br/>
-                                📍 <strong>المعلمُ:</strong> فاعل مرفوع وعلامة رفعه الضمة الظاهرة.
+
+                        <h4 class="font-bold text-royalMaroon-700 text-base font-cairo mt-4">علامات رفع المبتدأ والخبر:</h4>
+                        <ul class="list-disc list-inside space-y-1.5 text-xs md:text-sm bg-white p-4 rounded-2xl border border-royalMaroon-700/10">
+                            <li><strong>الضمة الظاهرة:</strong> إذا كان الاسم فرداً أو جمع تكسير أو جمع مؤنث سالماً (مثال: <em>الطَالِبُ مُجْتَهِدٌ</em> / <em>العُلَمَاءُ أُمَنَاءُ</em>).</li>
+                            <li><strong>الألف:</strong> إذا كان الاسم مثنى (مثال: <em>الْطَّالِبَانِ مُتَفَوِّقَانِ</em>).</li>
+                            <li><strong>الواو:</strong> إذا كان الاسم جمع مذكر سالماً أو من الأسماء الخمسة (مثال: <em>المُعَلِّمُونَ مُخْلِصُونَ</em> / <em>أَبُوكَ ذُو فَضْلٍ</em>).</li>
+                        </ul>
+                    </div>
+
+                    <!-- Solved Practice 1 -->
+                    <div class="bg-amberGold-100/50 p-5 rounded-2xl border border-amberGold-500/30">
+                        <h4 class="font-bold text-royalMaroon-700 mb-3 text-sm font-cairo flex items-center gap-2">
+                            <i class="fa-solid fa-pen-ruler text-amberGold-600"></i> تدريبات مشروحة وتطبيقات إعرابية على الجملة الاسمية:
+                        </h4>
+                        <div class="space-y-3 text-xs md:text-sm text-slateNavy-800">
+                            <div class="p-3 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong class="text-royalMaroon-700">التدريب 1:</strong> اعرب الجملة التالية: <em>(المُهَنْدِسُونَ بَارِعُونَ)</em><br/>
+                                📍 <strong>المُهَنْدِسُونَ:</strong> مبتدأ مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم.<br/>
+                                📍 <strong>بَارِعُونَ:</strong> خبر المبتدأ مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم.
+                            </div>
+                            <div class="p-3 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong class="text-royalMaroon-700">التدريب 2:</strong> حدد المبتدأ والخبر وبين علامة رفعهما في: <em>(أَخُوكَ ذُو عِلْمٍ)</em><br/>
+                                📍 <strong>المبتدأ:</strong> أَخُوكَ (مرفوع بالواو لأنه من الأسماء الخمسة).<br/>
+                                📍 <strong>الخبر:</strong> ذُو (مرفوع بالواو لأنه من الأسماء الخمسة).
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- LESSON 2 -->
+                <!-- SECTION 2: النواسخ (كان وأخواتها - إن وأخواتها) -->
                 <div class="light-glass-card rounded-3xl p-6 md:p-8">
                     <h3 class="text-xl md:text-2xl font-black text-royalMaroon-700 mb-6 flex items-center gap-3 border-b border-royalMaroon-700/10 pb-4 font-cairo">
-                        <i class="fa-solid fa-layer-group text-amberGold-500"></i> الدرس الثاني: النواسخ (كان وأخواتها - إنَّ وأخواتها)
+                        <i class="fa-solid fa-layer-group text-amberGold-500"></i> القسم الثاني: النواسخ (كان وأخواتها - إنَّ وأخواتها)
                     </h3>
-                    <div class="overflow-x-auto mb-6">
-                        <table class="w-full text-right text-xs md:text-sm border-collapse rounded-2xl overflow-hidden shadow-sm">
-                            <thead>
-                                <tr class="bg-royalMaroon-700 text-white font-cairo">
-                                    <th class="p-3 border border-royalMaroon-800">وجه المقارنة</th>
-                                    <th class="p-3 border border-royalMaroon-800">الأفعال الناقصة (كان وأخواتها)</th>
-                                    <th class="p-3 border border-royalMaroon-800">الحروف المشبهة بالفعل (إنَّ وأخواتها)</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-royalMaroon-700/10 bg-white text-slateNavy-800">
-                                <tr>
-                                    <td class="p-3 font-bold bg-creamBg text-royalMaroon-700">الأثر الإعرابي</td>
-                                    <td class="p-3 text-royalMaroon-700 font-bold">ترفع المبتدأ اسماً لها، وتنصب الخبر خبراً لها.</td>
-                                    <td class="p-3 text-amberGold-600 font-bold">تنصب المبتدأ اسماً لها، وترفع الخبر خبراً لها.</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3 font-bold bg-creamBg text-royalMaroon-700">الأدوات</td>
-                                    <td class="p-3">كان، أصبح، أضحى، أمسى، بات، صار، ليس، ظلّ.</td>
-                                    <td class="p-3">إنَّ، أنَّ، كأنَّ، لكنَّ، ليتَ، لعلَّ.</td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+                    <div class="space-y-4 text-slateNavy-800 text-sm md:text-base leading-relaxed mb-6">
+                        <p>
+                            <strong>النواسخ:</strong> هي أدوات تدْخل على الجملة الاسمية فتنسخ (تغيّر) حكم المبتدأ والخبر إعرابياً:
+                        </p>
+
+                        <!-- Comparison Table -->
+                        <div class="overflow-x-auto my-4">
+                            <table class="w-full text-right text-xs md:text-sm border-collapse rounded-2xl overflow-hidden shadow-sm">
+                                <thead>
+                                    <tr class="bg-royalMaroon-700 text-white font-cairo">
+                                        <th class="p-3 border border-royalMaroon-800">وجه المقارنة</th>
+                                        <th class="p-3 border border-royalMaroon-800">الأفعال الناقصة (كان وأخواتها)</th>
+                                        <th class="p-3 border border-royalMaroon-800">الحروف المشبهة بالفعل (إنَّ وأخواتها)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-royalMaroon-700/10 bg-white text-slateNavy-800">
+                                    <tr>
+                                        <td class="p-3 font-bold bg-creamBg text-royalMaroon-700">نوع الأدوات</td>
+                                        <td class="p-3">أفعال ناسخة ناقصة</td>
+                                        <td class="p-3">حروف ناسخة</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 font-bold bg-creamBg text-royalMaroon-700">الأثر الإعرابي</td>
+                                        <td class="p-3 text-royalMaroon-700 font-bold">ترفع المبتدأ اسماً لها، وتنصب الخبر خبراً لها.</td>
+                                        <td class="p-3 text-amberGold-600 font-bold">تنصب المبتدأ اسماً لها، وترفع الخبر خبراً لها.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 font-bold bg-creamBg text-royalMaroon-700">الأدوات ومعانيها</td>
+                                        <td class="p-3">
+                                            • <strong>كان:</strong> التوقيت بالماضي.<br/>
+                                            • <strong>أصبح/أضحى/أمسى/بات:</strong> أوقات اليوم.<br/>
+                                            • <strong>صار:</strong> التحول.<br/>
+                                            • <strong>ليس:</strong> النفي.<br/>
+                                            • <strong>ظلّ / ما زال:</strong> الاستمرار.
+                                        </td>
+                                        <td class="p-3">
+                                            • <strong>إنَّ / أنَّ:</strong> التوكيد.<br/>
+                                            • <strong>كأنَّ:</strong> التشبيه.<br/>
+                                            • <strong>لكنَّ:</strong> الاستدراك.<br/>
+                                            • <strong>ليتَ:</strong> التمني.<br/>
+                                            • <strong>لعلَّ:</strong> الترجي.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="bg-amberGold-100/60 border border-amberGold-500/30 p-4 rounded-2xl text-xs md:text-sm text-slateNavy-800">
+                            <strong class="text-amberGold-700"><i class="fa-solid fa-triangle-exclamation ml-1"></i> تنبيه هام جداً (كفّ إنَّ عن العمل):</strong>
+                            إذا اتصلت (ما) الكافية بـ (إنَّ) كما في قوله تعالى: <em>(إِنَّمَا المُؤْمِنُونَ إِخْوَةٌ)</em>، فإنها **تكفها عن العمل** ويُعرب ما بعدها مبتدأً وخبراً مرفوعين.
+                        </div>
+                    </div>
+
+                    <!-- Solved Practice 2 -->
+                    <div class="bg-amberGold-100/50 p-5 rounded-2xl border border-amberGold-500/30">
+                        <h4 class="font-bold text-royalMaroon-700 mb-3 text-sm font-cairo flex items-center gap-2">
+                            <i class="fa-solid fa-pen-ruler text-amberGold-600"></i> تدريبات مشروحة وتطبيقات على النواسخ:
+                        </h4>
+                        <div class="space-y-3 text-xs md:text-sm text-slateNavy-800">
+                            <div class="p-3 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong class="text-royalMaroon-700">التدريب 1:</strong> ادخل (أصبح) ثم (إنَّ) على الجملة التالية واضبط الحركات: <em>(المُعَلِّمُونَ مُخْلِصُونَ)</em><br/>
+                                📍 <strong>مع أصبح:</strong> أَصْبَحَ المُعَلِّمُونَ مُخْلِصِينَ. (رفع الاسم بالواو ونصب الخبر بالياء).<br/>
+                                📍 <strong>مع إنَّ:</strong> إِنَّ المُعَلِّمِينَ مُخْلِصُونَ. (نصب الاسم بالياء ورفع الخبر بالواو).
+                            </div>
+                            <div class="p-3 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong class="text-royalMaroon-700">التدريب 2:</strong> اعرب كلمة (الجو) في الجملتين: 1. <em>(كان الجوُّ بارداً)</em> 2. <em>(إن الجوَّ باردٌ)</em><br/>
+                                📍 <strong>في الأولى:</strong> اسم كان مرفوع وعلامة رفعه الضمة الظاهرة.<br/>
+                                📍 <strong>في الثانية:</strong> اسم إنَّ منصوب وعلامة نصبه الفتحة الظاهرة.
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- LESSON 3 -->
+                <!-- SECTION 3: إعراب الفعل المضارع -->
                 <div class="light-glass-card rounded-3xl p-6 md:p-8">
                     <h3 class="text-xl md:text-2xl font-black text-royalMaroon-700 mb-6 flex items-center gap-3 border-b border-royalMaroon-700/10 pb-4 font-cairo">
-                        <i class="fa-solid fa-bolt text-amberGold-500"></i> الدرس الثالث: إعراب الفعل المضارع بالتفصيل
+                        <i class="fa-solid fa-bolt text-amberGold-500"></i> القسم الثالث: إعراب الفعل المضارع بالتفصيل
                     </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-creamBg p-5 rounded-2xl border border-amberGold-500/20">
-                            <h4 class="font-bold text-royalMaroon-700 mb-2 border-b border-royalMaroon-700/10 pb-2">1. حالة الرفع</h4>
-                            <p class="text-xs text-slateNavy-700 mb-2">إذا لم تسبقه أداة نصب ولا أداة جزم.</p>
-                            <p class="text-xs text-slateNavy-800 font-mono">الضمة الظاهرة / المقدرة / ثبوت النون</p>
+
+                    <div class="space-y-4 text-slateNavy-800 text-sm md:text-base leading-relaxed mb-6">
+                        <p>
+                            الفعل المضارع فعل معرب، وتختلف علامته الإعرابية بحسب **نوع الفعل** (صحيح الآخر، معتل الآخر، أفعال خمسة) و**الحالة الإعرابية**:
+                        </p>
+
+                        <!-- Cases Breakdown -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-4">
+                            <div class="bg-creamBg p-4 rounded-2xl border border-amberGold-500/30">
+                                <h4 class="font-bold text-royalMaroon-700 mb-1">1. حالة الرفع:</h4>
+                                <p class="text-xs md:text-sm">إذا لم تسبقه أداة نصب ولا أداة جزم.<br/>📍 <em>(يَكْتُبُ / يَسْعَى / يَجْتَهِدُونَ)</em></p>
+                            </div>
+                            <div class="bg-creamBg p-4 rounded-2xl border border-amberGold-500/30">
+                                <h4 class="font-bold text-amberGold-600 mb-1">2. حالة النصب:</h4>
+                                <p class="text-xs md:text-sm">إذا سبق بأداة النصب المقررة: <strong>(لَنْ - كَيْ)</strong>.<br/>📍 <em>(لَنْ يُهْمِلَ / كَيْ تَنْجَحُوا)</em></p>
+                            </div>
+                            <div class="bg-creamBg p-4 rounded-2xl border border-royalMaroon-700/30">
+                                <h4 class="font-bold text-royalMaroon-700 mb-1">3. حالة الجزم:</h4>
+                                <p class="text-xs md:text-sm">إذا سبق بأداة الجزم المقررة: <strong>(لَمْ)</strong>.<br/>📍 <em>(لَمْ يَحْضُرْ / لَمْ يَسْعَ)</em></p>
+                            </div>
                         </div>
-                        <div class="bg-creamBg p-5 rounded-2xl border border-amberGold-500/20">
-                            <h4 class="font-bold text-amberGold-600 mb-2 border-b border-royalMaroon-700/10 pb-2">2. حالة النصب</h4>
-                            <p class="text-xs text-slateNavy-700 mb-2">إذا سبق بـ المقررة: <strong>(لَنْ - كَيْ)</strong>.</p>
-                            <p class="text-xs text-slateNavy-800 font-mono">الفتحة الظاهرة / المقدرة / حذف النون</p>
+
+                        <!-- Comprehensive Verbs Table -->
+                        <h4 class="font-bold text-royalMaroon-700 text-base font-cairo mt-4">جدول علامات إعراب الفعل المضارع الشامل:</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-right text-xs md:text-sm border-collapse rounded-xl overflow-hidden shadow-sm">
+                                <thead>
+                                    <tr class="bg-royalMaroon-700 text-white">
+                                        <th class="p-2.5 border border-royalMaroon-800">نوع الفعل المضارع</th>
+                                        <th class="p-2.5 border border-royalMaroon-800">حالة الرفع</th>
+                                        <th class="p-2.5 border border-royalMaroon-800">حالة النصب (لن/كي)</th>
+                                        <th class="p-2.5 border border-royalMaroon-800">حالة الجزم (لم)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-royalMaroon-700/10 bg-white text-slateNavy-800">
+                                    <tr>
+                                        <td class="p-2.5 font-bold bg-creamBg">صحيح الآخر (يكتب)</td>
+                                        <td class="p-2.5">الضمة الظاهرة</td>
+                                        <td class="p-2.5">الفتحة الظاهرة</td>
+                                        <td class="p-2.5 text-royalMaroon-700 font-bold">السكون الظاهر</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 font-bold bg-creamBg">معتل الآخر (يسعى / يدعو / يرمي)</td>
+                                        <td class="p-2.5">الضمة المقدرة</td>
+                                        <td class="p-2.5">الفتحة (ظاهرة مع الواو والياء / مقدرة مع الألف)</td>
+                                        <td class="p-2.5 text-royalMaroon-700 font-bold">حذف حرف العلة</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 font-bold bg-creamBg">الأفعال الخمسة (يتعلمون)</td>
+                                        <td class="p-2.5">ثبوت النون</td>
+                                        <td class="p-2.5 text-amberGold-600 font-bold">حذف النون</td>
+                                        <td class="p-2.5 text-amberGold-600 font-bold">حذف النون</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="bg-creamBg p-5 rounded-2xl border border-royalMaroon-700/20">
-                            <h4 class="font-bold text-royalMaroon-700 mb-2 border-b border-royalMaroon-700/10 pb-2">3. حالة الجزم</h4>
-                            <p class="text-xs text-slateNavy-700 mb-2">إذا سبق بـ أداة الجزم المقررة: <strong>(لَمْ)</strong>.</p>
-                            <p class="text-xs text-slateNavy-800 font-mono">السكون / حذف حرف العلة / حذف النون</p>
+                    </div>
+
+                    <!-- Solved Practice 3 -->
+                    <div class="bg-amberGold-100/50 p-5 rounded-2xl border border-amberGold-500/30">
+                        <h4 class="font-bold text-royalMaroon-700 mb-3 text-sm font-cairo flex items-center gap-2">
+                            <i class="fa-solid fa-pen-ruler text-amberGold-600"></i> تدريبات مشروحة وتطبيقات على المضارع:
+                        </h4>
+                        <div class="space-y-3 text-xs md:text-sm text-slateNavy-800">
+                            <div class="p-3 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong class="text-royalMaroon-700">التدريب 1:</strong> بين الحالة الإعرابية والعلامة في: <em>(المُسْلِمُ لَمْ يَسْعَ فِي الشَّرِّ)</em><br/>
+                                📍 <strong>الفعل (يسعَ):</strong> مضارع مجزوم بـ (لَمْ)، وعلامة جزمه حذف حرف العلة (الألف)، والفتحة دليل عليها.
+                            </div>
+                            <div class="p-3 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong class="text-royalMaroon-700">التدريب 2:</strong> اعرب الفعل في: <em>(اجْتَهِدُوا كَيْ تَفُوزُوا)</em><br/>
+                                📍 <strong>الفعل (تفوزوا):</strong> فعل مضارع منصوب بـ (كَيْ)، وعلامة نصبه حذف النون لأنه من الأفعال الخمسة.
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- SECTION 4: الفاعل ونائب الفاعل (المعلوم والمجهول) -->
+                <div class="light-glass-card rounded-3xl p-6 md:p-8">
+                    <h3 class="text-xl md:text-2xl font-black text-royalMaroon-700 mb-6 flex items-center gap-3 border-b border-royalMaroon-700/10 pb-4 font-cairo">
+                        <i class="fa-solid fa-user-shield text-amberGold-500"></i> القسم الرابع: الجملة الفعلية (الفاعل ونائب الفاعل)
+                    </h3>
+
+                    <div class="space-y-4 text-slateNavy-800 text-sm md:text-base leading-relaxed mb-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
+                            <div class="bg-creamBg p-5 rounded-2xl border border-amberGold-500/30">
+                                <h4 class="font-bold text-royalMaroon-700 mb-2">1. الجملة المبنية للمعلوم (الفاعل):</h4>
+                                <p class="text-xs md:text-sm mb-3">هي الجملة التي يكون فاعلها معلومًا ومذكورًا في الكلام.<br/>📍 <strong>الفاعل:</strong> اسم مرفوع يدل على من قام بالفعل.<br/>📌 <em>مثال: (كَتَبَ الطَالِبُ الدَّرْسَ)</em></p>
+                            </div>
+                            <div class="bg-creamBg p-5 rounded-2xl border border-royalMaroon-700/30">
+                                <h4 class="font-bold text-royalMaroon-700 mb-2">2. الجملة المبنية للمجهول (نائب الفاعل):</h4>
+                                <p class="text-xs md:text-sm mb-3">هي الجملة التي يُحذف فاعلها ويحل المفعول به محله فيأخذ حكم الرفع.<br/>📍 <strong>نائب الفاعل:</strong> اسم مرفوع حل محل الفاعل بعد حذفه.<br/>📌 <em>مثال: (كُتِبَ الدَّرْسُ)</em></p>
+                            </div>
+                        </div>
+
+                        <h4 class="font-bold text-royalMaroon-700 text-base font-cairo mt-4">قواعد تغيير بناء الفعل للمجهول:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm">
+                            <div class="p-3.5 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong>الفعل الماضي:</strong> يُضمُّ أوَّلُهُ ويُكسَرُ ما قبلَ آخِرِه.<br/>
+                                <span class="text-royalMaroon-700 font-mono font-bold">شَرِبَ ⬅️ شُرِبَ / كَافَأَ ⬅️ كُوفِئَ</span>
+                            </div>
+                            <div class="p-3.5 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong>الفعل المضارع:</strong> يُضمُّ أوَّلُهُ ويُفتَحُ ما قبلَ آخِرِه.<br/>
+                                <span class="text-royalMaroon-700 font-mono font-bold">يَكْتُبُ ⬅️ يُكْتَبُ / يَشْرَحُ ⬅️ يُشْرَحُ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Solved Practice 4 -->
+                    <div class="bg-amberGold-100/50 p-5 rounded-2xl border border-amberGold-500/30">
+                        <h4 class="font-bold text-royalMaroon-700 mb-3 text-sm font-cairo flex items-center gap-2">
+                            <i class="fa-solid fa-pen-ruler text-amberGold-600"></i> تدريبات مشروحة وتطبيقات على البناء للمجهول:
+                        </h4>
+                        <div class="space-y-3 text-xs md:text-sm text-slateNavy-800">
+                            <div class="p-3 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong class="text-royalMaroon-700">التدريب 1:</strong> حوّل الجملة التالية للمجهول واضبط الكلمات: <em>(كَرََّمَ المُدِيرُ الفَائِزِينَ)</em><br/>
+                                📍 <strong>التحويل:</strong> كُرِّمَ الفَائِزُونَ.<br/>
+                                📍 <strong>الشرح:</strong> حذفنا الفاعل (المديرُ)، وبنينا الماضي للمجهول (كُرِّمَ)، ورفعنا المفعول به ليكون نائب فاعل بالواو (الفائزونَ).
+                            </div>
+                            <div class="p-3 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong class="text-royalMaroon-700">التدريب 2:</strong> اعرب كلمة (التقريران) في: <em>(سُتْلِمَ التَّقْرِيرَانِ)</em><br/>
+                                📍 <strong>التَّقْرِيرَانِ:</strong> نائب فاعل مرفوع وعلامة رفعه الألف لأنه مثنى.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -337,7 +508,7 @@
 
                     <div id="game-feedback" class="hidden mb-6 p-4 rounded-2xl bg-amberGold-100/60 border border-amberGold-500/40 text-slateNavy-800 text-sm font-bold"></div>
 
-                    <!-- 5 Unified Categories -->
+                    <!-- 5 Categories -->
                     <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
                         <button onclick="checkGameAnswer('kana')" class="p-4 rounded-2xl bg-white border border-royalMaroon-700/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
                             <i class="fa-solid fa-cube block mb-1.5 text-lg text-royalMaroon-700"></i> أفعال ناسخة (كان)
@@ -402,7 +573,6 @@
             { category: "الجملة الاسمية والفعلية", question: "1. [اختيار] ما الركن الأساسي الذي تبدأ به الجملة الاسمية؟", sentence: "العِلْمُ نُورٌ يَهْدِي القُلُوبَ", options: ["المبتدأ", "الفاعل", "الفعل الماضي", "نائب الفاعل"], explanation: "تبدأ الجملة الاسمية بالمبتدأ وهو اسم مرفوع تبتدأ به الجملة." },
             { category: "الجملة الاسمية والفعلية", question: "2. [تصنيف] حدد نوع الجملة التالية: (يَحْرِصُ المَعَلِّمُ عَلَى طُلاَّبِهِ):", sentence: "يَحْرِصُ المَعَلِّمُ عَلَى طُلاَّبِهِ", options: ["جملة فعلية", "جملة اسمية", "شبه جملة", "جملة ناسخة"], explanation: "بدأت بالفعل المضارع (يحرصُ) فهي جملة فعلية." },
             { category: "الجملة الاسمية والفعلية", question: "3. [استخرج] استخرج المبتدأ من الجملة التالية: (المَاجِدُونَ مُخْلِصُونَ فِي عَمَلِهِمْ):", sentence: "المَاجِدُونَ مُخْلِصُونَ فِي عَمَلِهِمْ", options: ["المَاجِدُونَ", "مُخْلِصُونَ", "فِي عَمَلِهِمْ", "ضمير مستتر"], explanation: "(الماجدون) هو الاسم المرفوع الواقع في بداية الجملة ويعرب مبتدأً." },
-            { category: "الجملة الاسمية والفعلية", question: "4. [صح أم خطأ] المبتدأ والخبر يكونان دائماً منصوبين بالفتحة.", sentence: null, options: ["خطأ، المبتدأ والخبر مرفوعان دائماً", "صح، المبتدأ والخبر منصوبان"], explanation: "حكم المبتدأ والخبر الأصلي هو الرفع دائماً." },
             { category: "النواسخ (كان وإنّ)", question: "9. [اختيار] ما العمل الإعرابي لـ (كان وأخواتها) عند دخولها على الجملة الاسمية؟", sentence: null, options: ["ترفع المبتدأ وتنصب الخبر", "تنصب المبتدأ وترفع الخبر", "تنصب المبتدأ والخبر", "ترفع المبتدأ والخبر"], explanation: "كان وأخواتها أفعال ناسخة ترفع المبتدأ اسماً لها وتنصب الخبر." },
             { category: "النواسخ (كان وإنّ)", question: "10. [اختيار] ما العمل الإعرابي لـ (إنَّ وأخواتها) عند دخولها على الجملة الاسمية؟", sentence: null, options: ["تنصب المبتدأ وترفع الخبر", "ترفع المبتدأ وتنصب الخبر", "تجزم المبتدأ والخبر", "ترفع المبتدأ والخبر"], explanation: "إنَّ وأخواتها حروف ناسخة تنصب المبتدأ اسماً لها وترفع الخبر." },
             { category: "إعراب الفعل المضارع", question: "20. [أدوات] أيّ من الأدوات التالية تعدّ من أدوات نصب الفعل المضارع المقررة؟", sentence: null, options: ["لَنْ وَ كَيْ", "لَمْ وَ لا الناهية", "إنَّ وَ أنَّ", "كانَ وَ أصْبَحَ"], explanation: "(لَنْ) و(كَيْ) من أدوات نصب المضارع." },
@@ -548,7 +718,7 @@
             if(tabName === 'game') initGame();
         }
 
-        // Expanded 70 Items Mini Game Array for Unit Grammar
+        // Expanded 70 Items Mini Game Array
         const masterGameItems = [
             { text: "كانَ", type: "kana", exp: "أصبح/كان أفعال ناسخة ترفع المبتدأ وتنصب الخبر." },
             { text: "إنَّ", type: "inna", exp: "إنَّ وأخواتها حروف ناسخة تنصب المبتدأ وترفع الخبر." },
