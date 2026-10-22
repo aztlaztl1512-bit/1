@@ -135,7 +135,7 @@
                     <i class="fa-solid fa-clipboard-question ml-1"></i> الاختبار التفاعلي (40)
                 </button>
                 <button onclick="switchTab('game')" id="tab-btn-game" class="nav-tab px-3.5 py-2 rounded-xl transition-all text-slateNavy-700 hover:text-royalMaroon-700 hover:bg-white/60">
-                    <i class="fa-solid fa-bolt ml-1"></i> تحدي التصنيف
+                    <i class="fa-solid fa-bolt ml-1"></i> تحدي التصنيف (70)
                 </button>
             </nav>
         </div>
@@ -153,10 +153,10 @@
                             <i class="fa-solid fa-book-open ml-1"></i> المرجع الموحد والكامل للوحدة النحوية
                         </span>
                         <h2 class="text-2xl md:text-4xl font-black mb-3 text-slateNavy-900 font-cairo leading-tight">
-                            الشرح التفصيلي والتطبيقي الشامل <span class="royal-gradient-text">لجميع أبواب النحو المقررة</span>
+                            الشرح التفصيلي والتطبيقي الشامل <span class="royal-gradient-text">لأبواب النحو الأساسية</span>
                         </h2>
                         <p class="text-slateNavy-700 text-sm md:text-base leading-relaxed max-w-3xl">
-                            مرجع النحو المكتمل: يتضمن تفصيلاً عميقاً وشرحاً شاملاً للجملة الاسمية والفعلية، النواسخ (كان وإنَّ)، إعراب المضارع بكل حالاته وأنوَاعه، والفاعل ونائب الفاعل، مدعوماً بأمثلة إعرابية وتدريبات محلولة ومفصلة.
+                            مرجع النحو المكتمل: يتضمن تفصيلاً عميقاً وشرحاً شاملاً للجملة الاسمية والفعلية، المبتدأ والخبر، إعراب المضارع بكل حالاته، الفاعل، ونائب الفاعل، مدعوماً بأمثلة إعرابية وتدريبات محلولة ومفصلة.
                         </p>
                     </div>
                     <div class="hidden lg:flex flex-col items-center bg-white/80 p-5 rounded-2xl border border-amberGold-500/30 text-center min-w-[210px] shadow-sm">
@@ -192,7 +192,7 @@
 
                         <h4 class="font-bold text-royalMaroon-700 text-base font-cairo mt-4">علامات رفع المبتدأ والخبر:</h4>
                         <ul class="list-disc list-inside space-y-2 text-xs md:text-sm bg-white p-4 rounded-2xl border border-royalMaroon-700/10">
-                            <li><strong>الضمة الظاهرة:</strong> إذا كان الاسم فرداً أو جمع تكسير أو جمع مؤنث سالماً (مثال: <span class="grammar-example">الطَالِبُ مُجْتَهِدٌ</span> / <span class="grammar-example">العُلَمَاءُ أُمَنَاءُ</span>).</li>
+                            <li><strong>الضمة الظاهرة:</strong> إذا كان الاسم مفرداً أو جمع تكسير أو جمع مؤنث سالماً (مثال: <span class="grammar-example">الطَالِبُ مُجْتَهِدٌ</span> / <span class="grammar-example">العُلَمَاءُ أُمَنَاءُ</span>).</li>
                             <li><strong>الألف:</strong> إذا كان الاسم مثنى (مثال: <span class="grammar-example">الطَّالِبَانِ مُتَفَوِّقَانِ</span>).</li>
                             <li><strong>الواو:</strong> إذا كان الاسم جمع مذكر سالماً أو من الأسماء الخمسة (مثال: <span class="grammar-example">المُعَلِّمُونَ مُخْلِصُونَ</span> / <span class="grammar-example">أَبُوكَ ذُو فَضْلٍ</span>).</li>
                         </ul>
@@ -217,87 +217,10 @@
                     </div>
                 </div>
 
-                <!-- SECTION 2: النواسخ (كان وأخواتها - إن وأخواتها) -->
+                <!-- SECTION 2: إعراب الفعل المضارع -->
                 <div class="light-glass-card rounded-3xl p-6 md:p-8">
                     <h3 class="text-xl md:text-2xl font-black text-royalMaroon-700 mb-6 flex items-center gap-3 border-b border-royalMaroon-700/10 pb-4 font-cairo">
-                        <i class="fa-solid fa-layer-group text-amberGold-500"></i> القسم الثاني: النواسخ (كان وأخواتها - إنَّ وأخواتها)
-                    </h3>
-
-                    <div class="space-y-4 text-slateNavy-800 text-sm md:text-base leading-relaxed mb-6">
-                        <p>
-                            <strong>النواسخ:</strong> هي أدوات تدْخل على الجملة الاسمية فتنسخ (تغيّر) حكم المبتدأ والخبر إعرابياً:
-                        </p>
-
-                        <div class="overflow-x-auto my-4">
-                            <table class="w-full text-right text-xs md:text-sm border-collapse rounded-2xl overflow-hidden shadow-sm">
-                                <thead>
-                                    <tr class="bg-royalMaroon-700 text-white font-cairo">
-                                        <th class="p-3 border border-royalMaroon-800">وجه المقارنة</th>
-                                        <th class="p-3 border border-royalMaroon-800">الأفعال الناقصة (كان وأخواتها)</th>
-                                        <th class="p-3 border border-royalMaroon-800">الحروف المشبهة بالفعل (إنَّ وأخواتها)</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-royalMaroon-700/10 bg-white text-slateNavy-800">
-                                    <tr>
-                                        <td class="p-3 font-bold bg-creamBg text-royalMaroon-700">نوع الأدوات</td>
-                                        <td class="p-3">أفعال ناسخة ناقصة</td>
-                                        <td class="p-3">حروف ناسخة</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="p-3 font-bold bg-creamBg text-royalMaroon-700">الأثر الإعرابي</td>
-                                        <td class="p-3 text-royalMaroon-700 font-bold">ترفع المبتدأ اسماً لها، وتنصب الخبر خبراً لها.</td>
-                                        <td class="p-3 text-amberGold-600 font-bold">تنصب المبتدأ اسماً لها، وترفع الخبر خبراً لها.</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="p-3 font-bold bg-creamBg text-royalMaroon-700">الأدوات ومعانيها</td>
-                                        <td class="p-3">
-                                            • <span class="grammar-example">كان</span>: التوقيت بالماضي.<br/>
-                                            • <span class="grammar-example">أصبح/أضحى/أمسى/بات</span>: أوقات اليوم.<br/>
-                                            • <span class="grammar-example">صار</span>: التحول.<br/>
-                                            • <span class="grammar-example">ليس</span>: النفي.<br/>
-                                            • <span class="grammar-example">ظلّ / ما زال</span>: الاستمرار.
-                                        </td>
-                                        <td class="p-3">
-                                            • <span class="grammar-example">إنَّ / أنَّ</span>: التوكيد.<br/>
-                                            • <span class="grammar-example">كأنَّ</span>: التشبيه.<br/>
-                                            • <span class="grammar-example">لكنَّ</span>: الاستدراك.<br/>
-                                            • <span class="grammar-example">ليتَ</span>: التمني.<br/>
-                                            • <span class="grammar-example">لعلَّ</span>: الترجي.
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="bg-amberGold-100/60 border border-amberGold-500/30 p-4 rounded-2xl text-xs md:text-sm text-slateNavy-800">
-                            <strong class="text-amberGold-700"><i class="fa-solid fa-triangle-exclamation ml-1"></i> تنبيه هام جداً (كفّ إنَّ عن العمل):</strong>
-                            إذا اتصلت (ما) الكافية بـ (إنَّ) كما في قوله تعالى: <span class="grammar-example">(إِنَّمَا المُؤْمِنُونَ إِخْوَةٌ)</span>، فإنها **تكفها عن العمل** ويُعرب ما بعدها مبتدأً وخبراً مرفوعين.
-                        </div>
-                    </div>
-
-                    <div class="bg-amberGold-100/50 p-5 rounded-2xl border border-amberGold-500/30">
-                        <h4 class="font-bold text-royalMaroon-700 mb-3 text-sm font-cairo flex items-center gap-2">
-                            <i class="fa-solid fa-pen-ruler text-amberGold-600"></i> تدريبات مشروحة وتطبيقات على النواسخ:
-                        </h4>
-                        <div class="space-y-3 text-xs md:text-sm text-slateNavy-800">
-                            <div class="p-3 bg-white rounded-xl border border-amberGold-500/20">
-                                <strong class="text-royalMaroon-700">التدريب 1:</strong> ادخل (أصبح) ثم (إنَّ) على الجملة التالية واضبط الحركات: <span class="grammar-example">(المُعَلِّمُونَ مُخْلِصُونَ)</span><br/>
-                                📍 <strong>مع أصبح:</strong> <span class="grammar-example">أَصْبَحَ المُعَلِّمُونَ مُخْلِصِينَ</span>. (رفع الاسم بالواو ونصب الخبر بالياء).<br/>
-                                📍 <strong>مع إنَّ:</strong> <span class="grammar-example">إِنَّ المُعَلِّمِينَ مُخْلِصُونَ</span>. (نصب الاسم بالياء ورفع الخبر بالواو).
-                            </div>
-                            <div class="p-3 bg-white rounded-xl border border-amberGold-500/20">
-                                <strong class="text-royalMaroon-700">التدريب 2:</strong> اعرب كلمة (الجو) في الجملتين: 1. <span class="grammar-example">(كان الجوُّ بارداً)</span> 2. <span class="grammar-example">(إن الجوَّ باردٌ)</span><br/>
-                                📍 <strong>في الأولى:</strong> اسم كان مرفوع وعلامة رفعه الضمة الظاهرة.<br/>
-                                📍 <strong>في الثانية:</strong> اسم إنَّ منصوب وعلامة نصبه الفتحة الظاهرة.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SECTION 3: إعراب الفعل المضارع -->
-                <div class="light-glass-card rounded-3xl p-6 md:p-8">
-                    <h3 class="text-xl md:text-2xl font-black text-royalMaroon-700 mb-6 flex items-center gap-3 border-b border-royalMaroon-700/10 pb-4 font-cairo">
-                        <i class="fa-solid fa-bolt text-amberGold-500"></i> القسم الثالث: إعراب الفعل المضارع بالتفصيل
+                        <i class="fa-solid fa-bolt text-amberGold-500"></i> القسم الثاني: إعراب الفعل المضارع بالتفصيل
                     </h3>
 
                     <div class="space-y-4 text-slateNavy-800 text-sm md:text-base leading-relaxed mb-6">
@@ -372,10 +295,10 @@
                     </div>
                 </div>
 
-                <!-- SECTION 4: الفاعل ونائب الفاعل (المعلوم والمجهول) -->
+                <!-- SECTION 3: الفاعل ونائب الفاعل (المعلوم والمجهول) -->
                 <div class="light-glass-card rounded-3xl p-6 md:p-8">
                     <h3 class="text-xl md:text-2xl font-black text-royalMaroon-700 mb-6 flex items-center gap-3 border-b border-royalMaroon-700/10 pb-4 font-cairo">
-                        <i class="fa-solid fa-user-shield text-amberGold-500"></i> القسم الرابع: الجملة الفعلية (الفاعل ونائب الفاعل)
+                        <i class="fa-solid fa-user-shield text-amberGold-500"></i> القسم الثالث: الجملة الفعلية (الفاعل ونائب الفاعل)
                     </h3>
 
                     <div class="space-y-4 text-slateNavy-800 text-sm md:text-base leading-relaxed mb-6">
@@ -490,16 +413,16 @@
             </div>
         </section>
 
-        <!-- TAB 3: SORTING MINI-GAME -->
+        <!-- TAB 3: SORTING MINI-GAME (70 EXPLICIT ITEMS FOCUSED ON CORE TOPICS WITHOUT KANA/INNA) -->
         <section id="tab-game" class="tab-content hidden">
             <div class="light-glass-card rounded-3xl p-6 md:p-8">
                 <div class="flex items-center justify-between mb-6 flex-wrap gap-4">
                     <div>
-                        <h2 class="text-2xl font-black text-slateNavy-900 mb-1 font-cairo"><i class="fa-solid fa-bolt ml-2 text-amberGold-500"></i>تحدي التصنيف السريع الشامل</h2>
-                        <p class="text-slateNavy-700 text-sm">اختر التصنيف النحوي الصحيح للعبارة أو الكلمة المعروضة:</p>
+                        <h2 class="text-2xl font-black text-slateNavy-900 mb-1 font-cairo"><i class="fa-solid fa-bolt ml-2 text-amberGold-500"></i>تحدي التصنيف السريع الشامل (70 فقرة)</h2>
+                        <p class="text-slateNavy-700 text-sm">صنّف العبارة أو الكلمة حسب تصنيفها النحوي الصحيح:</p>
                     </div>
                     <div class="flex items-center gap-4 text-xs md:text-sm font-bold">
-                        <span class="text-slateNavy-800 bg-creamDark px-3.5 py-2 rounded-xl border border-royalMaroon-700/10">الفقرة: <span id="game-progress" class="text-royalMaroon-700 font-black">1/40</span></span>
+                        <span class="text-slateNavy-800 bg-creamDark px-3.5 py-2 rounded-xl border border-royalMaroon-700/10">الفقرة: <span id="game-progress" class="text-royalMaroon-700 font-black">1/70</span></span>
                         <span class="text-royalMaroon-700 bg-royalMaroon-50 px-3.5 py-2 rounded-xl border border-royalMaroon-700/20"><i class="fa-solid fa-star ml-1 text-amberGold-500"></i> النقاط: <span id="game-score" class="font-black">0</span></span>
                     </div>
                 </div>
@@ -511,37 +434,31 @@
 
                     <div id="game-feedback" class="hidden mb-6 p-4 rounded-2xl bg-amberGold-100/60 border border-amberGold-500/40 text-slateNavy-800 text-sm font-bold"></div>
 
-                    <!-- Dynamic Categorization Buttons Matching Master Items -->
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-                        <button onclick="checkGameAnswer('أخوات كان')" class="p-4 rounded-2xl bg-white border border-royalMaroon-700/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
-                            <i class="fa-solid fa-cube block mb-1.5 text-lg text-royalMaroon-700"></i> أخوات كان
+                    <!-- 6 Direct Categorization Buttons for Core Grammar Topics -->
+                    <div class="grid grid-cols-2 md:grid-cols-6 gap-3">
+                        <button onclick="checkGameAnswer('أداة نصب')" class="p-3.5 rounded-2xl bg-white border border-slateNavy-700/20 hover:border-slateNavy-800 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                            <i class="fa-solid fa-circle-arrow-up block mb-1.5 text-base text-amberGold-600"></i> أداة نصب
                         </button>
-                        <button onclick="checkGameAnswer('أخوات إن')" class="p-4 rounded-2xl bg-white border border-amberGold-500/30 hover:border-amberGold-500 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
-                            <i class="fa-solid fa-cubes block mb-1.5 text-lg text-amberGold-500"></i> أخوات إن
+                        <button onclick="checkGameAnswer('أداة جزم')" class="p-3.5 rounded-2xl bg-white border border-royalMaroon-600/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                            <i class="fa-solid fa-circle-arrow-down block mb-1.5 text-base text-royalMaroon-600"></i> أداة جزم
                         </button>
-                        <button onclick="checkGameAnswer('أداة نصب')" class="p-4 rounded-2xl bg-white border border-slateNavy-700/20 hover:border-slateNavy-800 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
-                            <i class="fa-solid fa-circle-arrow-up block mb-1.5 text-lg text-amberGold-600"></i> أداة نصب
+                        <button onclick="checkGameAnswer('فاعل مرفوع')" class="p-3.5 rounded-2xl bg-white border border-amberGold-600/20 hover:border-amberGold-600 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                            <i class="fa-solid fa-user-shield block mb-1.5 text-base text-royalMaroon-800"></i> فاعل مرفوع
                         </button>
-                        <button onclick="checkGameAnswer('أداة جزم')" class="p-4 rounded-2xl bg-white border border-royalMaroon-600/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
-                            <i class="fa-solid fa-circle-arrow-down block mb-1.5 text-lg text-royalMaroon-600"></i> أداة جزم
+                        <button onclick="checkGameAnswer('مبتدأ مرفوع')" class="p-3.5 rounded-2xl bg-white border border-slateNavy-700/20 hover:border-slateNavy-800 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                            <i class="fa-solid fa-font block mb-1.5 text-base text-amberGold-600"></i> مبتدأ مرفوع
                         </button>
-                        <button onclick="checkGameAnswer('فاعل مرفوع')" class="p-4 rounded-2xl bg-white border border-amberGold-600/20 hover:border-amberGold-600 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
-                            <i class="fa-solid fa-user-shield block mb-1.5 text-lg text-royalMaroon-800"></i> فاعل مرفوع
+                        <button onclick="checkGameAnswer('نائب فاعل')" class="p-3.5 rounded-2xl bg-white border border-royalMaroon-700/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                            <i class="fa-solid fa-user-check block mb-1.5 text-base text-royalMaroon-700"></i> نائب فاعل
                         </button>
-                        <button onclick="checkGameAnswer('مبتدأ مرفوع')" class="p-4 rounded-2xl bg-white border border-slateNavy-700/20 hover:border-slateNavy-800 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
-                            <i class="fa-solid fa-font block mb-1.5 text-lg text-amberGold-600"></i> مبتدأ مرفوع
-                        </button>
-                        <button onclick="checkGameAnswer('نائب فاعل')" class="p-4 rounded-2xl bg-white border border-royalMaroon-700/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
-                            <i class="fa-solid fa-user-check block mb-1.5 text-lg text-royalMaroon-700"></i> نائب فاعل
-                        </button>
-                        <button onclick="checkGameAnswer('مضارع مجزوم')" class="col-span-2 md:col-span-2 p-4 rounded-2xl bg-white border border-amberGold-500/30 hover:border-amberGold-500 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
-                            <i class="fa-solid fa-bolt block mb-1.5 text-lg text-amberGold-500"></i> مضارع مجزوم
+                        <button onclick="checkGameAnswer('مضارع مجزوم')" class="p-3.5 rounded-2xl bg-white border border-amberGold-500/30 hover:border-amberGold-500 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                            <i class="fa-solid fa-bolt block mb-1.5 text-base text-amberGold-500"></i> مضارع مجزوم
                         </button>
                     </div>
                 </div>
 
                 <div id="game-results" class="hidden text-center py-8">
-                    <div class="text-4xl md:text-5xl font-black text-royalMaroon-700 mb-3 font-cairo" id="game-final-score">0 / 0</div>
+                    <div class="text-4xl md:text-5xl font-black text-royalMaroon-700 mb-3 font-cairo" id="game-final-score">0 / 70</div>
                     <h3 class="text-xl font-bold text-slateNavy-900 mb-4">انتهى تحدي التصنيف السريع الشامل بنجاح!</h3>
                     <button onclick="initGame()" class="btn-royal px-8 py-3 rounded-xl font-bold text-sm shadow-md">إعادة التحدي</button>
                 </div>
@@ -581,48 +498,78 @@
             } catch(e){}
         }
 
-        // 70 Explicit Game Items matching exact student-friendly answers
+        // exactly 70 game items strictly focused on sentence types, subject, predicate, verb forms, and particles without kana/inna
         const masterGameItems = [
-            { text: "ما نوع الأداة «كانَ»؟", type: "أخوات كان", exp: "«كانَ» من أخوات كان (أفعال ناسخة)." },
-            { text: "ما نوع الأداة «إنَّ»؟", type: "أخوات إن", exp: "«إنَّ» من أخوات إنَّ (حروف ناسخة)." },
-            { text: "ما نوع الأداة «لَنْ»؟", type: "أداة نصب", exp: "«لَنْ» من أداة نصب الفعل المضارع." },
-            { text: "ما نوع الأداة «لَمْ»؟", type: "أداة جزم", exp: "«لَمْ» من أداة جزم الفعل المضارع." },
-            { text: "ما إعراب كلمة (المَعَلِّمُ) في: «حَضَرَ المَعَلِّمُ»؟", type: "فاعل مرفوع", exp: "«المعلمُ» فاعل مرفوع بالضمة." },
-            { text: "ما إعراب كلمة (الطَّالِبُ) في: «الطَّالِبُ مُجْتَهِدٌ»؟", type: "مبتدأ مرفوع", exp: "«الطالبُ» مبتدأ مرفوع بالضمة." },
+            { text: "ما نوع الأداة «لَنْ»؟", type: "أداة نصب", exp: "«لَنْ» أداة نصب للفعل المضارع." },
+            { text: "ما نوع الأداة «لَمْ»؟", type: "أداة جزم", exp: "«لَمْ» أداة جزم للفعل المضارع." },
+            { text: "ما إعراب كلمة (المَعَلِّمُ) في: «حَضَرَ المَعَلِّمُ»؟", type: "فاعل مرفوع", exp: "«المعلمُ» فاعل مرفوع بالضمة الظاهرة." },
+            { text: "ما إعراب كلمة (الطَّالِبُ) في: «الطَّالِبُ مُجْتَهِدٌ»؟", type: "مبتدأ مرفوع", exp: "«الطالبُ» مبتدأ مرفوع بالضمة الظاهرة." },
             { text: "ما إعراب كلمة (الدَّرْسُ) في: «يُشْرَحُ الدَّرْسُ»؟", type: "نائب فاعل", exp: "«الدرسُ» نائب فاعل مرفوع بالضمة." },
-            { text: "ما تصنيف الفعل (يَحْضُرْ) في: «لَمْ يَحْضُرْ»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم بـ (لم)." },
-            { text: "ما نوع الأداة «أَصْبَحَ»؟", type: "أخوات كان", exp: "«أصبح» من أخوات كان." },
-            { text: "ما نوع الأداة «لَعَلَّ»؟", type: "أخوات إن", exp: "«لعلّ» من أخوات إنّ." },
-            { text: "ما نوع الأداة «كَيْ»؟", type: "أداة نصب", exp: "«كَيْ» أداة نصب." },
-            { text: "ما نوع الأداة «صَارَ»؟", type: "أخوات كان", exp: "«صار» من أخوات كان." },
-            { text: "ما نوع الأداة «لَيْتَ»؟", type: "أخوات إن", exp: "«ليت» من أخوات إنّ." },
-            { text: "ما تصنيف الفعل (يَسْعَ) في: «لَمْ يَسْعَ»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم (وعلامة جزمه حذف حرف العلة)." },
-            { text: "ما نوع الأداة «لَيْسَ»؟", type: "أخوات كان", exp: "«ليس» من أخوات كان." },
-            { text: "ما نوع الأداة «أَضْحَى»؟", type: "أخوات كان", exp: "«أضحى» من أخوات كان." },
-            { text: "ما نوع الأداة «لَكِنَّ»؟", type: "أخوات إن", exp: "«لكنّ» من أخوات إنّ." },
-            { text: "ما نوع الأداة «بَاتَ»؟", type: "أخوات كان", exp: "«بات» من أخوات كان." },
-            { text: "ما نوع الأداة «أَمْسَى»؟", type: "أخوات كان", exp: "«أمسى» من أخوات كان." },
-            { text: "ما نوع الأداة «ظَلَّ»؟", type: "أخوات كان", exp: "«ظلّ» من أخوات كان." },
-            { text: "ما نوع الأداة «أنَّ»؟", type: "أخوات إن", exp: "«أنّ» من أخوات إنّ." },
-            { text: "ما إعراب كلمة (مُجْتَهِدٌ) في: «الطَّالِبُ مُجْتَهِدٌ»؟", type: "مبتدأ مرفوع", exp: "يعتبر خبراً مرفوعاً (أو ضمن المرفوعات الأساسية للمبتدأ والخبر)." },
-            { text: "ما إعراب كلمة (الحَلِيبُ) في: «شُرِبَ الحَلِيبُ»؟", type: "نائب فاعل", exp: "«الحليبُ» نائب فاعل." },
-            { text: "ما إعراب كلمة (الوَلَدُ) في: «لَعِبَ الوَلَدُ»؟", type: "فاعل مرفوع", exp: "«الولدُ» فاعل مرفوع." },
-            { text: "ما إعراب كلمة (المُسْلِمُونَ) في: «صَلَّى المُسْلِمُونَ»؟", type: "فاعل مرفوع", exp: "«المسلمون» فاعل مرفوع بالواو." },
-            { text: "ما إعراب كلمة (الأَخَوَانِ) في: «حَضَرَ الأَخَوَانِ»؟", type: "فاعل مرفوع", exp: "«الأخوان» فاعل مرفوع بالألف." },
-            { text: "ما إعراب كلمة (أَبُوكَ) في: «حَضَرَ أَبُوكَ»؟", type: "فاعل مرفوع", exp: "«أبوك» فاعل مرفوع بالواو." },
-            { text: "ما إعراب كلمة (الجوُّ) في: «كَانَ الجوُّ بَارِداً»؟", type: "أخوات كان", exp: "اسم كان مرفوع (تابع لأخوات كان)." },
-            { text: "ما إعراب كلمة (القَصِيدَةُ) في: «كُتِبَتْ القَصِيدَةُ»؟", type: "نائب فاعل", exp: "«القصيدة» نائب فاعل مرفوع." },
+            { text: "ما تصنيف الفعل (يَحْضُرْ) في: «لَمْ يَحْضُرْ»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم بـ (لم) وعلامة جزمه السكون." },
+            { text: "ما نوع الأداة «كَيْ»؟", type: "أداة نصب", exp: "«كَيْ» أداة نصب للفعل المضارع." },
+            { text: "ما تصنيف الفعل (يَسْعَ) في: «لَمْ يَسْعَ»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم وعلامة جزمه حذف حرف العلة." },
+            { text: "ما إعراب كلمة (مُجْتَهِدٌ) في: «الطَّالِبُ مُجْتَهِدٌ»؟", type: "مبتدأ مرفوع", exp: "خبر المبتدأ مرفوع بالضمة (تابع لأركان الجملة الاسمية الأساسية)." },
+            { text: "ما إعراب كلمة (الحَلِيبُ) في: «شُرِبَ الحَلِيبُ»؟", type: "نائب فاعل", exp: "«الحليبُ» نائب فاعل مرفوع بالضمة." },
+            { text: "ما إعراب كلمة (الوَلَدُ) في: «لَعِبَ الوَلَدُ»؟", type: "فاعل مرفوع", exp: "«الولدُ» فاعل مرفوع بالضمة." },
+            { text: "ما إعراب كلمة (المُسْلِمُونَ) في: «صَلَّى المُسْلِمُونَ»؟", type: "فاعل مرفوع", exp: "«المسلمون» فاعل مرفوع بالواو لأنه جمع مذكر سالم." },
+            { text: "ما إعراب كلمة (الأَخَوَانِ) في: «حَضَرَ الأَخَوَانِ»؟", type: "فاعل مرفوع", exp: "«الأخوان» فاعل مرفوع بالألف لأنه مثنى." },
+            { text: "ما إعراب كلمة (أَبُوكَ) في: «حَضَرَ أَبُوكَ»؟", type: "فاعل مرفوع", exp: "«أبوك» فاعل مرفوع بالواو لأنه من الأسماء الخمسة." },
+            { text: "ما إعراب كلمة (القَصِيدَةُ) في: «كُتِبَتْ القَصِيدَةُ»؟", type: "نائب فاعل", exp: "«القصيدة» نائب فاعل مرفوع بالضمة." },
             { text: "ما إعراب كلمة (المُهَنْدِسُونَ) في: «يُكَرَّمُ المُهَنْدِسُونَ»؟", type: "نائب فاعل", exp: "«المهندسون» نائب فاعل مرفوع بالواو." },
-            { text: "ما نوع الأداة «ما زَالَ»؟", type: "أخوات كان", exp: "«ما زال» من أخوات كان." },
-            { text: "ما نوع الأداة «ما بَرِحَ»؟", type: "أخوات كان", exp: "«ما برح» من أخوات كان." },
-            { text: "ما نوع الأداة «ما فَتِئَ»؟", type: "أخوات كان", exp: "«ما فتئ» من أخوات كان." },
-            { text: "ما نوع الأداة «ما انْفَكَّ»؟", type: "أخوات كان", exp: "«ما انفك» من أخوات كان." },
-            { text: "ما تصنيف الفعل (تَتَأَخَّرْ) في: «لَمْ تَتَأَخَّرْ»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم بـ (لم)." },
-            { text: "ما تصنيف الفعل (يَقُضِ) في: «لَمْ يَقُضِ القَاضِي»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم بـ (لم)." },
-            { text: "ما تصنيف الفعل (يَرْمِ) في: «لَمْ يَرْمِ»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم بـ (لم)." },
-            { text: "ما تصنيف الفعل (يَدْعُ) في: «لَمْ يَدْعُ»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم بـ (لم)." },
-            { text: "ما نوع الأداة «كَأَنَّ»؟", type: "أخوات إن", exp: "«كأنّ» من أخوات إنّ." },
-            { text: "ما نوع الأداة «لَيْتَ»؟", type: "أخوات إن", exp: "«ليت» من أخوات إنّ." }
+            { text: "ما تصنيف الفعل (تَتَأَخَّرْ) في: «لَمْ تَتَأَخَّرْ»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم بـ (لم) وعلامة جزمه السكون." },
+            { text: "ما تصنيف الفعل (يَقُضِ) في: «لَمْ يَقُضِ القَاضِي»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم وعلامة جزمه حذف حرف العلة." },
+            { text: "ما تصنيف الفعل (يَرْمِ) في: «لَمْ يَرْمِ»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم وعلامة جزمه حذف حرف العلة." },
+            { text: "ما تصنيف الفعل (يَدْعُ) في: «لَمْ يَدْعُ»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم وعلامة جزمه حذف حرف العلة." },
+            { text: "ما إعراب كلمة (القَاضِي) في: «حَكَمَ القَاضِي»؟", type: "فاعل مرفوع", exp: "«القاضي» فاعل مرفوع بالضمة المقدرة." },
+            { text: "ما تصنيف الفعل (يَفْهَمْ) في: «لَمْ يَفْهَمْ الطَّالِبُ»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم بـ (لم) وعلامة جزمه السكون." },
+            { text: "ما إعراب كلمة (البَاطِلُ) في: «زَهَقَ البَاطِلُ»؟", type: "فاعل مرفوع", exp: "«الباطل» فاعل مرفوع بالضمة." },
+            { text: "ما إعراب كلمة (الحَقُّ) في: «ظَهَرَ الحَقُّ»؟", type: "فاعل مرفوع", exp: "«الحق» فاعل مرفوع بالضمة." },
+            { text: "ما إعراب كلمة (المُسْلِمُ) في: «يَبْنِي المُسْلِمُ المَجْدَ»؟", type: "فاعل مرفوع", exp: "«المسلم» فاعل مرفوع بالضمة." },
+            { text: "ما إعراب كلمة (المَجْدُ) في: «يُبْنَى المَجْدُ»؟", type: "نائب فاعل", exp: "«المجد» نائب فاعل مرفوع بالضمة." },
+            { text: "ما إعراب كلمة (الطَّالِبَانِ) في: «الطَّالِبَانِ بَارِعَانِ»؟", type: "مبتدأ مرفوع", exp: "«الطالبان» مبتدأ مرفوع بالألف لأنه مثنى." },
+            { text: "ما إعراب كلمة (بَارِعَانِ) في: «الطَّالِبَانِ بَارِعَانِ»؟", type: "مبتدأ مرفوع", exp: "خبر المبتدأ مرفوع بالألف لأنه مثنى." },
+            { text: "ما نوع الأداة «لَنْ» في جملة: «لَنْ يَخِيبَ السَّاعي»؟", type: "أداة نصب", exp: "«لن» أداة نصب لفعل المضارع." },
+            { text: "ما نوع الأداة «كَيْ» في جملة: «اجْتَهِدْ كَيْ تَنْجَحَ»؟", type: "أداة نصب", exp: "«كي» حرف نصب يفيد التعليل." },
+            { text: "ما نوع الأداة «لَمْ» في جملة: «لَمْ يَتَأَخَّرْ أَحَدٌ»؟", type: "أداة جزم", exp: "«لم» حرف نفي وجزم وقلب." },
+            { text: "ما إعراب كلمة (العُلَمَاءُ) في: «العُلَمَاءُ مَصَابِيحُ»؟", type: "مبتدأ مرفوع", exp: "«العلماء» مبتدأ مرفوع بالضمة الظاهرة." },
+            { text: "ما إعراب كلمة (مَصَابِيحُ) في: «العُلَمَاءُ مَصَابِيحُ»؟", type: "مبتدأ مرفوع", exp: "خبر المبتدأ مرفوع بالضمة الظاهرة." },
+            { text: "ما إعراب كلمة (الطُّلَّابُ) في: «حَضَرَ الطُّلَّابُ»؟", type: "فاعل مرفوع", exp: "«الطلاب» فاعل مرفوع بالضمة." },
+            { text: "ما إعراب كلمة (الجَائِزَةُ) في: «سُِلِّمَتِ الجَائِزَةُ»؟", type: "نائب فاعل", exp: "«الجائزة» نائب فاعل مرفوع بالضمة." },
+            { text: "ما إعراب كلمة (الأَخَوَانِ) في: «سُتْلِمَ التَّقْرِيرَانِ»؟", type: "نائب فاعل", exp: "«التقريران» نائب فاعل مرفوع بالألف لأنه مثنى." },
+            { text: "ما تصنيف الفعل (تَكْتُبَ) في: «لَنْ تَكْتُبَ»؟", type: "أداة نصب", exp: "فعل مضارع منصوب بأداة النصب (لن)." },
+            { text: "ما تصنيف الفعل (تَفْهَمُوا) في: «كَيْ تَفْهَمُوا»؟", type: "أداة نصب", exp: "فعل مضارع منصوب وعلامة نصبه حذف النون." },
+            { text: "ما تصنيف الفعل (تَهْمِلُوا) في: «لَمْ تَهْمِلُوا»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم وعلامة جزمه حذف النون." },
+            { text: "ما إعراب كلمة (المُخْلِصُونَ) في: «جَاءَ المُخْلِصُونَ»؟", type: "فاعل مرفوع", exp: "«المخلصون» فاعل مرفوع بالواو." },
+            { text: "ما إعراب كلمة (الزَّهْرَةُ) في: «تفتحت الزهرة»؟", type: "فاعل مرفوع", exp: "«الزهرة» فاعل مرفوع بالضمة." },
+            { text: "ما إعراب كلمة (البَابُ) في: «فُتِحَ البَابُ»؟", type: "نائب فاعل", exp: "«الباب» نائب فاعل مرفوع بالضمة." },
+            { text: "ما تصنيف الفعل (يَسْعَ) في: «لَنْ يَسْعَ لِلشَّرِّ»؟", type: "أداة نصب", exp: "فعل مضارع منصوب بالفتحة المقدرة." },
+            { text: "ما تصنيف الفعل (يَرْضَ) في: «لَمْ يَرْضَ بِالظُّلْمِ»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم بحذف حرف العلة." },
+            { text: "ما إعراب كلمة (الزَّيْدَانِ) في: «حَضَرَ الزَّيْدَانِ»؟", type: "فاعل مرفوع", exp: "«الزيدان» فاعل مرفوع بالألف." },
+            { text: "ما إعراب كلمة (أَخُوكَ) في: «فَازَ أَخُوكَ»؟", type: "فاعل مرفوع", exp: "«أخوك» فاعل مرفوع بالواو لأنه من الأسماء الخمسة." },
+            { text: "ما إعراب كلمة (عَلِيٌّ) في: «حَضَرَ عَلِيٌّ»؟", type: "فاعل مرفوع", exp: "«علي» فاعل مرفوع بالضمة." },
+            { text: "ما إعراب كلمة (الكِتَابُ) في: «الكِتَابُ مُفِيدٌ»؟", type: "مبتدأ مرفوع", exp: "«الكتاب» مبتدأ مرفوع بالضمة." },
+            { text: "ما إعراب كلمة (مُفِيدٌ) في: «الكِتَابُ مُفِيدٌ»؟", type: "مبتدأ مرفوع", exp: "«مفيد» خبر المبتدأ مرفوع بالضمة." },
+            { text: "ما إعراب كلمة (السَّمَاءُ) في: «السَّمَاءُ صَافِيَةٌ»؟", type: "مبتدأ مرفوع", exp: "«السماء» مبتدأ مرفوع بالضمة." },
+            { text: "ما إعراب كلمة (صَافِيَةٌ) في: «السَّمَاءُ صَافِيَةٌ»؟", type: "مبتدأ مرفوع", exp: "«صافية» خبر المبتدأ مرفوع بالضمة." },
+            { text: "ما إعراب كلمة (الوَرْدَةُ) في: «الوَرْدَةُ مُتَفَتِّحَةٌ»؟", type: "مبتدأ مرفوع", exp: "«الوردة» مبتدأ مرفوع بالضمة." },
+            { text: "ما إعراب كلمة (مُتَفَتِّحَةٌ) في: «الوَرْدَةُ مُتَفَتِّحَةٌ»؟", type: "مبتدأ مرفوع", exp: "«متفتحة» خبر المبتدأ مرفوع بالضمة." },
+            { text: "ما تصنيف الفعل (تَنْجَحَ) في: «لَنْ تَنْجَحَ بِدُونِ جَهْدٍ»؟", type: "أداة نصب", exp: "فعل مضارع منصوب بالفتحة الظاهرة." },
+            { text: "ما تصنيف الفعل (تَتعلَّمَ) في: «كَيْ تَتعلَّمَ النَّحْوَ»؟", type: "أداة نصب", exp: "فعل مضارع منصوب بالفتحة الظاهرة." },
+            { text: "ما تصنيف الفعل (تَخَفْ) في: «لَمْ تَخَفْ إِلاَّ اللهَ»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم بالسكون وحذف التقاء الساكنين." },
+            { text: "ما إعراب كلمة (الفَرِيقَانِ) في: «تَنافَسَ الفَرِيقَانِ»؟", type: "فاعل مرفوع", exp: "«الفريقان» فاعل مرفوع بالألف لأنه مثنى." },
+            { text: "ما إعراب كلمة (المُعَلِّمُونَ) في: «أُكْرِمَ المُعَلِّمُونَ»؟", type: "نائب فاعل", exp: "«المعلمون» نائب فاعل مرفوع بالواو." },
+            { text: "ما إعراب كلمة (الطَّالِبَاتُ) في: «حَضَرَتِ الطَّالِبَاتُ»؟", type: "فاعل مرفوع", exp: "«الطالبات» فاعل مرفوع بالضمة." },
+            { text: "ما إعراب كلمة (الأُمهاتُ) في: «تُكَرَّمُ الأُمهاتُ»؟", type: "نائب فاعل", exp: "«الأمهات» نائب فاعل مرفوع بالضمة." },
+            { text: "ما تصنيف الفعل (تَسْتَمِعُوا) في: «كَيْ تَسْتَمِعُوا لِلدَّرْسِ»؟", type: "أداة نصب", exp: "فعل مضارع منصوب بحذف النون." },
+            { text: "ما تصنيف الفعل (تَتَكَاثَرُوا) في: «لَمْ تَتَكَاثَرُوا»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم بحذف النون." },
+            { text: "ما تصنيف الفعل (تَتأخروا) في: «لَنْ تَتأخروا»؟", type: "أداة نصب", exp: "فعل مضارع منصوب بحذف النون." },
+            { text: "ما إعراب كلمة (الأزهَارُ) في: «تفتحت الأزهَارُ»؟", type: "فاعل مرفوع", exp: "«الأزهار» فاعل مرفوع بالضمة (جمع تكسير)." },
+            { text: "ما إعراب كلمة (القصائدُ) في: «حفظت القصائدُ»؟", type: "نائب فاعل", exp: "«القصائد» نائب فاعل مرفوع بالضمة." },
+            { text: "ما إعراب كلمة (المهندسُ) في: «صمّم المهندسُ المشروعَ»؟", type: "فاعل مرفوع", exp: "«المهندس» فاعل مرفوع بالضمة الظاهرة." },
+            { text: "ما إعراب كلمة (المشروعُ) في: «صُمِّمَ المشروعُ»؟", type: "نائب فاعل", exp: "«المشروع» نائب فاعل مرفوع بالضمة." },
+            { text: "ما تصنيف الفعل (تَصدقَ) في: «لَنْ تَصدقَ في كَذِبِكَ»؟", type: "أداة نصب", exp: "فعل مضارع منصوب بالفتحة الظاهرة." },
+            { text: "ما تصنيف الفعل (تَسْتَفِدْ) في: «لَمْ تَسْتَفِدْ مِنَ الوَقْتِ»؟", type: "مضارع مجزوم", exp: "فعل مضارع مجزوم بالسكون الظاهر." },
+            { text: "ما إعراب كلمة (المهذبُ) في: «الطالبُ المهذبُ محبوبٌ»؟", type: "مبتدأ مرفوع", exp: "مبتدأ أو صفة تابعة للمرفوعات الأساسية." }
         ];
 
         // 40 Full Interactive Quiz Questions
@@ -641,7 +588,7 @@
             { category: "النواسخ", question: "12. اختر الإعراب الصحيح لكلمة (بارداً) في جملة: (كَانَ الجوُّ بَارِداً):", sentence: "كَانَ الجوُّ بَارِداً", options: ["خبر كان منصوب وعلامة نصبه الفتحة", "اسم كان مرفوع", "مبتدأ مرفوع", "نعت منصوب"], explanation: "بارداً خبر كان منصوب وعلامة نصبه الفتحة الظاهرة." },
             { category: "النواسخ", question: "13. ماذا تقصد بـ (كفّ إنّ عن العمل) عند دخول (ما) الكافية عليها؟", sentence: "إِنَّمَا المُؤْمِنُونَ إِخْوَةٌ", options: ["تبطل عملها في النصب ويعرب ما بعدها مبتدأ وخبراً مرفوعين", "تزيدها توكيداً", "تجزم ما بعدها", "تنصب المبتدأ والخبر"], explanation: "إذا اتصلت (ما) الكافية بإنّ فإنها تكفها عن العمل ويعرب ما بعدها مبتدأ وخبراً مرفوعين." },
             { category: "النواسخ", question: "14. أيّ الأفعال الآتية يفيد التوقيت بالماضي من أخوات كان؟", sentence: null, options: ["كانَ", "صارَ", "ليسَ", "أصبحَ"], explanation: "(كان) تفيد التوقيت بالماضي." },
-            { category: "النواسخ", question: "15. أيّ الحروف الآتية يفيد التشبيه من أخوات إنَّ؟", sentence: null, options: ["كأَنَّ", "لَيْتَ", "لَعَلَّ", "لَكِنَّ"], explanation: "(كأنّ) حرفناسخ يفيد التشبيه." },
+            { category: "النواسخ", question: "15. أيّ الحروف الآتية يفيد التشبيه من أخوات إنَّ؟", sentence: null, options: ["كأَنَّ", "لَيْتَ", "لَعَلَّ", "لَكِنَّ"], explanation: "(كأنّ) حرف ناسخ يفيد التشبيه." },
             { category: "النواسخ", question: "16. أيّ الأفعال الآتية يفيد التحول والصيرورة؟", sentence: null, options: ["صَارَ", "باتَ", "أمسى", "أضحى"], explanation: "(صار) يفيد تحول الشئ من حال إلى حال." },
             { category: "النواسخ", question: "17. ما معنى الحرف الناسخ (لَيْتَ)؟", sentence: null, options: ["التمني (لأمر قد يكون مستحيلاً أو صعب المراس)", "الترجي", "التشبيه", "الاستدراك"], explanation: "ليت تفيد التمني." },
             { category: "النواسخ", question: "18. ما معنى الحرف الناسخ (لَعَلَّ)؟", sentence: null, options: ["الترجي (لأمر محبوب ومرجوّ حصوله)", "التمني", "التوكيد", "النفي"], explanation: "لعل تفيد الترجي." },
@@ -866,6 +813,3 @@
     </script>
 </body>
 </html>
-```eof
-
-تم استبدال البيانات في الكود بالكامل وبشكل دقيق كما طلبت دون حذف أي عنصر.
