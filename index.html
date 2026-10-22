@@ -413,7 +413,7 @@
             </div>
         </section>
 
-        <!-- TAB 3: SORTING MINI-GAME (70 EXPLICIT ITEMS FOCUSED ON CORE TOPICS WITHOUT KANA/INNA) -->
+        <!-- TAB 3: SORTING MINI-GAME (70 EXPLICIT ITEMS WITH NEXT BUTTON FOR MANUAL PROGRESSION) -->
         <section id="tab-game" class="tab-content hidden">
             <div class="light-glass-card rounded-3xl p-6 md:p-8">
                 <div class="flex items-center justify-between mb-6 flex-wrap gap-4">
@@ -435,24 +435,31 @@
                     <div id="game-feedback" class="hidden mb-6 p-4 rounded-2xl bg-amberGold-100/60 border border-amberGold-500/40 text-slateNavy-800 text-sm font-bold"></div>
 
                     <!-- 6 Direct Categorization Buttons for Core Grammar Topics -->
-                    <div class="grid grid-cols-2 md:grid-cols-6 gap-3">
-                        <button onclick="checkGameAnswer('أداة نصب')" class="p-3.5 rounded-2xl bg-white border border-slateNavy-700/20 hover:border-slateNavy-800 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                    <div id="game-options-container" class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-6">
+                        <button onclick="checkGameAnswer('أداة نصب')" class="game-btn p-3.5 rounded-2xl bg-white border border-slateNavy-700/20 hover:border-slateNavy-800 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
                             <i class="fa-solid fa-circle-arrow-up block mb-1.5 text-base text-amberGold-600"></i> أداة نصب
                         </button>
-                        <button onclick="checkGameAnswer('أداة جزم')" class="p-3.5 rounded-2xl bg-white border border-royalMaroon-600/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                        <button onclick="checkGameAnswer('أداة جزم')" class="game-btn p-3.5 rounded-2xl bg-white border border-royalMaroon-600/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
                             <i class="fa-solid fa-circle-arrow-down block mb-1.5 text-base text-royalMaroon-600"></i> أداة جزم
                         </button>
-                        <button onclick="checkGameAnswer('فاعل مرفوع')" class="p-3.5 rounded-2xl bg-white border border-amberGold-600/20 hover:border-amberGold-600 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                        <button onclick="checkGameAnswer('فاعل مرفوع')" class="game-btn p-3.5 rounded-2xl bg-white border border-amberGold-600/20 hover:border-amberGold-600 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
                             <i class="fa-solid fa-user-shield block mb-1.5 text-base text-royalMaroon-800"></i> فاعل مرفوع
                         </button>
-                        <button onclick="checkGameAnswer('مبتدأ مرفوع')" class="p-3.5 rounded-2xl bg-white border border-slateNavy-700/20 hover:border-slateNavy-800 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                        <button onclick="checkGameAnswer('مبتدأ مرفوع')" class="game-btn p-3.5 rounded-2xl bg-white border border-slateNavy-700/20 hover:border-slateNavy-800 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
                             <i class="fa-solid fa-font block mb-1.5 text-base text-amberGold-600"></i> مبتدأ مرفوع
                         </button>
-                        <button onclick="checkGameAnswer('نائب فاعل')" class="p-3.5 rounded-2xl bg-white border border-royalMaroon-700/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                        <button onclick="checkGameAnswer('نائب فاعل')" class="game-btn p-3.5 rounded-2xl bg-white border border-royalMaroon-700/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
                             <i class="fa-solid fa-user-check block mb-1.5 text-base text-royalMaroon-700"></i> نائب فاعل
                         </button>
-                        <button onclick="checkGameAnswer('مضارع مجزوم')" class="p-3.5 rounded-2xl bg-white border border-amberGold-500/30 hover:border-amberGold-500 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                        <button onclick="checkGameAnswer('مضارع مجزوم')" class="game-btn p-3.5 rounded-2xl bg-white border border-amberGold-500/30 hover:border-amberGold-500 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
                             <i class="fa-solid fa-bolt block mb-1.5 text-base text-amberGold-500"></i> مضارع مجزوم
+                        </button>
+                    </div>
+
+                    <!-- Next Button for Game -->
+                    <div class="flex justify-end mt-4">
+                        <button id="game-next-btn" onclick="nextGameItem()" class="hidden btn-royal px-8 py-3.5 rounded-2xl font-bold text-base flex items-center gap-2">
+                            الفقرة التالية <i class="fa-solid fa-arrow-left"></i>
                         </button>
                     </div>
                 </div>
@@ -766,6 +773,9 @@
             document.getElementById('game-box').classList.remove('hidden');
             document.getElementById('game-results').classList.add('hidden');
             document.getElementById('game-feedback').classList.add('hidden');
+            document.getElementById('game-next-btn').classList.add('hidden');
+            
+            enableGameButtons(true);
             showGameItem();
         }
 
@@ -773,15 +783,25 @@
             if (gameIndex < gameQuestions.length) {
                 document.getElementById('game-progress').innerText = `${gameIndex + 1} / ${gameQuestions.length}`;
                 document.getElementById('game-item').innerText = gameQuestions[gameIndex].text;
+                document.getElementById('game-feedback').classList.add('hidden');
+                document.getElementById('game-next-btn').classList.add('hidden');
+                enableGameButtons(true);
             } else {
                 showGameResults();
             }
+        }
+
+        function enableGameButtons(enable) {
+            const btns = document.querySelectorAll('.game-btn');
+            btns.forEach(b => b.disabled = !enable);
         }
 
         function checkGameAnswer(selectedType) {
             if (gameIndex >= gameQuestions.length) return;
             const current = gameQuestions[gameIndex];
             const feedback = document.getElementById('game-feedback');
+
+            enableGameButtons(false);
 
             if (current.type === selectedType) {
                 gameScore += 1;
@@ -796,6 +816,10 @@
             }
 
             feedback.classList.remove('hidden');
+            document.getElementById('game-next-btn').classList.remove('hidden');
+        }
+
+        function nextGameItem() {
             gameIndex++;
             showGameItem();
         }
