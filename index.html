@@ -104,6 +104,7 @@
         @media print {
             body { background: white !important; color: black !important; }
             header, nav, .no-print { display: none !important; }
+            #printable-certificate { display: block !important; border: 12px double #8B0000 !important; background: #FFF9F2 !important; color: #1E293B !important; }
         }
     </style>
 </head>
@@ -152,7 +153,7 @@
                             الشرح التفصيلي والتطبيقي الشامل <span class="royal-gradient-text">لجميع أبواب النحو المقررة</span>
                         </h2>
                         <p class="text-slateNavy-700 text-sm md:text-base leading-relaxed max-w-3xl">
-                            مرجع النحو المكتمل: يتضمن تفصيلاً عميقاً وشرحاً شاملاً للجملة الاسمية والفعلية، النواسخ (كان وإنَّ)، إعراب المضارع بكل حالاته وأنواعه، والفاعل ونائب الفاعل.
+                            مرجع النحو المكتمل: يتضمن تفصيلاً عميقاً وشرحاً شاملاً للجملة الاسمية والفعلية، النواسخ (كان وإنَّ)، إعراب المضارع بكل حالاته وأنوَاعه، والفاعل ونائب الفاعل، مدعوماً بأمثلة إعرابية وتدريبات محلولة ومفصلة.
                         </p>
                     </div>
                     <div class="hidden lg:flex flex-col items-center bg-white/80 p-5 rounded-2xl border border-amberGold-500/30 text-center min-w-[210px] shadow-sm">
@@ -164,18 +165,19 @@
             </div>
 
             <div class="space-y-8">
+                <!-- SECTION 1 -->
                 <div class="light-glass-card rounded-3xl p-6 md:p-8">
                     <h3 class="text-xl md:text-2xl font-black text-royalMaroon-700 mb-6 flex items-center gap-3 border-b border-royalMaroon-700/10 pb-4 font-cairo">
-                        <i class="fa-solid fa-font text-amberGold-500"></i> ملخص القواعد الأساسية للمنهج
+                        <i class="fa-solid fa-font text-amberGold-500"></i> القسم الأول: الجملة الاسمية (المبتدأ والخبر)
                     </h3>
-                    <p class="text-slateNavy-800 text-sm md:text-base leading-relaxed">
-                        استخدم أزرار التنقل بالأعلى للاطلاع على الشرح الموسوعي أو الانتقال للاختبارات الفورية وتحدي التصنيف المباشر.
-                    </p>
+                    <div class="space-y-4 text-slateNavy-800 text-sm md:text-base leading-relaxed">
+                        <p><strong>الجملة الاسمية:</strong> تبدأ باسم مرفوع (المبتدأ)، وتتكون من (المبتدأ) و(الخبر) وهما مرفوعان دائماً.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- TAB 2: INTERACTIVE QUIZ SECTION (40 QUESTIONS) -->
+        <!-- TAB 2: INTERACTIVE QUIZ SECTION (40 FULL QUESTIONS) -->
         <section id="tab-quiz" class="tab-content hidden">
             <div id="quiz-intro" class="light-glass-card rounded-3xl p-6 md:p-10 mb-8 text-center relative overflow-hidden bg-gradient-to-br from-white via-creamBg to-creamDark">
                 <span class="inline-block px-4 py-1.5 rounded-full bg-royalMaroon-50 text-royalMaroon-700 text-xs md:text-sm font-bold mb-4 border border-royalMaroon-700/10">
@@ -227,15 +229,17 @@
             </div>
 
             <div id="quiz-result" class="hidden light-glass-card rounded-3xl p-6 md:p-10 text-center relative overflow-hidden">
-                <div class="w-20 h-20 mx-auto mb-4 rounded-3xl bg-gradient-to-tr from-royalMaroon-700 to-amberGold-500 p-0.5 shadow-xl flex items-center justify-center text-amberGold-500 text-3xl">
-                    <i class="fa-solid fa-trophy"></i>
+                <div class="no-print">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-3xl bg-gradient-to-tr from-royalMaroon-700 to-amberGold-500 p-0.5 shadow-xl flex items-center justify-center text-amberGold-500 text-3xl">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-black text-slateNavy-900 mb-2 font-cairo">نتيجة مراجعة الوحدة النحوية</h2>
+                    <div class="max-w-md mx-auto bg-creamBg p-6 rounded-2xl border border-royalMaroon-700/10 mb-6 shadow-inner">
+                        <div class="text-4xl md:text-5xl font-black text-royalMaroon-700 mb-2 font-cairo" id="final-score">0 / 40</div>
+                        <p class="text-slateNavy-800 font-bold text-sm md:text-base" id="result-message">نتيجة متميزة!</p>
+                    </div>
+                    <button onclick="restartQuiz()" class="px-6 py-3 rounded-xl bg-slateNavy-800 text-white font-bold text-sm shadow-sm">إعادة الاختبار</button>
                 </div>
-                <h2 class="text-2xl md:text-3xl font-black text-slateNavy-900 mb-2 font-cairo">نتيجة مراجعة الوحدة النحوية</h2>
-                <div class="max-w-md mx-auto bg-creamBg p-6 rounded-2xl border border-royalMaroon-700/10 mb-6 shadow-inner">
-                    <div class="text-4xl md:text-5xl font-black text-royalMaroon-700 mb-2 font-cairo" id="final-score">0 / 40</div>
-                    <p class="text-slateNavy-800 font-bold text-sm md:text-base" id="result-message">نتيجة متميزة!</p>
-                </div>
-                <button onclick="restartQuiz()" class="px-6 py-3 rounded-xl bg-slateNavy-800 text-white font-bold text-sm shadow-sm">إعادة الاختبار</button>
             </div>
         </section>
 
@@ -465,8 +469,8 @@
         const masterGameItems = [
             { text: "ما نوع الأداة «كانَ»؟", type: "أخوات كان", exp: "«كانَ» من أخوات كان (أفعال ناسخة)." },
             { text: "ما نوع الأداة «إنَّ»؟", type: "أخوات إن", exp: "«إنَّ» من أخوات إنَّ (حروف ناسخة)." },
-            { text: "ما نوع الأداة «لَنْ»؟", type: "أداة نصب", exp: "«لَنْ» من أداة نصب الفعل المضارع." },
-            { text: "ما نوع الأداة «لَمْ»؟", type: "أداة جزم", exp: "«لَمْ» من أداة جزم الفعل المضارع." },
+            { text: "ما نوع الأداة «لَنْ»؟", type: "أداة نصب", exp: "«لَنْ» أداة نصب للفعل المضارع." },
+            { text: "ما نوع الأداة «لَمْ»؟", type: "أداة جزم", exp: "«لَمْ» أداة جزم للفعل المضارع." },
             { text: "ما إعراب كلمة (المَعَلِّمُ) في: «حَضَرَ المَعَلِّمُ»؟", type: "فاعل مرفوع", exp: "«المعلمُ» فاعل مرفوع بالضمة." },
             { text: "ما إعراب كلمة (الطَّالِبُ) في: «الطَّالِبُ مُجْتَهِدٌ»؟", type: "مبتدأ مرفوع", exp: "«الطالبُ» مبتدأ مرفوع بالضمة." },
             { text: "ما إعراب كلمة (الدَّرْسُ) في: «يُشْرَحُ الدَّرْسُ»؟", type: "نائب فاعل", exp: "«الدرسُ» نائب فاعل مرفوع بالضمة." },
@@ -510,7 +514,6 @@
         let gameScore = 0;
 
         function initGame() {
-            // نأخذ مصفوفة الأسئلة ونكررها أو نأخذها كاملة لتغطية الـ 70 فقرة بسلاسة
             gameQuestions = [...masterGameItems, ...masterGameItems].slice(0, 70).sort(() => Math.random() - 0.5);
             gameIndex = 0;
             gameScore = 0;
