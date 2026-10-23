@@ -154,6 +154,10 @@
                         <i class="fa-solid fa-pen-to-square"></i>
                         <span>إعادة الكتابة والتعديل (40)</span>
                     </button>
+                    <button onclick="switchTab('matching')" id="tab-btn-matching" class="nav-tab whitespace-nowrap px-3 md:px-3.5 py-2 rounded-xl transition-all text-slateNavy-700 hover:text-royalMaroon-700 hover:bg-white/60 flex items-center gap-1">
+                        <i class="fa-solid fa-link"></i>
+                        <span>تحدي المزاوجة (12)</span>
+                    </button>
                 </div>
             </nav>
         </div>
@@ -254,7 +258,7 @@
                                 <h4 class="font-bold text-amberGold-600 mb-1">2. حالة النصب:</h4>
                                 <p class="text-xs md:text-sm">إذا سبق بأداة النصب المقررة: <strong>(لَنْ - كَيْ)</strong>.<br/>📍 <span class="grammar-example">(لَنْ يُهْمِلَ / كَيْ تَنْجَحُوا)</span></p>
                             </div>
-                            <div class="bg-creamBg p-4 rounded-2xl border border-royalMaroon-700/30">
+                            <div class="bg-creamBg p-4 rounded-2xl border border-amberGold-500/30">
                                 <h4 class="font-bold text-royalMaroon-700 mb-1">3. حالة الجزم:</h4>
                                 <p class="text-xs md:text-sm">إذا سبق بأداة الجزم المقررة: <strong>(لَمْ)</strong>.<br/>📍 <span class="grammar-example">(لَمْ يَحْضُرْ / لَمْ يَسْعَ)</span></p>
                             </div>
@@ -578,6 +582,84 @@
             </div>
         </section>
 
+        <!-- TAB: MATCHING SECTION (12 GROUPS - NUMBERED WITH INPUT BOXES) -->
+        <section id="tab-matching" class="tab-content hidden">
+            <div class="light-glass-card rounded-3xl p-6 md:p-8">
+                <!-- Header -->
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6 pb-4 border-b border-royalMaroon-700/10">
+                    <div>
+                        <span class="inline-block px-3 py-1 rounded-full bg-amberGold-100 text-amberGold-700 text-xs font-bold mb-2 border border-amberGold-500/20">
+                            <i class="fa-solid fa-link ml-1"></i> تحدي الربط والمزاوجة النحوي الدقيق
+                        </span>
+                        <h2 class="text-2xl md:text-3xl font-black text-slateNavy-900 font-cairo">
+                            تحدي المزاوجة والصلة النحوية <span class="royal-gradient-text">(12 مجموعة كاملة)</span>
+                        </h2>
+                        <p class="text-slateNavy-700 text-xs md:text-sm mt-1">
+                            اكتب رقم الخيار المناسب من العمود (ب) في المربع المقابل لكل فقرة في العمود (أ). تنبيه: العمود (ب) يحتوي على 5 خيارات (خيار إضافي مموه).
+                        </p>
+                    </div>
+
+                    <div class="flex items-center gap-3 bg-creamBg p-3 rounded-2xl border border-royalMaroon-700/10 self-stretch md:self-auto justify-between">
+                        <div class="text-xs font-bold text-slateNavy-800">
+                            المجموعة: <span id="match-group-progress" class="text-royalMaroon-700 text-base font-black">1/12</span>
+                        </div>
+                        <div class="text-xs font-bold text-amberGold-700 bg-white px-3 py-1.5 rounded-xl border border-amberGold-500/30 shadow-sm">
+                            <i class="fa-solid fa-star ml-1 text-amberGold-500"></i> النقاط: <span id="match-score" class="text-royalMaroon-700 font-black">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Matching Container -->
+                <div id="matching-box" class="py-2">
+                    <div class="mb-4 flex items-center justify-between">
+                        <span id="match-group-title" class="px-3.5 py-1.5 rounded-xl text-xs md:text-sm font-bold bg-royalMaroon-50 text-royalMaroon-700 border border-royalMaroon-700/20 inline-flex items-center gap-2">
+                            <i class="fa-solid fa-layer-group text-amberGold-500"></i> عنوان المجموعة
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
+                        <!-- Column A (Occupies 7 cols) -->
+                        <div class="lg:col-span-7 bg-creamBg/60 p-4 rounded-3xl border border-royalMaroon-700/10">
+                            <h4 class="text-center font-bold text-royalMaroon-700 mb-3 text-sm font-cairo bg-white py-2 rounded-xl border border-royalMaroon-700/10">
+                                العمود (أ): الجمل والأمثلة
+                            </h4>
+                            <div id="col-a-container" class="space-y-3"></div>
+                        </div>
+
+                        <!-- Column B (Occupies 5 cols) -->
+                        <div class="lg:col-span-5 bg-creamBg/60 p-4 rounded-3xl border border-amberGold-500/20">
+                            <h4 class="text-center font-bold text-amberGold-700 mb-3 text-sm font-cairo bg-white py-2 rounded-xl border border-amberGold-500/20">
+                                العمود (ب): التوصيف والنحو
+                            </h4>
+                            <div id="col-b-container" class="space-y-3"></div>
+                        </div>
+                    </div>
+
+                    <div id="match-feedback" class="hidden mb-6 p-4 rounded-2xl font-bold text-sm leading-relaxed text-center"></div>
+
+                    <div class="flex justify-between items-center">
+                        <button id="match-check-btn" onclick="checkMatchingAnswersNum()" class="btn-royal px-8 py-3.5 rounded-2xl font-bold text-sm md:text-base flex items-center gap-2">
+                            <i class="fa-solid fa-spell-check"></i> التحقق من الإجابات
+                        </button>
+                        <button id="match-next-btn" onclick="nextMatchingGroupNum()" class="hidden btn-royal px-8 py-3.5 rounded-2xl font-bold text-base flex items-center gap-2">
+                            المجموعة التالية <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Final Results -->
+                <div id="matching-results" class="hidden text-center py-10">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-3xl bg-gradient-to-tr from-royalMaroon-700 to-amberGold-500 p-0.5 shadow-xl flex items-center justify-center text-amberGold-500 text-3xl">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="text-4xl md:text-5xl font-black text-royalMaroon-700 mb-3 font-cairo" id="match-final-score">0 / 48</div>
+                    <h3 class="text-xl md:text-2xl font-bold text-slateNavy-900 mb-2">مبارك! أتممت بنجاح جميع مجموعات تحدي المزاوجة والربط النحوي</h3>
+                    <p class="text-slateNavy-700 text-sm md:text-base mb-6 font-medium">أظهرت تمكناً راقياً ودقة عالية في ربط الأبواب بالنواسخ والأفعال والفاعلين.</p>
+                    <button onclick="initMatchingSection()" class="btn-royal px-8 py-3.5 rounded-2xl font-bold text-sm shadow-md">إعادة تحدي المزاوجة</button>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- FOOTER -->
@@ -609,6 +691,337 @@
                 const now = Tone.now();
                 synth.triggerAttackRelease("C3", "8n", now);
             } catch(e){}
+        }
+
+        /* ============================================================== */
+        /* TAB: NUMBERED MATCHING SECTION WITH INPUT BOXES (12 GROUPS)    */
+        /* ============================================================== */
+        const matchingDataGroups = [
+            // --- النواسخ والجملة الاسمية (4 مجموعات) ---
+            {
+                title: "المجموعة 1: علامات رفع المبتدأ والخبر",
+                colA: [
+                    { id: 1, text: "«الطَالِبُ مُجْتَهِدٌ» (كلمة: طالب)", correctB: 1 },
+                    { id: 2, text: "«الطَّالِبَانِ مُتَفَوِّقَانِ» (كلمة: متفوقان)", correctB: 2 },
+                    { id: 3, text: "«المُعَلِّمُونَ مُخْلِصُونَ» (كلمة: المعلمون)", correctB: 3 },
+                    { id: 4, text: "«أَبُوكَ ذُو فَضْلٍ» (كلمة: ذو)", correctB: 4 }
+                ],
+                colB: [
+                    { id: 1, text: "مبتدأ مرفوع وعلامة رفعه الضمة الظاهرة" },
+                    { id: 2, text: "خبر المبتدأ مرفوع وعلامة رفعه الألف لأنه مثنى" },
+                    { id: 3, text: "مبتدأ مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم" },
+                    { id: 4, text: "خبر المبتدأ مرفوع وعلامة رفعه الواو لأنه من الأسماء الخمسة" },
+                    { id: 5, text: "خبر المبتدأ مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم" }
+                ]
+            },
+            {
+                title: "المجموعة 2: أحكام عمل كان وأخواتها",
+                colA: [
+                    { id: 1, text: "«كانَ المَطَرُ غَزِيراً» (كلمة: غزيراً)", correctB: 1 },
+                    { id: 2, text: "«أَصْبَحَ الطَّالِبَانِ مُتَفَوِّقَيْنِ» (كلمة: الطالبان)", correctB: 2 },
+                    { id: 3, text: "«لَيْسَ المَاجِدُونَ غَائِبِينَ» (كلمة: غائبين)", correctB: 3 },
+                    { id: 4, text: "«صَارَ أَخُوكَ ذَا عِلْمٍ» (كلمة: ذا)", correctB: 4 }
+                ],
+                colB: [
+                    { id: 1, text: "خبر كان منصوب وعلامة نصبه الفتحة بتنوين النصب" },
+                    { id: 2, text: "اسم أصبح مرفوع وعلامة رفعه الألف لأنه مثنى" },
+                    { id: 3, text: "خبر ليس منصوب وعلامة نصبه الياء لأنه جمع مذكر سالم" },
+                    { id: 4, text: "خبر صار منصوب وعلامة نصبه الألف لأنه من الأسماء الخمسة" },
+                    { id: 5, text: "خبر ليس منصوب وعلامة نصبه الفتحة المقدرة" }
+                ]
+            },
+            {
+                title: "المجموعة 3: أحكام عمل إن وأخواتها",
+                colA: [
+                    { id: 1, text: "«إِنَّ العِلْمَ نُورٌ» (كلمة: العلمَ)", correctB: 1 },
+                    { id: 2, text: "«إِنَّ المُهَنْدِسِينَ بَارِعُونَ» (كلمة: بارعون)", correctB: 2 },
+                    { id: 3, text: "«لَعَلَّ الأَخَوَيْنِ حَاضِرَانِ» (كلمة: الأخوين)", correctB: 3 },
+                    { id: 4, text: "«إِنَّ أَبَاكَ ذُو فَضْلٍ» (كلمة: أباك)", correctB: 4 }
+                ],
+                colB: [
+                    { id: 1, text: "اسم إنَّ منصوب وعلامة نصبه الفتحة الظاهرة" },
+                    { id: 2, text: "خبر إنَّ مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم" },
+                    { id: 3, text: "اسم لعلَّ منصوب وعلامة نصبه الياء لأنه مثنى" },
+                    { id: 4, text: "اسم إنَّ منصوب وعلامة نصبه الألف لأنه من الأسماء الخمسة" },
+                    { id: 5, text: "خبر إنَّ مرفوع وعلامة رفعه الضمة المقدرة" }
+                ]
+            },
+            {
+                title: "المجموعة 4: معاني ودلالات النواسخ",
+                colA: [
+                    { id: 1, text: "الحرف الناسخ «لَيْتَ»", correctB: 1 },
+                    { id: 2, text: "الفعل الناقص «صَارَ»", correctB: 2 },
+                    { id: 3, text: "الحرف الناسخ «كَأَنَّ»", correctB: 3 },
+                    { id: 4, text: "الحرف الناسخ «لَعَلَّ»", correctB: 4 }
+                ],
+                colB: [
+                    { id: 1, text: "يفيد التمني لأمر قد يكون مستحيلاً" },
+                    { id: 2, text: "يفيد التحوّل والصيرورة من حال إلى حال" },
+                    { id: 3, text: "يفيد التشبيه بين المبتدأ والخبر" },
+                    { id: 4, text: "يفيد الترجي والترقب لأمر مرجّح الحدوث" },
+                    { id: 5, text: "يفيد نفي اتصاف المبتدأ بالخبر في الحال" }
+                ]
+            },
+
+            // --- الفعل المضارع (4 مجموعات) ---
+            {
+                title: "المجموعة 5: حالات جزم الفعل المضارع بـ (لَمْ)",
+                colA: [
+                    { id: 1, text: "«لَمْ يَحْضُرْ المَعَلِّمُ» (الفعل: يحضر)", correctB: 1 },
+                    { id: 2, text: "«المُسْلِمُ لَمْ يَسْعَ فِي الشَّرِّ» (الفعل: يسعَ)", correctB: 2 },
+                    { id: 3, text: "«لَمْ يَدْعُ العَاقِلُ لِلبَاطِلِ» (الفعل: يدعُ)", correctB: 3 },
+                    { id: 4, text: "«الطُّلَّابُ لَمْ يُهْمِلُوا» (الفعل: يهملوا)", correctB: 4 }
+                ],
+                colB: [
+                    { id: 1, text: "مضارع مجزوم بـ (لم) وعلامة جزمه السكون الظاهر" },
+                    { id: 2, text: "مضارع مجزوم بـ (لم) وعلامة جزمه حذف حرف العلة (الألف)" },
+                    { id: 3, text: "مضارع مجزوم بـ (لم) وعلامة جزمه حذف حرف العلة (الواو)" },
+                    { id: 4, text: "مضارع مجزوم بـ (لم) وعلامة جزمه حذف النون لأنه من الأفعال الخمسة" },
+                    { id: 5, text: "مضارع مجزوم بـ (لم) وعلامة جزمه حذف حرف العلة (الياء)" }
+                ]
+            },
+            {
+                title: "المجموعة 6: حالات نصب الفعل المضارع بـ (لَنْ / كَيْ)",
+                colA: [
+                    { id: 1, text: "«لَنْ يُهْمِلَ المُجْتَهِدُ» (الفعل: يهمل)", correctB: 1 },
+                    { id: 2, text: "«اجْتَهِدْ كَيْ تَنْجَحَ» (الفعل: تنجح)", correctB: 2 },
+                    { id: 3, text: "«لَنْ يَسْعَى لِلشَّرِّ» (الفعل: يسعى)", correctB: 3 },
+                    { id: 4, text: "«اجْتَهِدُوا كَيْ تَفُوزُوا» (الفعل: تفوزوا)", correctB: 4 }
+                ],
+                colB: [
+                    { id: 1, text: "مضارع منصوب بـ (لن) وعلامة نصبه الفتحة الظاهرة" },
+                    { id: 2, text: "مضارع منصوب بـ (كي) وعلامة نصبه الفتحة الظاهرة" },
+                    { id: 3, text: "مضارع منصوب بـ (لن) وعلامة نصبه الفتحة المقدرة للتعذر" },
+                    { id: 4, text: "مضارع منصوب بـ (كي) وعلامة نصبه حذف النون لأنه من الأفعال الخمسة" },
+                    { id: 5, text: "مضارع منصوب بـ (كي) وعلامة نصبه ثبوت النون" }
+                ]
+            },
+            {
+                title: "المجموعة 7: علامات رفع الفعل المضارع المجرد",
+                colA: [
+                    { id: 1, text: "«يَكْتُبُ الطَّالِبُ الدَّرْسَ» (الفعل: يكتب)", correctB: 1 },
+                    { id: 2, text: "«المُؤْمِنُ يَسْعَى فِي الخَيْرِ» (الفعل: يسعى)", correctB: 2 },
+                    { id: 3, text: "«المُسْلِمُ يَدْعُو لِلحَقِّ» (الفعل: يدعو)", correctB: 3 },
+                    { id: 4, text: "«المُعَلِّمُونَ يُخْلِصُونَ» (الفعل: يخلصون)", correctB: 4 }
+                ],
+                colB: [
+                    { id: 1, text: "مضارع مرفوع وعلامة رفعه الضمة الظاهرة" },
+                    { id: 2, text: "مضارع مرفوع وعلامة رفعه الضمة المقدرة للتعذر" },
+                    { id: 3, text: "مضارع مرفوع وعلامة رفعه الضمة المقدرة للثقل" },
+                    { id: 4, text: "مضارع مرفوع وعلامة رفعه ثبوت النون لأنه من الأفعال الخمسة" },
+                    { id: 5, text: "مضارع مرفوع وعلامة رفعه ثبوت الياء" }
+                ]
+            },
+            {
+                title: "المجموعة 8: تصنيف وظائف أدوات المضارع",
+                colA: [
+                    { id: 1, text: "الأداة «لَمْ»", correctB: 1 },
+                    { id: 2, text: "الأداة «لَنْ»", correctB: 2 },
+                    { id: 3, text: "الأداة «كَيْ»", correctB: 3 },
+                    { id: 4, text: "التجرد من الناصب والجازم", correctB: 4 }
+                ],
+                colB: [
+                    { id: 1, text: "حرف نفي وجزم وقلب يجزم المضارع" },
+                    { id: 2, text: "حرف نفي واستقبال ينصب المضارع" },
+                    { id: 3, text: "حرف مصدري ونصب يفيد التعليل" },
+                    { id: 4, text: "شرط موجب لرفع الفعل المضارع" },
+                    { id: 5, text: "حرفناسخ ينصب المبتدأ ويرفع الخبر" }
+                ]
+            },
+
+            // --- الفاعل ونائب الفاعل والمجهول (4 مجموعات) ---
+            {
+                title: "المجموعة 9: علامات رفع الفاعل المبني للمعلوم",
+                colA: [
+                    { id: 1, text: "«حَضَرَ المَعَلِّمُ» (كلمة: المعلم)", correctB: 1 },
+                    { id: 2, text: "«تَنَافَسَ الفَرِيقَانِ» (كلمة: الفريقان)", correctB: 2 },
+                    { id: 3, text: "«صَلَّى المُسْلِمُونَ» (كلمة: المسلمون)", correctB: 3 },
+                    { id: 4, text: "«حَضَرَ أَبُوكَ» (كلمة: أبوك)", correctB: 4 }
+                ],
+                colB: [
+                    { id: 1, text: "فاعل مرفوع وعلامة رفعه الضمة الظاهرة" },
+                    { id: 2, text: "فاعل مرفوع وعلامة رفعه الألف لأنه مثنى" },
+                    { id: 3, text: "فاعل مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم" },
+                    { id: 4, text: "فاعل مرفوع وعلامة رفعه الواو لأنه من الأسماء الخمسة" },
+                    { id: 5, text: "فاعل مرفوع وعلامة رفعه الضمة المقدرة للثقل" }
+                ]
+            },
+            {
+                title: "المجموعة 10: نائب الفاعل وحالات رفعه",
+                colA: [
+                    { id: 1, text: "«شُرِبَ الحَلِيبُ» (كلمة: الحليب)", correctB: 1 },
+                    { id: 2, text: "«سُتْلِمَ التَّقْرِيرَانِ» (كلمة: التقريران)", correctB: 2 },
+                    { id: 3, text: "«كُرِّمَ الفَائِزُونَ» (كلمة: الفائزون)", correctB: 3 },
+                    { id: 4, text: "«تُكَرَّمُ الأُمَّهَاتُ» (كلمة: الأمهات)", correctB: 4 }
+                ],
+                colB: [
+                    { id: 1, text: "نائب فاعل مرفوع وعلامة رفعه الضمة الظاهرة" },
+                    { id: 2, text: "نائب فاعل مرفوع وعلامة رفعه الألف لأنه مثنى" },
+                    { id: 3, text: "نائب فاعل مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم" },
+                    { id: 4, text: "نائب فاعل مرفوع وعلامة رفعه الضمة الظاهرة (جمع مؤنث)" },
+                    { id: 5, text: "نائب فاعل مرفوع وعلامة رفعه الكسرة نيابة عن الضمة" }
+                ]
+            },
+            {
+                title: "المجموعة 11: قواعد تغيير البناء للمجهول",
+                colA: [
+                    { id: 1, text: "«كَتَبَ الطَالِبُ الدَّرْسَ» ⬅️ «كُتِبَ الدَّرْسُ»", correctB: 1 },
+                    { id: 2, text: "«يَشْرَحُ المعلمُ الدرسَ» ⬅️ «يُشْرَحُ الدرسُ»", correctB: 2 },
+                    { id: 3, text: "«سَلَّمَ المَدِيرُ الجَائِزَةَ» ⬅️ «سُلِّمَتِ الجَائِزَةُ»", correctB: 3 },
+                    { id: 4, text: "«كَافَأَ المَدِيرُ الفَائِزِينَ» ⬅️ «كُوفِئَ الفَائِزُونَ»", correctB: 4 }
+                ],
+                colB: [
+                    { id: 1, text: "ضم الأول وكسر ما قبل الآخر في الفعل الماضي" },
+                    { id: 2, text: "ضم الأول وفتح ما قبل الآخر في الفعل المضارع" },
+                    { id: 3, text: "ضم أول الماضي وكسر ما قبله وتأنيث الفعل للمؤنث" },
+                    { id: 4, text: "تحويل الهمزة على ياء لكسر ما قبلها ورفع نائب الفاعل بالواو" },
+                    { id: 5, text: "فتح الأول وكسر الآخر في الفعل المضارع" }
+                ]
+            },
+            {
+                title: "المجموعة 12: تمييز الجمل المعلومة والمجهولة",
+                colA: [
+                    { id: 1, text: "«شَرِبَ مُحَمَّدٌ العَصِيرَ»", correctB: 1 },
+                    { id: 2, text: "«يُقَدَّرُ المُجْتَهِدُونَ»", correctB: 2 },
+                    { id: 3, text: "«صَمَّمَ المهندسُ المَشْرُوعَ»", correctB: 3 },
+                    { id: 4, text: "«صُمِّمَ المَشْرُوعُ»", correctB: 4 }
+                ],
+                colB: [
+                    { id: 1, text: "جملة فعلية مبنية للمعلوم (الفاعل مذكور: محمدٌ)" },
+                    { id: 2, text: "جملة فعلية مبنية للمجهول (نائب الفاعل مرفوع بالواو: المجتهدون)" },
+                    { id: 3, text: "جملة فعلية مبنية للمعلوم (الفاعل مذكور: المهندسُ)" },
+                    { id: 4, text: "جملة فعلية مبنية للمجهول (نائب الفاعل مرفوع بالضمة: المشروعُ)" },
+                    { id: 5, text: "جملة اسمية مجردة من النواسخ والفاعل" }
+                ]
+            }
+        ];
+
+        let currentMatchGroupNum = 0;
+        let matchScoreNum = 0;
+
+        function initMatchingSection() {
+            currentMatchGroupNum = 0;
+            matchScoreNum = 0;
+            document.getElementById('match-score').innerText = matchScoreNum;
+            document.getElementById('matching-box').classList.remove('hidden');
+            document.getElementById('matching-results').classList.add('hidden');
+            showMatchingGroupNum();
+        }
+
+        function showMatchingGroupNum() {
+            if (currentMatchGroupNum >= matchingDataGroups.length) {
+                showMatchingResultsNum();
+                return;
+            }
+
+            const grp = matchingDataGroups[currentMatchGroupNum];
+            document.getElementById('match-group-progress').innerText = `${currentMatchGroupNum + 1} / ${matchingDataGroups.length}`;
+            document.getElementById('match-group-title').innerHTML = `<i class="fa-solid fa-layer-group text-amberGold-500"></i> ${grp.title}`;
+
+            const colAContainer = document.getElementById('col-a-container');
+            const colBContainer = document.getElementById('col-b-container');
+
+            colAContainer.innerHTML = '';
+            colBContainer.innerHTML = '';
+
+            // Render Col A with number badges and input boxes
+            grp.colA.forEach(item => {
+                const el = document.createElement('div');
+                el.className = "p-3.5 rounded-2xl bg-white border border-royalMaroon-700/20 text-xs md:text-sm font-bold text-slateNavy-800 flex items-center justify-between shadow-sm gap-2";
+                el.id = `box-a-${item.id}`;
+                el.innerHTML = `
+                    <div class="flex items-center gap-2">
+                        <span class="w-6 h-6 rounded-full bg-royalMaroon-700 text-white flex items-center justify-center text-xs font-black shrink-0">${item.id}</span>
+                        <span>${item.text}</span>
+                    </div>
+                    <div class="flex items-center gap-1 shrink-0">
+                        <span class="text-[11px] text-slateNavy-700">اختر من (ب):</span>
+                        <input type="number" id="input-match-${item.id}" min="1" max="5" placeholder="؟" class="w-10 h-9 text-center border-2 border-royalMaroon-700/30 rounded-xl font-black text-royalMaroon-700 focus:border-royalMaroon-700 focus:outline-none bg-creamBg text-sm">
+                    </div>
+                `;
+                colAContainer.appendChild(el);
+            });
+
+            // Render Col B with number badges
+            grp.colB.forEach(item => {
+                const el = document.createElement('div');
+                el.className = "p-3.5 rounded-2xl bg-white border border-amberGold-500/30 text-xs md:text-sm font-bold text-slateNavy-800 flex items-center gap-2 shadow-sm";
+                el.id = `box-b-${item.id}`;
+                el.innerHTML = `
+                    <span class="w-6 h-6 rounded-full bg-amberGold-500 text-white flex items-center justify-center text-xs font-black shrink-0">${item.id}</span>
+                    <span>${item.text}</span>
+                `;
+                colBContainer.appendChild(el);
+            });
+
+            document.getElementById('match-feedback').classList.add('hidden');
+            document.getElementById('match-check-btn').classList.remove('hidden');
+            document.getElementById('match-check-btn').disabled = false;
+            document.getElementById('match-next-btn').classList.add('hidden');
+        }
+
+        function checkMatchingAnswersNum() {
+            const grp = matchingDataGroups[currentMatchGroupNum];
+            let correctInGroup = 0;
+            let allFilled = true;
+
+            // Check if inputs filled
+            grp.colA.forEach(itemA => {
+                const inputVal = document.getElementById(`input-match-${itemA.id}`).value.trim();
+                if (!inputVal) allFilled = false;
+            });
+
+            if (!allFilled) {
+                alert('فضلًا اكتب أرقام الخيارات المُنتاظرة من العمود (ب) في جميع المربعات الأربعة أولاً!');
+                return;
+            }
+
+            document.getElementById('match-check-btn').disabled = true;
+
+            grp.colA.forEach(itemA => {
+                const inputEl = document.getElementById(`input-match-${itemA.id}`);
+                const userVal = parseInt(inputEl.value.trim(), 10);
+                const boxA = document.getElementById(`box-a-${itemA.id}`);
+
+                inputEl.disabled = true;
+
+                if (userVal === itemA.correctB) {
+                    correctInGroup++;
+                    boxA.className = "p-3.5 rounded-2xl bg-amberGold-100 border-2 border-amberGold-500 text-amberGold-700 text-xs md:text-sm font-bold flex items-center justify-between shadow-sm gap-2";
+                } else {
+                    boxA.className = "p-3.5 rounded-2xl bg-royalMaroon-50 border-2 border-royalMaroon-600 text-royalMaroon-700 text-xs md:text-sm font-bold flex items-center justify-between shadow-sm gap-2";
+                }
+            });
+
+            matchScoreNum += correctInGroup;
+            document.getElementById('match-score').innerText = matchScoreNum;
+
+            const feedbackEl = document.getElementById('match-feedback');
+            if (correctInGroup === 4) {
+                if (typeof playCorrectSound === 'function') playCorrectSound();
+                feedbackEl.className = "mb-6 p-4 rounded-2xl bg-amberGold-100 border border-amberGold-500 text-amberGold-700 text-sm font-bold shadow-sm";
+                feedbackEl.innerHTML = `<i class="fa-solid fa-circle-check text-amberGold-600 text-lg"></i> إجابة كاملة وممتازة! ربطت جميع الفقرات بشكل إعرابي وتوصيفي دقيق (4 / 4).`;
+            } else {
+                if (typeof playWrongSound === 'function') playWrongSound();
+                feedbackEl.className = "mb-6 p-4 rounded-2xl bg-royalMaroon-50 border border-royalMaroon-600 text-royalMaroon-700 text-sm font-bold shadow-sm";
+                feedbackEl.innerHTML = `<i class="fa-solid fa-circle-xmark text-royalMaroon-600 text-lg"></i> حصلت على ${correctInGroup} من 4 ربط صحيح. الإجابات النموذجية بالترتيب هي: (1 ⬅️ 1، 2 ⬅️ 2، 3 ⬅️ 3، 4 ⬅️ 4).`;
+            }
+
+            feedbackEl.classList.remove('hidden');
+            document.getElementById('match-check-btn').classList.add('hidden');
+            document.getElementById('match-next-btn').classList.remove('hidden');
+        }
+
+        function nextMatchingGroupNum() {
+            currentMatchGroupNum++;
+            showMatchingGroupNum();
+        }
+
+        function showMatchingResultsNum() {
+            document.getElementById('matching-box').classList.add('hidden');
+            document.getElementById('matching-results').classList.remove('hidden');
+            document.getElementById('match-final-score').innerText = `${matchScoreNum} / 48`;
+            if (typeof confetti === 'function') confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
         }
 
         // Master Game Items (70)
@@ -1274,6 +1687,7 @@
 
             if(tabName === 'game') initGame();
             if(tabName === 'fillin') initFillInSection();
+            if(tabName === 'matching') initMatchingSection();
         }
 
         let gameQuestions = [];
