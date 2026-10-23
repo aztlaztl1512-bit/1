@@ -595,7 +595,7 @@
                             تحدي المزاوجة والصلة النحوية <span class="royal-gradient-text">(12 مجموعة كاملة)</span>
                         </h2>
                         <p class="text-slateNavy-700 text-xs md:text-sm mt-1">
-                            اكتب رقم الخيار المناسب من العمود (ب) في المربع المقابل لكل فقرة في العمود (أ). تنبيه: العمود (ب) يحتوي على 5 خيارات (خيار إضافي مموه).
+                            اكتب رقم الخيار المناسب من العمود (ب) (من 1 إلى 5) في المربع المقابل لكل فقرة في العمود (أ) دون تكرار أو أرقام خارج النطاق.
                         </p>
                     </div>
 
@@ -935,8 +935,8 @@
                         <span>${item.text}</span>
                     </div>
                     <div class="flex items-center gap-1 shrink-0">
-                        <span class="text-[11px] text-slateNavy-700">اختر من (ب):</span>
-                        <input type="number" id="input-match-${item.id}" min="1" max="5" placeholder="؟" class="w-10 h-9 text-center border-2 border-royalMaroon-700/30 rounded-xl font-black text-royalMaroon-700 focus:border-royalMaroon-700 focus:outline-none bg-creamBg text-sm">
+                        <span class="text-[11px] text-slateNavy-700">اختر (1-5):</span>
+                        <input type="number" id="input-match-${item.id}" min="1" max="5" placeholder="؟" class="w-12 h-9 text-center border-2 border-royalMaroon-700/30 rounded-xl font-black text-royalMaroon-700 focus:border-royalMaroon-700 focus:outline-none bg-creamBg text-sm">
                     </div>
                 `;
                 colAContainer.appendChild(el);
@@ -962,20 +962,44 @@
 
         function checkMatchingAnswersNum() {
             const grp = matchingDataGroups[currentMatchGroupNum];
-            let correctInGroup = 0;
             let allFilled = true;
+            let enteredValues = [];
 
-            // Check if inputs filled
-            grp.colA.forEach(itemA => {
-                const inputVal = document.getElementById(`input-match-${itemA.id}`).value.trim();
-                if (!inputVal) allFilled = false;
-            });
+            // Validation loop: Check inputs for presence, range 1-5, and duplicates
+            for (let itemA of grp.colA) {
+                const inputEl = document.getElementById(`input-match-${itemA.id}`);
+                const valStr = inputEl.value.trim();
+                
+                if (!valStr) {
+                    allFilled = false;
+                    break;
+                }
+
+                const val = parseInt(valStr, 10);
+
+                // Check if number is outside 1 to 5 range
+                if (isNaN(val) || val < 1 || val > 5) {
+                    alert(`تنبيه: عذراً، رقم الخيار في الفقرة (${itemA.id}) غير مقبول. يُرجى كتابة أرقام صحيحة من 1 إلى 5 فقط.`);
+                    inputEl.focus();
+                    return;
+                }
+
+                // Check for duplicate numbers
+                if (enteredValues.includes(val)) {
+                    alert(`تنبيه: لا يمكن تكرار نفس رقم الخيار (${val}) أكثر من مرة في نفس المجموعة! يرجى اختيار أرقام مختلفة.`);
+                    inputEl.focus();
+                    return;
+                }
+
+                enteredValues.push(val);
+            }
 
             if (!allFilled) {
-                alert('فضلًا اكتب أرقام الخيارات المُنتاظرة من العمود (ب) في جميع المربعات الأربعة أولاً!');
+                alert('فضلًا املأ جميع خانات الاختيارات بأرقام من 1 إلى 5 قبل التحقق!');
                 return;
             }
 
+            let correctInGroup = 0;
             document.getElementById('match-check-btn').disabled = true;
 
             grp.colA.forEach(itemA => {
@@ -1459,7 +1483,7 @@
                     "فتح الباب", "فُتِحَ الباب"
                 ],
                 sampleCorrect: "فُتِحَ البَابُ.",
-                ruleExp: "يضم أول الماضي ويكسر ما قبل آخره (فُتِحَ) ويرفع نائب الفاعل بالضمة (البَابُ)."
+                ruleExp: "يضم أول الماضي ويكسر ما قبل آخره (فُتِحَ) ويرفع نائب الفاعل بالضمة."
             },
             {
                 target: "حوّل الجملة للمجهول واعد كتابتها كاملة",
