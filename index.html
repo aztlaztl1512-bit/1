@@ -101,21 +101,6 @@
             border-color: #A31D1D;
             background-color: #FDF2F2;
         }
-        .match-item {
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .match-item.selected-a {
-            border-color: #8B0000 !important;
-            background-color: #FDF2F2 !important;
-            box-shadow: 0 0 0 2px #8B0000;
-        }
-        .match-item.matched {
-            background-color: #FEF3C7 !important;
-            border-color: #D97706 !important;
-            cursor: default;
-            opacity: 0.85;
-        }
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -126,6 +111,7 @@
         @media print {
             body { background: white !important; color: black !important; }
             header, nav, .no-print { display: none !important; }
+            #printable-certificate { display: block !important; border: 12px double #8B0000 !important; background: #FFF9F2 !important; color: #1E293B !important; }
         }
     </style>
 </head>
@@ -164,10 +150,6 @@
                         <i class="fa-solid fa-bolt"></i>
                         <span>تحدي التصنيف (70)</span>
                     </button>
-                    <button onclick="switchTab('matching')" id="tab-btn-matching" class="nav-tab whitespace-nowrap px-3 md:px-3.5 py-2 rounded-xl transition-all text-slateNavy-700 hover:text-royalMaroon-700 hover:bg-white/60 flex items-center gap-1">
-                        <i class="fa-solid fa-link"></i>
-                        <span>تحدي المزاوجة والربط (12)</span>
-                    </button>
                     <button onclick="switchTab('fillin')" id="tab-btn-fillin" class="nav-tab whitespace-nowrap px-3 md:px-3.5 py-2 rounded-xl transition-all text-slateNavy-700 hover:text-royalMaroon-700 hover:bg-white/60 flex items-center gap-1">
                         <i class="fa-solid fa-pen-to-square"></i>
                         <span>إعادة الكتابة والتعديل (40)</span>
@@ -204,35 +186,181 @@
             </div>
 
             <div class="space-y-8">
-                <!-- SECTION 1 -->
+                <!-- SECTION 1: الجملة الاسمية والمبتدأ والخبر -->
                 <div class="light-glass-card rounded-3xl p-6 md:p-8">
                     <h3 class="text-xl md:text-2xl font-black text-royalMaroon-700 mb-6 flex items-center gap-3 border-b border-royalMaroon-700/10 pb-4 font-cairo">
                         <i class="fa-solid fa-font text-amberGold-500"></i> القسم الأول: الجملة الاسمية (المبتدأ والخبر)
                     </h3>
+
                     <div class="space-y-4 text-slateNavy-800 text-sm md:text-base leading-relaxed mb-6">
-                        <p><strong>الجملة الاسمية:</strong> تتكون من المبتدأ والخبر وهما مرفوعان دائماً ما لم يسبقهما ناسخ.</p>
+                        <p>
+                            <strong>الجملة الاسمية:</strong> هي كل جملة تبدأ بـ <strong>اسم مرفوع (المبتدأ)</strong>، وتتكون من ركنين أساسيين لا تستغني الجملة عن أحدهما:
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+                            <div class="bg-creamBg p-4 rounded-2xl border border-amberGold-500/30">
+                                <h4 class="font-bold text-royalMaroon-700 mb-1">1. المبتدأ:</h4>
+                                <p class="text-xs md:text-sm">هو الاسم المرفوع المتحدث عنه والواقع في أول الجملة غالباً. وحكمه الإعرابي <strong>الرفع دائماً</strong>.</p>
+                            </div>
+                            <div class="bg-creamBg p-4 rounded-2xl border border-amberGold-500/30">
+                                <h4 class="font-bold text-royalMaroon-700 mb-1">2. الخبر:</h4>
+                                <p class="text-xs md:text-sm">هو الجزء المكمل والمتمم لمعنى الجملة والذي يتحدث به عن المبتدأ. وحكمه الإعرابي <strong>الرفع دائماً</strong>.</p>
+                            </div>
+                        </div>
+
+                        <h4 class="font-bold text-royalMaroon-700 text-base font-cairo mt-4">علامات رفع المبتدأ والخبر:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-xs md:text-sm bg-white p-4 rounded-2xl border border-royalMaroon-700/10">
+                            <li><strong>الضمة الظاهرة:</strong> إذا كان الاسم مفرداً أو جمع تكسير أو جمع مؤنث سالماً (مثال: <span class="grammar-example">الطَالِبُ مُجْتَهِدٌ</span> / <span class="grammar-example">العُلَمَاءُ أُمَنَاءُ</span>).</li>
+                            <li><strong>الألف:</strong> إذا كان الاسم مثنى (مثال: <span class="grammar-example">الطَّالِبَانِ مُتَفَوِّقَانِ</span>).</li>
+                            <li><strong>الواو:</strong> إذا كان الاسم جمع مذكر سالماً أو من الأسماء الخمسة (مثال: <span class="grammar-example">المُعَلِّمُونَ مُخْلِصُونَ</span> / <span class="grammar-example">أَبُوكَ ذُو فَضْلٍ</span>).</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-amberGold-100/50 p-5 rounded-2xl border border-amberGold-500/30">
+                        <h4 class="font-bold text-royalMaroon-700 mb-3 text-sm font-cairo flex items-center gap-2">
+                            <i class="fa-solid fa-pen-ruler text-amberGold-600"></i> تدريبات مشروحة وتطبيقات إعرابية على الجملة الاسمية:
+                        </h4>
+                        <div class="space-y-3 text-xs md:text-sm text-slateNavy-800">
+                            <div class="p-3 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong class="text-royalMaroon-700">التدريب 1:</strong> اعرب الجملة التالية: <span class="grammar-example">(المُهَنْدِسُونَ بَارِعُونَ)</span><br/>
+                                📍 <strong>المُهَنْدِسُونَ:</strong> مبتدأ مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم.<br/>
+                                📍 <strong>بَارِعُونَ:</strong> خبر المبتدأ مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم.
+                            </div>
+                            <div class="p-3 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong class="text-royalMaroon-700">التدريب 2:</strong> حدد المبتدأ والخبر وبين علامة رفعهما في: <span class="grammar-example">(أَخُوكَ ذُو عِلْمٍ)</span><br/>
+                                📍 <strong>المبتدأ:</strong> أَخُوكَ (مرفوع بالواو لأنه من الأسماء الخمسة).<br/>
+                                📍 <strong>الخبر:</strong> ذُو (مرفوع بالواو لأنه من الأسماء الخمسة).
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- SECTION 2 -->
+                <!-- SECTION 2: إعراب الفعل المضارع -->
                 <div class="light-glass-card rounded-3xl p-6 md:p-8">
                     <h3 class="text-xl md:text-2xl font-black text-royalMaroon-700 mb-6 flex items-center gap-3 border-b border-royalMaroon-700/10 pb-4 font-cairo">
                         <i class="fa-solid fa-bolt text-amberGold-500"></i> القسم الثاني: إعراب الفعل المضارع بالتفصيل
                     </h3>
+
                     <div class="space-y-4 text-slateNavy-800 text-sm md:text-base leading-relaxed mb-6">
-                        <p>الفعل المضارع يُرفع إذا لم يسبق بناصب أو جازم، وينصب إذا سبق بـ (لن، كي)، ويجزم إذا سبق بـ (لم).</p>
+                        <p>
+                            الفعل المضارع فعل معرب، وتختلف علامته الإعرابية بحسب **نوع الفعل** (صحيح الآخر، معتل الآخر، أفعال خمسة) و**الحالة الإعرابية**:
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-4">
+                            <div class="bg-creamBg p-4 rounded-2xl border border-amberGold-500/30">
+                                <h4 class="font-bold text-royalMaroon-700 mb-1">1. حالة الرفع:</h4>
+                                <p class="text-xs md:text-sm">إذا لم تسبقه أداة نصب ولا أداة جزم.<br/>📍 <span class="grammar-example">(يَكْتُبُ / يَسْعَى / يَجْتَهِدُونَ)</span></p>
+                            </div>
+                            <div class="bg-creamBg p-4 rounded-2xl border border-amberGold-500/30">
+                                <h4 class="font-bold text-amberGold-600 mb-1">2. حالة النصب:</h4>
+                                <p class="text-xs md:text-sm">إذا سبق بأداة النصب المقررة: <strong>(لَنْ - كَيْ)</strong>.<br/>📍 <span class="grammar-example">(لَنْ يُهْمِلَ / كَيْ تَنْجَحُوا)</span></p>
+                            </div>
+                            <div class="bg-creamBg p-4 rounded-2xl border border-royalMaroon-700/30">
+                                <h4 class="font-bold text-royalMaroon-700 mb-1">3. حالة الجزم:</h4>
+                                <p class="text-xs md:text-sm">إذا سبق بأداة الجزم المقررة: <strong>(لَمْ)</strong>.<br/>📍 <span class="grammar-example">(لَمْ يَحْضُرْ / لَمْ يَسْعَ)</span></p>
+                            </div>
+                        </div>
+
+                        <h4 class="font-bold text-royalMaroon-700 text-base font-cairo mt-4">جدول علامات إعراب الفعل المضارع الشامل:</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-right text-xs md:text-sm border-collapse rounded-xl overflow-hidden shadow-sm">
+                                <thead>
+                                    <tr class="bg-royalMaroon-700 text-white">
+                                        <th class="p-2.5 border border-royalMaroon-800">نوع الفعل المضارع</th>
+                                        <th class="p-2.5 border border-royalMaroon-800">حالة الرفع</th>
+                                        <th class="p-2.5 border border-royalMaroon-800">حالة النصب (لن/كي)</th>
+                                        <th class="p-2.5 border border-royalMaroon-800">حالة الجزم (لم)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-royalMaroon-700/10 bg-white text-slateNavy-800">
+                                    <tr>
+                                        <td class="p-2.5 font-bold bg-creamBg">صحيح الآخر (<span class="grammar-example">يكتب</span>)</td>
+                                        <td class="p-2.5">الضمة الظاهرة</td>
+                                        <td class="p-2.5">الفتحة الظاهرة</td>
+                                        <td class="p-2.5 text-royalMaroon-700 font-bold">السكون الظاهر</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 font-bold bg-creamBg">معتل الآخر (<span class="grammar-example">يسعى / يدعو / يرمي</span>)</td>
+                                        <td class="p-2.5">الضمة المقدرة</td>
+                                        <td class="p-2.5">الفتحة (ظاهرة مع الواو والياء / مقدرة مع الألف)</td>
+                                        <td class="p-2.5 text-royalMaroon-700 font-bold">حذف حرف العلة</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 font-bold bg-creamBg">الأفعال الخمسة (<span class="grammar-example">يتعلمون</span>)</td>
+                                        <td class="p-2.5">ثبوت النون</td>
+                                        <td class="p-2.5 text-amberGold-600 font-bold">حذف النون</td>
+                                        <td class="p-2.5 text-amberGold-600 font-bold">حذف النون</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="bg-amberGold-100/50 p-5 rounded-2xl border border-amberGold-500/30">
+                        <h4 class="font-bold text-royalMaroon-700 mb-3 text-sm font-cairo flex items-center gap-2">
+                            <i class="fa-solid fa-pen-ruler text-amberGold-600"></i> تدريبات مشروحة وتطبيقات على المضارع:
+                        </h4>
+                        <div class="space-y-3 text-xs md:text-sm text-slateNavy-800">
+                            <div class="p-3 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong class="text-royalMaroon-700">التدريب 1:</strong> بين الحالة الإعرابية والعلامة في: <span class="grammar-example">(المُسْلِمُ لَمْ يَسْعَ فِي الشَّرِّ)</span><br/>
+                                📍 <strong>الفعل (<span class="grammar-example">يسعَ</span>):</strong> مضارع مجزوم بـ (لَمْ)، وعلامة جزمه حذف حرف العلة (الألف)، والفتحة دليل عليها.
+                            </div>
+                            <div class="p-3 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong class="text-royalMaroon-700">التدريب 2:</strong> اعرب الفعل في: <span class="grammar-example">(اجْتَهِدُوا كَيْ تَفُوزُوا)</span><br/>
+                                📍 <strong>الفعل (<span class="grammar-example">تفوزوا</span>):</strong> فعل مضارع منصوب بـ (كَيْ)، وعلامة نصبه حذف النون لأنه من الأفعال الخمسة.
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- SECTION 3 -->
+                <!-- SECTION 3: الفاعل ونائب الفاعل (المعلوم والمجهول) -->
                 <div class="light-glass-card rounded-3xl p-6 md:p-8">
                     <h3 class="text-xl md:text-2xl font-black text-royalMaroon-700 mb-6 flex items-center gap-3 border-b border-royalMaroon-700/10 pb-4 font-cairo">
                         <i class="fa-solid fa-user-shield text-amberGold-500"></i> القسم الثالث: الجملة الفعلية (الفاعل ونائب الفاعل)
                     </h3>
+
                     <div class="space-y-4 text-slateNavy-800 text-sm md:text-base leading-relaxed mb-6">
-                        <p>الجملة المبنية للمعلوم تحتوي على فاعل، وعند حذفه تُبنى الجملة للمجهول ويحل المفعول به محله نائباً للفاعل مرفوعاً.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
+                            <div class="bg-creamBg p-5 rounded-2xl border border-amberGold-500/30">
+                                <h4 class="font-bold text-royalMaroon-700 mb-2">1. الجملة المبنية للمعلوم (الفاعل):</h4>
+                                <p class="text-xs md:text-sm mb-3">هي الجملة التي يكون فاعلها معلومًا ومذكورًا في الكلام.<br/>📍 <strong>الفاعل:</strong> اسم مرفوع يدل على من قام بالفعل.<br/>📌 <span class="grammar-example">(كَتَبَ الطَالِبُ الدَّرْسَ)</span></p>
+                            </div>
+                            <div class="bg-creamBg p-5 rounded-2xl border border-amberGold-500/30">
+                                <h4 class="font-bold text-royalMaroon-700 mb-2">2. الجملة المبنية للمجهول (نائب الفاعل):</h4>
+                                <p class="text-xs md:text-sm mb-3">هي الجملة التي يُحذف فاعلها ويحل المفعول به محله فيأخذ حكم الرفع.<br/>📍 <strong>نائب الفاعل:</strong> اسم مرفوع حل محل الفاعل بعد حذفه.<br/>📌 <span class="grammar-example">(كُتِبَ الدَّرْسُ)</span></p>
+                            </div>
+                        </div>
+
+                        <h4 class="font-bold text-royalMaroon-700 text-base font-cairo mt-4">قواعد تغيير بناء الفعل للمجهول:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm">
+                            <div class="p-3.5 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong>الفعل الماضي:</strong> يُضمُّ أوَّلُهُ ويُكسَرُ ما قبلَ آخِرِه.<br/>
+                                <span class="grammar-example">شَرِبَ ⬅️ شُرِبَ</span> / <span class="grammar-example">كَافَأَ ⬅️ كُوفِئَ</span>
+                            </div>
+                            <div class="p-3.5 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong>الفعل المضارع:</strong> يُضمُّ أوَّلُهُ ويُفتَحُ ما قبلَ آخِرِه.<br/>
+                                <span class="grammar-example">يَكْتُبُ ⬅️ يُكْتَبُ</span> / <span class="grammar-example">يَشْرَحُ ⬅️ يُشْرَحُ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-amberGold-100/50 p-5 rounded-2xl border border-amberGold-500/30">
+                        <h4 class="font-bold text-royalMaroon-700 mb-3 text-sm font-cairo flex items-center gap-2">
+                            <i class="fa-solid fa-pen-ruler text-amberGold-600"></i> تدريبات مشروحة وتطبيقات على البناء للمجهول:
+                        </h4>
+                        <div class="space-y-3 text-xs md:text-sm text-slateNavy-800">
+                            <div class="p-3 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong class="text-royalMaroon-700">التدريب 1:</strong> حوّل الجملة التالية للمجهول واضبط الكلمات: <span class="grammar-example">(كََرََّمَ المُدِيرُ الفَائِزِينَ)</span><br/>
+                                📍 <strong>التحويل:</strong> <span class="grammar-example">كُرِّمَ الفَائِزُونَ</span>.<br/>
+                                📍 <strong>الشرح:</strong> حذفنا الفاعل (المديرُ)، وبنينا الماضي للمجهول (كُرِّمَ)، ورفعنا المفعول به ليكون نائب فاعل بالواو (الفائزُونَ).
+                            </div>
+                            <div class="p-3 bg-white rounded-xl border border-amberGold-500/20">
+                                <strong class="text-royalMaroon-700">التدريب 2:</strong> اعرب كلمة (التقريران) في: <span class="grammar-example">(سُتْلِمَ التَّقْرِيرَانِ)</span><br/>
+                                📍 <strong>التَّقْرِيرَانِ:</strong> نائب فاعل مرفوع وعلامة رفعه الألف لأنه مثنى.
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -323,17 +451,35 @@
 
                     <div id="game-feedback" class="hidden mb-6 p-4 rounded-2xl bg-amberGold-100/60 border border-amberGold-500/40 text-slateNavy-800 text-sm font-bold"></div>
 
+                    <!-- Categorization Buttons Grid -->
                     <div id="game-options-container" class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-                        <button onclick="checkGameAnswer('أداة نصب')" class="game-btn p-3.5 rounded-2xl bg-white border border-slateNavy-700/20 hover:border-slateNavy-800 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">أداة نصب</button>
-                        <button onclick="checkGameAnswer('أداة جزم')" class="game-btn p-3.5 rounded-2xl bg-white border border-royalMaroon-600/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">أداة جزم</button>
-                        <button onclick="checkGameAnswer('مضارع منصوب')" class="game-btn p-3.5 rounded-2xl bg-white border border-amberGold-500/30 hover:border-amberGold-500 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">مضارع منصوب</button>
-                        <button onclick="checkGameAnswer('مضارع مجزوم')" class="game-btn p-3.5 rounded-2xl bg-white border border-amberGold-500/30 hover:border-amberGold-500 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">مضارع مجزوم</button>
-                        <button onclick="checkGameAnswer('مبتدأ مرفوع')" class="game-btn p-3.5 rounded-2xl bg-white border border-slateNavy-700/20 hover:border-slateNavy-800 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">مبتدأ مرفوع</button>
-                        <button onclick="checkGameAnswer('خبر مرفوع')" class="game-btn p-3.5 rounded-2xl bg-white border border-amberGold-600/20 hover:border-amberGold-600 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">خبر مرفوع</button>
-                        <button onclick="checkGameAnswer('فاعل مرفوع')" class="game-btn p-3.5 rounded-2xl bg-white border border-amberGold-600/20 hover:border-amberGold-600 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">فاعل مرفوع</button>
-                        <button onclick="checkGameAnswer('نائب فاعل')" class="game-btn p-3.5 rounded-2xl bg-white border border-royalMaroon-700/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">نائب فاعل</button>
+                        <button onclick="checkGameAnswer('أداة نصب')" class="game-btn p-3.5 rounded-2xl bg-white border border-slateNavy-700/20 hover:border-slateNavy-800 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                            <i class="fa-solid fa-circle-arrow-up block mb-1 text-sm text-amberGold-600"></i> أداة نصب
+                        </button>
+                        <button onclick="checkGameAnswer('أداة جزم')" class="game-btn p-3.5 rounded-2xl bg-white border border-royalMaroon-600/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                            <i class="fa-solid fa-circle-arrow-down block mb-1 text-sm text-royalMaroon-600"></i> أداة جزم
+                        </button>
+                        <button onclick="checkGameAnswer('مضارع منصوب')" class="game-btn p-3.5 rounded-2xl bg-white border border-amberGold-500/30 hover:border-amberGold-500 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                            <i class="fa-solid fa-arrow-up-right-dots block mb-1 text-sm text-amberGold-600"></i> مضارع منصوب
+                        </button>
+                        <button onclick="checkGameAnswer('مضارع مجزوم')" class="game-btn p-3.5 rounded-2xl bg-white border border-amberGold-500/30 hover:border-amberGold-500 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                            <i class="fa-solid fa-bolt block mb-1 text-sm text-amberGold-500"></i> مضارع مجزوم
+                        </button>
+                        <button onclick="checkGameAnswer('مبتدأ مرفوع')" class="game-btn p-3.5 rounded-2xl bg-white border border-slateNavy-700/20 hover:border-slateNavy-800 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                            <i class="fa-solid fa-font block mb-1 text-sm text-amberGold-600"></i> مبتدأ مرفوع
+                        </button>
+                        <button onclick="checkGameAnswer('خبر مرفوع')" class="game-btn p-3.5 rounded-2xl bg-white border border-amberGold-600/20 hover:border-amberGold-600 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                            <i class="fa-solid fa-check-double block mb-1 text-sm text-amberGold-700"></i> خبر مرفوع
+                        </button>
+                        <button onclick="checkGameAnswer('فاعل مرفوع')" class="game-btn p-3.5 rounded-2xl bg-white border border-amberGold-600/20 hover:border-amberGold-600 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                            <i class="fa-solid fa-user-shield block mb-1 text-sm text-royalMaroon-800"></i> فاعل مرفوع
+                        </button>
+                        <button onclick="checkGameAnswer('نائب فاعل')" class="game-btn p-3.5 rounded-2xl bg-white border border-royalMaroon-700/20 hover:border-royalMaroon-700 text-slateNavy-800 font-bold text-xs md:text-sm transition shadow-sm hover:shadow-md">
+                            <i class="fa-solid fa-user-check block mb-1 text-sm text-royalMaroon-700"></i> نائب فاعل
+                        </button>
                     </div>
 
+                    <!-- Next Button for Game -->
                     <div class="flex justify-end mt-4">
                         <button id="game-next-btn" onclick="nextGameItem()" class="hidden btn-royal px-8 py-3.5 rounded-2xl font-bold text-base flex items-center gap-2">
                             الفقرة التالية <i class="fa-solid fa-arrow-left"></i>
@@ -349,86 +495,7 @@
             </div>
         </section>
 
-        <!-- TAB 4: BRAND NEW MATCHING SECTION (12 GROUPS - 4 ITEMS VS 5 OPTIONS - STRICT & NO CLUES) -->
-        <section id="tab-matching" class="tab-content hidden">
-            <div class="light-glass-card rounded-3xl p-6 md:p-8">
-                <!-- Header -->
-                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6 pb-4 border-b border-royalMaroon-700/10">
-                    <div>
-                        <span class="inline-block px-3 py-1 rounded-full bg-amberGold-100 text-amberGold-700 text-xs font-bold mb-2 border border-amberGold-500/20">
-                            <i class="fa-solid fa-link ml-1"></i> تحدي الربط والمزاوجة النحوي الدقيق
-                        </span>
-                        <h2 class="text-2xl md:text-3xl font-black text-slateNavy-900 font-cairo">
-                            تحدي المزاوجة والصلة النحوية <span class="royal-gradient-text">(12 مجموعة كاملة)</span>
-                        </h2>
-                        <p class="text-slateNavy-700 text-xs md:text-sm mt-1">
-                            صل كل فقرة في العمود (أ) بالخيار الإعرابي أو الوظيفي الدقيق المناسب لها من العمود (ب). تنبيه: يتضمن العمود (ب) خياراً إضافياً مموهاً بدون أي تلميحات تسهيلية!
-                        </p>
-                    </div>
-
-                    <div class="flex items-center gap-3 bg-creamBg p-3 rounded-2xl border border-royalMaroon-700/10 self-stretch md:self-auto justify-between">
-                        <div class="text-xs font-bold text-slateNavy-800">
-                            المجموعة: <span id="match-group-progress" class="text-royalMaroon-700 text-base font-black">1/12</span>
-                        </div>
-                        <div class="text-xs font-bold text-amberGold-700 bg-white px-3 py-1.5 rounded-xl border border-amberGold-500/30 shadow-sm">
-                            <i class="fa-solid fa-star ml-1 text-amberGold-500"></i> النقاط: <span id="match-score" class="text-royalMaroon-700 font-black">0</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Main Matching Container -->
-                <div id="matching-box" class="py-2">
-                    <div class="mb-4 flex items-center justify-between">
-                        <span id="match-group-title" class="px-3.5 py-1.5 rounded-xl text-xs md:text-sm font-bold bg-royalMaroon-50 text-royalMaroon-700 border border-royalMaroon-700/20 inline-flex items-center gap-2">
-                            <i class="fa-solid fa-layer-group text-amberGold-500"></i> عنوان المجموعة
-                        </span>
-                        <span class="text-xs text-slateNavy-700 font-bold">انقر على خيار من العمود (أ) ثم انقر على ما يناسبه من العمود (ب)</span>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <!-- Column A -->
-                        <div class="bg-creamBg/60 p-4 rounded-3xl border border-royalMaroon-700/10">
-                            <h4 class="text-center font-bold text-royalMaroon-700 mb-3 text-sm font-cairo bg-white py-2 rounded-xl border border-royalMaroon-700/10">
-                                العمود (أ): الجمل والأمثلة
-                            </h4>
-                            <div id="col-a-container" class="space-y-3"></div>
-                        </div>
-
-                        <!-- Column B -->
-                        <div class="bg-creamBg/60 p-4 rounded-3xl border border-amberGold-500/20">
-                            <h4 class="text-center font-bold text-amberGold-700 mb-3 text-sm font-cairo bg-white py-2 rounded-xl border border-amberGold-500/20">
-                                العمود (ب): التوصيف أو الإعراب النحوي
-                            </h4>
-                            <div id="col-b-container" class="space-y-3"></div>
-                        </div>
-                    </div>
-
-                    <div id="match-feedback" class="hidden mb-6 p-4 rounded-2xl font-bold text-sm leading-relaxed text-center"></div>
-
-                    <div class="flex justify-between items-center">
-                        <button id="match-check-btn" onclick="checkMatchingAnswers()" class="btn-royal px-8 py-3.5 rounded-2xl font-bold text-sm md:text-base flex items-center gap-2">
-                            <i class="fa-solid fa-spell-check"></i> التحقق من الإجابات
-                        </button>
-                        <button id="match-next-btn" onclick="nextMatchingGroup()" class="hidden btn-royal px-8 py-3.5 rounded-2xl font-bold text-base flex items-center gap-2">
-                            المجموعة التالية <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Final Results -->
-                <div id="matching-results" class="hidden text-center py-10">
-                    <div class="w-20 h-20 mx-auto mb-4 rounded-3xl bg-gradient-to-tr from-royalMaroon-700 to-amberGold-500 p-0.5 shadow-xl flex items-center justify-center text-amberGold-500 text-3xl">
-                        <i class="fa-solid fa-award"></i>
-                    </div>
-                    <div class="text-4xl md:text-5xl font-black text-royalMaroon-700 mb-3 font-cairo" id="match-final-score">0 / 48</div>
-                    <h3 class="text-xl md:text-2xl font-bold text-slateNavy-900 mb-2">مبارك! أتممت بنجاح جميع مجموعات تحدي المزاوجة والربط النحوي</h3>
-                    <p class="text-slateNavy-700 text-sm md:text-base mb-6 font-medium">أظهرت تمكناً راقياً ودقة عالية في ربط الأبواب بالنواسخ والأفعال والفاعلين.</p>
-                    <button onclick="initMatchingSection()" class="btn-royal px-8 py-3.5 rounded-2xl font-bold text-sm shadow-md">إعادة تحدي المزاوجة</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- TAB 5: REWRITE & STRICT SMART GRAMMAR GRADER (40 FULL SENTENCE REWRITE QUESTIONS) -->
+        <!-- TAB 4: REWRITE & STRICT SMART GRAMMAR GRADER (40 FULL SENTENCE REWRITE QUESTIONS) -->
         <section id="tab-fillin" class="tab-content hidden">
             <div class="light-glass-card rounded-3xl p-6 md:p-8">
                 <!-- Header -->
@@ -445,6 +512,7 @@
                         </p>
                     </div>
 
+                    <!-- Progress Indicator -->
                     <div class="flex items-center gap-3 bg-creamBg p-3 rounded-2xl border border-royalMaroon-700/10 self-stretch md:self-auto justify-between">
                         <div class="text-xs font-bold text-slateNavy-800">
                             السؤال: <span id="fillin-progress" class="text-royalMaroon-700 text-base font-black">1/40</span>
@@ -455,18 +523,26 @@
                     </div>
                 </div>
 
+                <!-- Main Fill-in Box -->
                 <div id="fillin-box" class="py-2">
+                    <!-- Target Requirement Tag -->
                     <div class="mb-4">
                         <span id="fillin-target-tag" class="px-3.5 py-1.5 rounded-xl text-xs md:text-sm font-bold bg-royalMaroon-50 text-royalMaroon-700 border border-royalMaroon-700/20 inline-flex items-center gap-2">
                             <i class="fa-solid fa-bullseye text-amberGold-500"></i> التعديل المطلوب: ادخل صار واعد كتابة الجملة
                         </span>
                     </div>
 
+                    <!-- Question Prompt / Sentence -->
                     <div class="bg-gradient-to-r from-creamBg via-white to-creamBg border-2 border-amberGold-500/30 p-6 md:p-8 rounded-3xl mb-6 shadow-inner text-center">
-                        <div id="fillin-prompt" class="text-lg md:text-xl font-bold text-slateNavy-900 mb-3 font-cairo leading-relaxed">تجهيز السؤال...</div>
-                        <div id="fillin-sentence" class="text-2xl md:text-4xl font-black text-royalMaroon-700 font-amiri tracking-wide leading-loose">---</div>
+                        <div id="fillin-prompt" class="text-lg md:text-xl font-bold text-slateNavy-900 mb-3 font-cairo leading-relaxed">
+                            تجهيز السؤال...
+                        </div>
+                        <div id="fillin-sentence" class="text-2xl md:text-4xl font-black text-royalMaroon-700 font-amiri tracking-wide leading-loose">
+                            ---
+                        </div>
                     </div>
 
+                    <!-- Input Area -->
                     <div class="max-w-2xl mx-auto mb-6">
                         <label class="block text-xs md:text-sm font-bold text-slateNavy-800 mb-2">اكتب الجملة كاملة بعد التعديل النحوي الصحيح هنا:</label>
                         <div class="flex flex-col sm:flex-row gap-2">
@@ -478,8 +554,10 @@
                         <p class="text-[11px] text-slateNavy-700/70 mt-1.5 text-center">تنبيـه: يشترط كتابة تنوين النصب بالألف (مثال: ممطراً) لضمان صحة الإجابة الدقيقة 100%.</p>
                     </div>
 
+                    <!-- Feedback Box -->
                     <div id="fillin-feedback" class="hidden max-w-2xl mx-auto mb-6 p-5 rounded-2xl transition-all font-bold text-sm leading-relaxed shadow-sm"></div>
 
+                    <!-- Next Question Button -->
                     <div class="flex justify-end">
                         <button id="fillin-next-btn" onclick="nextFillInQuestion()" class="hidden btn-royal px-8 py-3.5 rounded-2xl font-bold text-base flex items-center gap-2">
                             السؤال التالي <i class="fa-solid fa-arrow-left"></i>
@@ -487,12 +565,14 @@
                     </div>
                 </div>
 
+                <!-- Final Results View for Fill-In Section -->
                 <div id="fillin-results" class="hidden text-center py-10">
                     <div class="w-20 h-20 mx-auto mb-4 rounded-3xl bg-gradient-to-tr from-royalMaroon-700 to-amberGold-500 p-0.5 shadow-xl flex items-center justify-center text-amberGold-500 text-3xl">
                         <i class="fa-solid fa-award"></i>
                     </div>
                     <div class="text-4xl md:text-5xl font-black text-royalMaroon-700 mb-3 font-cairo" id="fillin-final-score">0 / 40</div>
                     <h3 class="text-xl md:text-2xl font-bold text-slateNavy-900 mb-2">مبارك! أتممت مهارة إعادة كتابة وتعديل الجمل النحوية</h3>
+                    <p id="fillin-result-msg" class="text-slateNavy-700 text-sm md:text-base mb-6 font-medium">مستوى مبهر وراقي في التطبيق النحوي والتحويل.</p>
                     <button onclick="initFillInSection()" class="btn-royal px-8 py-3.5 rounded-2xl font-bold text-sm shadow-md">إعادة التحدي مرة أخرى</button>
                 </div>
             </div>
@@ -510,434 +590,25 @@
     <script>
         let synth;
         function initAudio() {
-            if (!synth) synth = new Tone.Synth().toDestination();
+            if (!synth) {
+                synth = new Tone.Synth().toDestination();
+            }
         }
+
         function playCorrectSound() {
-            try { initAudio(); synth.triggerAttackRelease("G5", "8n", Tone.now()); } catch(e){}
+            try {
+                initAudio();
+                const now = Tone.now();
+                synth.triggerAttackRelease("G5", "8n", now);
+            } catch(e){}
         }
+
         function playWrongSound() {
-            try { initAudio(); synth.triggerAttackRelease("C3", "8n", Tone.now()); } catch(e){}
-        }
-
-        // ==========================================
-        // DATA SET FOR TAB 4: MATCHING (12 GROUPS)
-        // 4 Items in Col A, 5 Options in Col B (Strict & Distractor-rich)
-        // ==========================================
-        const matchingGroups = [
-            // --- الموضوع الأول: الجملة الاسمية والنواسخ (4 مجموعات) ---
-            {
-                title: "المجموعة 1: علامات رفع المبتدأ والخبر",
-                colA: [
-                    { id: "a1", text: "«الطَالِبُ مُجْتَهِدٌ» (كلمة: طالب)" },
-                    { id: "a2", text: "«الطَّالِبَانِ مُتَفَوِّقَانِ» (كلمة: متفوقان)" },
-                    { id: "a3", text: "«المُعَلِّمُونَ مُخْلِصُونَ» (كلمة: المعلمون)" },
-                    { id: "a4", text: "«أَبُوكَ ذُو فَضْلٍ» (كلمة: ذو)" }
-                ],
-                colB: [
-                    { id: "b1", text: "مبتدأ مرفوع وعلامة رفعه الضمة الظاهرة" },
-                    { id: "b2", text: "خبر المبتدأ مرفوع وعلامة رفعه الألف لأنه مثنى" },
-                    { id: "b3", text: "مبتدأ مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم" },
-                    { id: "b4", text: "خبر المبتدأ مرفوع وعلامة رفعه الواو لأنه من الأسماء الخمسة" },
-                    { id: "b5", text: "خبر المبتدأ مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم" }
-                ],
-                correctPairs: { "a1": "b1", "a2": "b2", "a3": "b3", "a4": "b4" }
-            },
-            {
-                title: "المجموعة 2: أحكام عمل كان وأخواتها",
-                colA: [
-                    { id: "a1", text: "«كانَ المَطَرُ غَزِيراً» (كلمة: غزيراً)" },
-                    { id: "a2", text: "«أَصْبَحَ الطَّالِبَانِ مُتَفَوِّقَيْنِ» (كلمة: الطالبان)" },
-                    { id: "a3", text: "«لَيْسَ المَاجِدُونَ غَائِبِينَ» (كلمة: غائبين)" },
-                    { id: "a4", text: "«صَارَ أَخُوكَ ذَا عِلْمٍ» (كلمة: ذا)" }
-                ],
-                colB: [
-                    { id: "b1", text: "خبر كان منصوب وعلامة نصبه الفتحة بتنوين النصب" },
-                    { id: "b2", text: "اسم أصبح مرفوع وعلامة رفعه الألف لأنه مثنى" },
-                    { id: "b3", text: "خبر ليس منصوب وعلامة نصبه الياء لأنه جمع مذكر سالم" },
-                    { id: "b4", text: "خبر صار منصوب وعلامة نصبه الألف لأنه من الأسماء الخمسة" },
-                    { id: "b5", text: "خبر ليس منصوب وعلامة نصبه الفتحة المقدرة" }
-                ],
-                correctPairs: { "a1": "b1", "a2": "b2", "a3": "b3", "a4": "b4" }
-            },
-            {
-                title: "المجموعة 3: أحكام عمل إن وأخواتها",
-                colA: [
-                    { id: "a1", text: "«إِنَّ العِلْمَ نُورٌ» (كلمة: العلمَ)" },
-                    { id: "a2", text: "«إِنَّ المُهَنْدِسِينَ بَارِعُونَ» (كلمة: بارعون)" },
-                    { id: "a3", text: "«لَعَلَّ الأَخَوَيْنِ حَاضِرَانِ» (كلمة: الأخوين)" },
-                    { id: "a4", text: "«إِنَّ أَبَاكَ ذُو فَضْلٍ» (كلمة: أباك)" }
-                ],
-                colB: [
-                    { id: "b1", text: "اسم إنَّ منصوب وعلامة نصبه الفتحة الظاهرة" },
-                    { id: "b2", text: "خبر إنَّ مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم" },
-                    { id: "b3", text: "اسم لعلَّ منصوب وعلامة نصبه الياء لأنه مثنى" },
-                    { id: "b4", text: "اسم إنَّ منصوب وعلامة نصبه الألف لأنه من الأسماء الخمسة" },
-                    { id: "b5", text: "خبر إنَّ مرفوع وعلامة رفعه الضمة المقدرة" }
-                ],
-                correctPairs: { "a1": "b1", "a2": "b2", "a3": "b3", "a4": "b4" }
-            },
-            {
-                title: "المجموعة 4: معاني ودلالات النواسخ",
-                colA: [
-                    { id: "a1", text: "الحرف الناسخ «لَيْتَ»" },
-                    { id: "a2", text: "الفعل الناقص «صَارَ»" },
-                    { id: "a3", text: "الحرف الناسخ «كَأَنَّ»" },
-                    { id: "a4", text: "الحرف الناسخ «لَعَلَّ»" }
-                ],
-                colB: [
-                    { id: "b1", text: "يفيد التمني لأمر قد يكون مستحيلاً" },
-                    { id: "b2", text: "يفيد التحوّل والصيرورة من حال إلى حال" },
-                    { id: "b3", text: "يفيد التشبيه بين المبتدأ والخبر" },
-                    { id: "b4", text: "يفيد الترجي والترقب لأمر مرجّح الحدوث" },
-                    { id: "b5", text: "يفيد نفي اتصاف المبتدأ بالخبر في الحال" }
-                ],
-                correctPairs: { "a1": "b1", "a2": "b2", "a3": "b3", "a4": "b4" }
-            },
-
-            // --- الموضوع الثاني: الفعل المضارع وإعرابه (4 مجموعات) ---
-            {
-                title: "المجموعة 5: حالات جزم الفعل المضارع بـ (لَمْ)",
-                colA: [
-                    { id: "a1", text: "«لَمْ يَحْضُرْ المَعَلِّمُ» (الفعل: يحضر)" },
-                    { id: "a2", text: "«المُسْلِمُ لَمْ يَسْعَ فِي الشَّرِّ» (الفعل: يسعَ)" },
-                    { id: "a3", text: "«لَمْ يَدْعُ العَاقِلُ لِلبَاطِلِ» (الفعل: يدعُ)" },
-                    { id: "a4", text: "«الطُّلَّابُ لَمْ يُهْمِلُوا» (الفعل: يهملوا)" }
-                ],
-                colB: [
-                    { id: "b1", text: "مضارع مجزوم بـ (لم) وعلامة جزمه السكون الظاهر" },
-                    { id: "b2", text: "مضارع مجزوم بـ (لم) وعلامة جزمه حذف حرف العلة (الألف)" },
-                    { id: "b3", text: "مضارع مجزوم بـ (لم) وعلامة جزمه حذف حرف العلة (الواو)" },
-                    { id: "b4", text: "مضارع مجزوم بـ (لم) وعلامة جزمه حذف النون لأنه من الأفعال الخمسة" },
-                    { id: "b5", text: "مضارع مجزوم بـ (لم) وعلامة جزمه حذف حرف العلة (الياء)" }
-                ],
-                correctPairs: { "a1": "b1", "a2": "b2", "a3": "b3", "a4": "b4" }
-            },
-            {
-                title: "المجموعة 6: حالات نصب الفعل المضارع بـ (لَنْ / كَيْ)",
-                colA: [
-                    { id: "a1", text: "«لَنْ يُهْمِلَ المُجْتَهِدُ» (الفعل: يهمل)" },
-                    { id: "a2", text: "«اجْتَهِدْ كَيْ تَنْجَحَ» (الفعل: تنجح)" },
-                    { id: "a3", text: "«لَنْ يَسْعَى لِلشَّرِّ» (الفعل: يسعى)" },
-                    { id: "a4", text: "«اجْتَهِدُوا كَيْ تَفُوزُوا» (الفعل: تفوزوا)" }
-                ],
-                colB: [
-                    { id: "b1", text: "مضارع منصوب بـ (لن) وعلامة نصبه الفتحة الظاهرة" },
-                    { id: "b2", text: "مضارع منصوب بـ (كي) وعلامة نصبه الفتحة الظاهرة" },
-                    { id: "b3", text: "مضارع منصوب بـ (لن) وعلامة نصبه الفتحة المقدرة للتعذر" },
-                    { id: "b4", text: "مضارع منصوب بـ (كي) وعلامة نصبه حذف النون لأنه من الأفعال الخمسة" },
-                    { id: "b5", text: "مضارع منصوب بـ (كي) وعلامة نصبه ثبوت النون" }
-                ],
-                correctPairs: { "a1": "b1", "a2": "b2", "a3": "b3", "a4": "b4" }
-            },
-            {
-                title: "المجموعة 7: علامات رفع الفعل المضارع المجرد",
-                colA: [
-                    { id: "a1", text: "«يَكْتُبُ الطَّالِبُ الدَّرْسَ» (الفعل: يكتب)" },
-                    { id: "a2", text: "«المُؤْمِنُ يَسْعَى فِي الخَيْرِ» (الفعل: يسعى)" },
-                    { id: "a3", text: "«المُسْلِمُ يَدْعُو لِلحَقِّ» (الفعل: يدعو)" },
-                    { id: "a4", text: "«المُعَلِّمُونَ يُخْلِصُونَ» (الفعل: يخلصون)" }
-                ],
-                colB: [
-                    { id: "b1", text: "مضارع مرفوع وعلامة رفعه الضمة الظاهرة" },
-                    { id: "b2", text: "مضارع مرفوع وعلامة رفعه الضمة المقدرة للتعذر" },
-                    { id: "b3", text: "مضارع مرفوع وعلامة رفعه الضمة المقدرة للثقل" },
-                    { id: "b4", text: "مضارع مرفوع وعلامة رفعه ثبوت النون لأنه من الأفعال الخمسة" },
-                    { id: "b5", text: "مضارع مرفوع وعلامة رفعه ثبوت الياء" }
-                ],
-                correctPairs: { "a1": "b1", "a2": "b2", "a3": "b3", "a4": "b4" }
-            },
-            {
-                title: "المجموعة 8: تصنيف وظائف أدوات المضارع",
-                colA: [
-                    { id: "a1", text: "الأداة «لَمْ»" },
-                    { id: "a2", text: "الأداة «لَنْ»" },
-                    { id: "a3", text: "الأداة «كَيْ»" },
-                    { id: "a4", text: "التجرد من الناصب والجازم" }
-                ],
-                colB: [
-                    { id: "b1", text: "حرف نفي وجزم وقلب يجزم المضارع" },
-                    { id: "b2", text: "حرف نفي واستقبال ينصب المضارع" },
-                    { id: "b3", text: "حرف مصدري ونصب يفيد التعليل" },
-                    { id: "b4", text: "شرط موجب لرفع الفعل المضارع" },
-                    { id: "b5", text: "حرف ناسخ ينصب المبتدأ ويرفع الخبر" }
-                ],
-                correctPairs: { "a1": "b1", "a2": "b2", "a3": "b3", "a4": "b4" }
-            },
-
-            // --- الموضوع الثالث: الفاعل ونائب الفاعل والبناء للمجهول (4 مجموعات) ---
-            {
-                title: "المجموعة 9: علامات رفع الفاعل المبني للمعلوم",
-                colA: [
-                    { id: "a1", text: "«حَضَرَ المَعَلِّمُ» (كلمة: المعلم)" },
-                    { id: "a2", text: "«تَنَافَسَ الفَرِيقَانِ» (كلمة: الفريقان)" },
-                    { id: "a3", text: "«صَلَّى المُسْلِمُونَ» (كلمة: المسلمون)" },
-                    { id: "a4", text: "«حَضَرَ أَبُوكَ» (كلمة: أبوك)" }
-                ],
-                colB: [
-                    { id: "b1", text: "فاعل مرفوع وعلامة رفعه الضمة الظاهرة" },
-                    { id: "b2", text: "فاعل مرفوع وعلامة رفعه الألف لأنه مثنى" },
-                    { id: "b3", text: "فاعل مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم" },
-                    { id: "b4", text: "فاعل مرفوع وعلامة رفعه الواو لأنه من الأسماء الخمسة" },
-                    { id: "b5", text: "فاعل مرفوع وعلامة رفعه الضمة المقدرة للثقل" }
-                ],
-                correctPairs: { "a1": "b1", "a2": "b2", "a3": "b3", "a4": "b4" }
-            },
-            {
-                title: "المجموعة 10: نائب الفاعل وحالات رفعه",
-                colA: [
-                    { id: "a1", text: "«شُرِبَ الحَلِيبُ» (كلمة: الحليب)" },
-                    { id: "a2", text: "«سُتْلِمَ التَّقْرِيرَانِ» (كلمة: التقريران)" },
-                    { id: "a3", text: "«كُرِّمَ الفَائِزُونَ» (كلمة: الفائزون)" },
-                    { id: "a4", text: "«تُكَرَّمُ الأُمَّهَاتُ» (كلمة: الأمهات)" }
-                ],
-                colB: [
-                    { id: "b1", text: "نائب فاعل مرفوع وعلامة رفعه الضمة الظاهرة" },
-                    { id: "b2", text: "نائب فاعل مرفوع وعلامة رفعه الألف لأنه مثنى" },
-                    { id: "b3", text: "نائب فاعل مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم" },
-                    { id: "b4", text: "نائب فاعل مرفوع وعلامة رفعه الضمة الظاهرة (جمع مؤنث سالم)" },
-                    { id: "b5", text: "نائب فاعل مرفوع وعلامة رفعه الكسرة نيابة عن الضمة" }
-                ],
-                correctPairs: { "a1": "b1", "a2": "b2", "a3": "b3", "a4": "b4" }
-            },
-            {
-                title: "المجموعة 11: التحويل بين البناء للمعلوم والبناء للمجهول",
-                colA: [
-                    { id: "a1", text: "«كَتَبَ الطَالِبُ الدَّرْسَ» ⬅️ «كُتِبَ الدَّرْسُ»" },
-                    { id: "a2", text: "«يَشْرَحُ المعلمُ الدرسَ» ⬅️ «يُشْرَحُ الدرسُ»" },
-                    { id: "a3", text: "«سَلَّمَ المَدِيرُ الجَائِزَةَ» ⬅️ «سُلِّمَتِ الجَائِزَةُ»" },
-                    { id: "a4", text: "«كَافَأَ المَدِيرُ الفَائِزِينَ» ⬅️ «كُوفِئَ الفَائِزُونَ»" }
-                ],
-                colB: [
-                    { id: "b1", text: "ضم الأول وكسر ما قبل الآخر في الفعل الماضي" },
-                    { id: "b2", text: "ضم الأول وفتح ما قبل الآخر في الفعل المضارع" },
-                    { id: "b3", text: "ضم أول الماضي وكسر ما قبله وتأنيث الفعل لكون نائب الفاعل مؤنثاً" },
-                    { id: "b4", text: "تحويل الهمزة على ياء لكسر ما قبلها ورفع نائب الفاعل بالواو" },
-                    { id: "b5", text: "فتح الأول وكسر الآخر في الفعل المضارع" }
-                ],
-                correctPairs: { "a1": "b1", "a2": "b2", "a3": "b3", "a4": "b4" }
-            },
-            {
-                title: "المجموعة 12: تمييز الجمل المعلومة والمجهولة",
-                colA: [
-                    { id: "a1", text: "«شَرِبَ مُحَمَّدٌ العَصِيرَ»" },
-                    { id: "a2", text: "«يُقَدَّرُ المُجْتَهِدُونَ»" },
-                    { id: "a3", text: "«صَمَّمَ المهندسُ المَشْرُوعَ»" },
-                    { id: "a4", text: "«صُمِّمَ المَشْرُوعُ»" }
-                ],
-                colB: [
-                    { id: "b1", text: "جملة فعلية مبنية للمعلوم (الفاعل مذكور: محمدٌ)" },
-                    { id: "b2", text: "جملة فعلية مبنية للمجهول (نائب الفاعل مرفوع بالواو: المجتهدون)" },
-                    { id: "b3", text: "جملة فعلية مبنية للمعلوم (الفاعل مذكور: المهندسُ)" },
-                    { id: "b4", text: "جملة فعلية مبنية للمجهول (نائب الفاعل مرفوع بالضمة: المشروعُ)" },
-                    { id: "b5", text: "جملة اسمية مجردة من النواسخ والفاعل" }
-                ],
-                correctPairs: { "a1": "b1", "a2": "b2", "a3": "b3", "a4": "b4" }
-            }
-        ];
-
-        let currentMatchGroup = 0;
-        let matchScore = 0;
-        let selectedA = null;
-        let userMatchState = {}; // { a1: b2, a2: b1, ... }
-
-        function initMatchingSection() {
-            currentMatchGroup = 0;
-            matchScore = 0;
-            document.getElementById('match-score').innerText = matchScore;
-            document.getElementById('matching-box').classList.remove('hidden');
-            document.getElementById('matching-results').classList.add('hidden');
-            showMatchingGroup();
-        }
-
-        function showMatchingGroup() {
-            if (currentMatchGroup >= matchingGroups.length) {
-                showMatchingResults();
-                return;
-            }
-
-            const grp = matchingGroups[currentMatchGroup];
-            document.getElementById('match-group-progress').innerText = `${currentMatchGroup + 1} / ${matchingGroups.length}`;
-            document.getElementById('match-group-title').innerHTML = `<i class="fa-solid fa-layer-group text-amberGold-500"></i> ${grp.title}`;
-
-            selectedA = null;
-            userMatchState = {};
-
-            const colAContainer = document.getElementById('col-a-container');
-            const colBContainer = document.getElementById('col-b-container');
-
-            colAContainer.innerHTML = '';
-            colBContainer.innerHTML = '';
-
-            // Render Col A
-            grp.colA.forEach(item => {
-                const el = document.createElement('div');
-                el.className = "match-item p-3.5 rounded-2xl bg-white border border-royalMaroon-700/20 text-xs md:text-sm font-bold text-slateNavy-800 flex items-center justify-between shadow-sm";
-                el.id = `match-a-${item.id}`;
-                el.setAttribute('data-id', item.id);
-                el.onclick = () => selectMatchA(item.id);
-                el.innerHTML = `<span>${item.text}</span> <span id="badge-a-${item.id}" class="text-[10px] font-black px-2 py-0.5 rounded-full bg-creamDark text-slateNavy-700 hidden"></span>`;
-                colAContainer.appendChild(el);
-            });
-
-            // Shuffle Col B display to prevent positional hints
-            const shuffledB = [...grp.colB].sort(() => Math.random() - 0.5);
-
-            shuffledB.forEach(item => {
-                const el = document.createElement('div');
-                el.className = "match-item p-3.5 rounded-2xl bg-white border border-amberGold-500/30 text-xs md:text-sm font-bold text-slateNavy-800 flex items-center justify-between shadow-sm";
-                el.id = `match-b-${item.id}`;
-                el.setAttribute('data-id', item.id);
-                el.onclick = () => selectMatchB(item.id);
-                el.innerHTML = `<span>${item.text}</span> <span id="badge-b-${item.id}" class="text-[10px] font-black px-2 py-0.5 rounded-full bg-amberGold-100 text-amberGold-700 hidden"></span>`;
-                colBContainer.appendChild(el);
-            });
-
-            document.getElementById('match-feedback').classList.add('hidden');
-            document.getElementById('match-check-btn').classList.remove('hidden');
-            document.getElementById('match-check-btn').disabled = false;
-            document.getElementById('match-next-btn').classList.add('hidden');
-        }
-
-        function selectMatchA(idA) {
-            if (document.getElementById('match-check-btn').disabled) return;
-
-            // Deselect previous
-            if (selectedA) {
-                const prevEl = document.getElementById(`match-a-${selectedA}`);
-                if (prevEl && !userMatchState[selectedA]) {
-                    prevEl.classList.remove('selected-a');
-                }
-            }
-
-            selectedA = idA;
-            const currentEl = document.getElementById(`match-a-${idA}`);
-            currentEl.classList.add('selected-a');
-        }
-
-        function selectMatchB(idB) {
-            if (document.getElementById('match-check-btn').disabled) return;
-            if (!selectedA) {
-                alert('فضلًا اختر فقرة من العمود (أ) أولاً قبل اختيار الوصف من العمود (ب)!');
-                return;
-            }
-
-            // Remove any existing pair pointing to this B
-            for (let key in userMatchState) {
-                if (userMatchState[key] === idB) {
-                    delete userMatchState[key];
-                    resetItemStyle('a', key);
-                }
-            }
-
-            // Record pair
-            userMatchState[selectedA] = idB;
-
-            // Update Badges
-            updateMatchUI();
-
-            // Clear selected highlight
-            const elA = document.getElementById(`match-a-${selectedA}`);
-            if (elA) elA.classList.remove('selected-a');
-            selectedA = null;
-        }
-
-        function updateMatchUI() {
-            const grp = matchingGroups[currentMatchGroup];
-
-            grp.colA.forEach(item => {
-                const badgeA = document.getElementById(`badge-a-${item.id}`);
-                const elA = document.getElementById(`match-a-${item.id}`);
-                if (userMatchState[item.id]) {
-                    badgeA.classList.remove('hidden');
-                    badgeA.innerText = "تم الربط";
-                    elA.classList.add('bg-amberGold-100/50', 'border-amberGold-500');
-                } else {
-                    badgeA.classList.add('hidden');
-                    elA.classList.remove('bg-amberGold-100/50', 'border-amberGold-500');
-                }
-            });
-
-            grp.colB.forEach(item => {
-                const badgeB = document.getElementById(`badge-b-${item.id}`);
-                const elB = document.getElementById(`match-b-${item.id}`);
-
-                // Check if any A is connected to this B
-                const matchedA = Object.keys(userMatchState).find(key => userMatchState[key] === item.id);
-                if (matchedA) {
-                    badgeB.classList.remove('hidden');
-                    badgeB.innerText = "مرتبط";
-                    elB.classList.add('bg-amberGold-100/50', 'border-amberGold-500');
-                } else {
-                    badgeB.classList.add('hidden');
-                    elB.classList.remove('bg-amberGold-100/50', 'border-amberGold-500');
-                }
-            });
-        }
-
-        function resetItemStyle(col, id) {
-            const badge = document.getElementById(`badge-${col}-${id}`);
-            const el = document.getElementById(`match-${col}-${id}`);
-            if (badge) badge.classList.add('hidden');
-            if (el) el.classList.remove('bg-amberGold-100/50', 'border-amberGold-500', 'selected-a');
-        }
-
-        function checkMatchingAnswers() {
-            const grp = matchingGroups[currentMatchGroup];
-            const connectedCount = Object.keys(userMatchState).length;
-
-            if (connectedCount < 4) {
-                alert('فضلًا قم بربط جميع الفقرات الأربع في العمود (أ) بالخيارات المناسبة أولاً!');
-                return;
-            }
-
-            document.getElementById('match-check-btn').disabled = true;
-
-            let correctInGroup = 0;
-
-            grp.colA.forEach(itemA => {
-                const userB = userMatchState[itemA.id];
-                const correctB = grp.correctPairs[itemA.id];
-                const elA = document.getElementById(`match-a-${itemA.id}`);
-                const elB = document.getElementById(`match-b-${userB}`);
-
-                if (userB === correctB) {
-                    correctInGroup++;
-                    if (elA) elA.className = "p-3.5 rounded-2xl bg-amberGold-100 border-2 border-amberGold-500 text-amberGold-700 text-xs md:text-sm font-bold flex items-center justify-between";
-                    if (elB) elB.className = "p-3.5 rounded-2xl bg-amberGold-100 border-2 border-amberGold-500 text-amberGold-700 text-xs md:text-sm font-bold flex items-center justify-between";
-                } else {
-                    if (elA) elA.className = "p-3.5 rounded-2xl bg-royalMaroon-50 border-2 border-royalMaroon-600 text-royalMaroon-700 text-xs md:text-sm font-bold flex items-center justify-between";
-                }
-            });
-
-            matchScore += correctInGroup;
-            document.getElementById('match-score').innerText = matchScore;
-
-            const feedbackEl = document.getElementById('match-feedback');
-            if (correctInGroup === 4) {
-                playCorrectSound();
-                feedbackEl.className = "mb-6 p-4 rounded-2xl bg-amberGold-100 border border-amberGold-500 text-amberGold-700 text-sm font-bold shadow-sm";
-                feedbackEl.innerHTML = `<i class="fa-solid fa-circle-check text-amberGold-600 text-lg"></i> إجابة كاملة ممتازة! ربطت جميع الفقرات بشكل إعرابي وتوصيفي دقيق (4 / 4).`;
-            } else {
-                playWrongSound();
-                feedbackEl.className = "mb-6 p-4 rounded-2xl bg-royalMaroon-50 border border-royalMaroon-600 text-royalMaroon-700 text-sm font-bold shadow-sm";
-                feedbackEl.innerHTML = `<i class="fa-solid fa-circle-xmark text-royalMaroon-600 text-lg"></i> حصلت على ${correctInGroup} من 4 صلة صحيحة. راجع التوصيفات الإعرابية النموذجية للفقرات.`;
-            }
-
-            feedbackEl.classList.remove('hidden');
-            document.getElementById('match-check-btn').classList.add('hidden');
-            document.getElementById('match-next-btn').classList.remove('hidden');
-        }
-
-        function nextMatchingGroup() {
-            currentMatchGroup++;
-            showMatchingGroup();
-        }
-
-        function showMatchingResults() {
-            document.getElementById('matching-box').classList.add('hidden');
-            document.getElementById('matching-results').classList.remove('hidden');
-            document.getElementById('match-final-score').innerText = `${matchScore} / 48`;
-            confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+            try {
+                initAudio();
+                const now = Tone.now();
+                synth.triggerAttackRelease("C3", "8n", now);
+            } catch(e){}
         }
 
         // Master Game Items (70)
@@ -1058,14 +729,16 @@
             { category: "الفاعل ونائب الفاعل", question: "40. ما هو الفعل المبني للمعلوم في الجمل الآتية؟", sentence: null, options: ["شَرِبَ محمدُ العصيرَ", "كُرِّمَ الطالبُ", "يُحْتَرَمُ المخلصُ", "سُتْلِمَ الخطابُ"], explanation: "(شرب محمد العصير) فعل مبني للمعلوم لأن فاعله (محمد) مذكور." }
         ];
 
-        // 40 FULL SENTENCE REWRITE & STRICT GRAMMAR TRANSFORM QUESTIONS (Section 5)
+        // 40 FULL SENTENCE REWRITE & STRICT GRAMMAR TRANSFORM QUESTIONS (Section 4)
         const fillInQuestions = [
-            // --- كان وأخواتها وإن وأخواتها ---
+            // --- كان وأخواتها وإن وأخواتها (12 سؤال جملة كاملة) ---
             {
                 target: "أدخل الفعل الناسخ (صَارَ) واعد كتابة الجملة",
                 prompt: "أدخل الفعل الناقص (صَارَ) على الجملة التالية وأعد كتابتها كاملة مع تنوين الخبر المنصوب بالألف:",
                 sentence: "الْجَوُّ مُمْطِرٌ",
-                validAnswers: ["صار الجو ممطرا", "صار الجو ممطراً", "أصبح الجو ممطرا"],
+                validAnswers: [
+                    "صار الجو ممطرا", "صار الجو ممطراً", "أصبح الجو ممطرا"
+                ],
                 sampleCorrect: "صَارَ الجَوُّ مُمْطِراً.",
                 ruleExp: "عند دخول (صار) على الجملة الاسمية ترفع المبتدأ اسماً لها وتنصب الخبر خبراً لها (مُمْطِراً)."
             },
@@ -1073,7 +746,9 @@
                 target: "أدخل الحرف الناسخ (إِنَّ) واعد كتابة الجملة",
                 prompt: "أدخل الحرف الناسخ (إِنَّ) على الجملة وأعد كتابتها كاملة واضبط اسمها بالمنصوب بالياء لجمع المذكر:",
                 sentence: "الْمُهَنْدِسُونَ بَارِعُونَ",
-                validAnswers: ["إن المهندسين بارعون", "ان المهندسين بارعون"],
+                validAnswers: [
+                    "إن المهندسين بارعون", "ان المهندسين بارعون"
+                ],
                 sampleCorrect: "إِنَّ المُمَهَنْدِسِينَ بَارِعُونَ.",
                 ruleExp: "ينصب اسم (إنّ) بالياء إذا كان جمع مذكر سالماً ويبقى الخبر مرفوعاً بالواو."
             },
@@ -1081,7 +756,9 @@
                 target: "أدخل الفعل الناسخ (كَانَ) واعد كتابة الجملة",
                 prompt: "أدخل الفعل الناسخ (كَانَ) واعد كتابة الجملة واضبط الخبر بتنوين النصب بالألف (غزيراً):",
                 sentence: "الْمَطَرُ غَزِيرٌ",
-                validAnswers: ["كان المطر غزيرا", "كان المطر غزيراً"],
+                validAnswers: [
+                    "كان المطر غزيرا", "كان المطر غزيراً"
+                ],
                 sampleCorrect: "كَانَ المَطَرُ غَزِيراً.",
                 ruleExp: "ترفع (كان) المبتدأ اسم كان وتنصب الخبر مع تنوين النصب بالألف (غزيراً)."
             },
@@ -1089,7 +766,9 @@
                 target: "أدخل الحرف الناسخ (إِنَّ) واعد كتابة الجملة",
                 prompt: "أدخل (إِنَّ) على الجملة واعد كتابتها كاملة واضبط اسم إنَّ بالحركة والضبط الصحيح:",
                 sentence: "الْعِلْمُ نُورٌ",
-                validAnswers: ["إن العلم نور", "ان العلم نور"],
+                validAnswers: [
+                    "إن العلم نور", "ان العلم نور"
+                ],
                 sampleCorrect: "إِنَّ العِلْمَ نُورٌ.",
                 ruleExp: "تنصب (إن) المبتدأ ليصبح اسمها (العِلْمَ) وترفع الخبر."
             },
@@ -1097,7 +776,9 @@
                 target: "أدخل الفعل الناسخ (أَصْبَحَ) واعد كتابة الجملة",
                 prompt: "أدخل (أَصْبَحَ) على الجملة واعد كتابتها مع تنوين النصب بالألف للخبر (متفوقاً):",
                 sentence: "الطَالِبُ مُتَفَوِّقٌ",
-                validAnswers: ["أصبح الطالب متفوقا", "اصبح الطالب متفوقا", "أصبح الطالب متفوقاً"],
+                validAnswers: [
+                    "أصبح الطالب متفوقا", "اصبح الطالب متفوقا", "أصبح الطالب متفوقاً"
+                ],
                 sampleCorrect: "أَصْبَحَ الطَّالِبُ مُتَفَوِّقاً.",
                 ruleExp: "أصبح تنصب الخبر بتنوين النصب بالألف فيصير (متفوقاً)."
             },
@@ -1105,15 +786,19 @@
                 target: "أدخل (لَيْتَ) واعد كتابة الجملة",
                 prompt: "أدخل حرف التمني (لَيْتَ) واعد كتابة الجملة كاملة مع ضبط اسمها بالفتح:",
                 sentence: "الشَّبَابُ عَائِدٌ",
-                validAnswers: ["ليت الشباب عائد"],
-                sampleCorrect: "لَيْتَ الشَّبَابَ عَائِدٌ.",
+                validAnswers: [
+                    "ليت الشباب عائد"
+                ],
+                sampleCorrect: "لَيْسَ الشَّبَابُ عَائِدٌ.",
                 ruleExp: "(ليت) تنصب المبتدأ اسم ليت وتُبقي الخبر مرفوعاً."
             },
             {
                 target: "أدخل (لَعَلَّ) واعد كتابة الجملة",
                 prompt: "أدخل حرف الترجي (لَعَلَّ) واعد كتابة الجملة كاملة واضبط اسمها بفتح الاسم:",
                 sentence: "النَّصْرُ قَرِيبٌ",
-                validAnswers: ["لعل النصر قريب"],
+                validAnswers: [
+                    "لعل النصر قريب"
+                ],
                 sampleCorrect: "لَعَلَّ النَّصْرَ قَرِيبٌ.",
                 ruleExp: "(لعل) حرف ناسخ ينصب الاسم المبتدأ بالفتحة (النَّصْرَ)."
             },
@@ -1121,7 +806,9 @@
                 target: "أدخل الفعل الناسخ (لَيْسَ) واعد كتابة الجملة",
                 prompt: "أدخل الفعل الناسخ (لَيْسَ) واعد كتابة الجملة كاملة واضبط خبره بتنوين النصب بالألف:",
                 sentence: "الْبَاطِلُ مُسْتَمِرٌّ",
-                validAnswers: ["ليس الباطل مستمرا", "ليس الباطل مستمراً"],
+                validAnswers: [
+                    "ليس الباطل مستمرا", "ليس الباطل مستمراً"
+                ],
                 sampleCorrect: "لَيْسَ البَاطِلُ مُسْتَمِرّاً.",
                 ruleExp: "(ليس) تنصب خبرها بالتنوين فيصبح (مستمرّاً)."
             },
@@ -1129,7 +816,9 @@
                 target: "أدخل (كَأَنَّ) واعد كتابة الجملة",
                 prompt: "أدخل الحرف الناسخ (كَأَنَّ) واعد كتابة الجملة مع ضبط الاسم المنصوب بالفتح:",
                 sentence: "الْمُعَلِّمُ أَبٌ",
-                validAnswers: ["كأن المعلم أب", "كان المعلم أب", "كأن المعلم اب"],
+                validAnswers: [
+                    "كأن المعلم أب", "كان المعلم أب", "كأن المعلم اب"
+                ],
                 sampleCorrect: "كَأَنَّ المَعَلِّمَ أَبٌ.",
                 ruleExp: "(كأن) تشبه المبتدأ بالخبر وتنصب اسمها (المعلمَ)."
             },
@@ -1137,7 +826,9 @@
                 target: "أدخل (إِنَّ) على أسماء خمسة واعد كتابة الجملة",
                 prompt: "أدخل (إِنَّ) وحوّل المبتدأ للأسماء الخمسة المنصوبة بالألف (أباك) واعد كتابة الجملة:",
                 sentence: "أَبُوكَ ذُو فَضْلٍ",
-                validAnswers: ["إن أباك ذو فضل", "ان أباك ذو فضل", "إن اباك ذو فضل"],
+                validAnswers: [
+                    "إن أباك ذو فضل", "ان أباك ذو فضل", "إن اباك ذو فضل"
+                ],
                 sampleCorrect: "إِنَّ أَبَاكَ ذُو فَضْلٍ.",
                 ruleExp: "تنصب الأسماء الخمسة بالألف عند دخول إنّ عليها فتصبح (أباك)."
             },
@@ -1145,7 +836,9 @@
                 target: "أدخل (كَانَ) على أسماء خمسة واعد كتابة الجملة",
                 prompt: "أدخل (كَانَ) واضبط الخبر المنصوب بالألف للأسماء الخمسة (ذا) واعد كتابة الجملة:",
                 sentence: "أَخُوكَ ذُو عِلْمٍ",
-                validAnswers: ["كان أخوك ذا علم", "كان اخوك ذا علم"],
+                validAnswers: [
+                    "كان أخوك ذا علم", "كان اخوك ذا علم"
+                ],
                 sampleCorrect: "كَانَ أَخُوكَ ذَا عِلْمٍ.",
                 ruleExp: "تنصب كان خبرها إذا كان من الأسماء الخمسة بالألف فيصير (ذا علمٍ)."
             },
@@ -1153,17 +846,21 @@
                 target: "أدخل (إِنَّ) على مثنى واعد كتابة الجملة",
                 prompt: "أدخل (إِنَّ) وحوّل المثنى المرفوع إلى مثنى منصوب بالياء واعد كتابة الجملة:",
                 sentence: "الطَّالِبَانِ مُتَفَوِّقَانِ",
-                validAnswers: ["إن الطالبين متفوقان", "ان الطالبين متفوقان"],
+                validAnswers: [
+                    "إن الطالبين متفوقان", "ان الطالبين متفوقان"
+                ],
                 sampleCorrect: "إِنَّ الطَّالِبَيْنِ مُتَفَوِّقَانِ.",
                 ruleExp: "اسم إن المثنى ينصب بالياء (الطالبَيْنِ) ويبقي الخبر مرفوعاً بالألف."
             },
 
-            // --- أداة الجزم والنصب وإعادة كتابة الفعل المضارع ---
+            // --- أداة الجزم والنصب وإعادة كتابة الفعل المضارع (14 سؤال جملة كاملة) ---
             {
                 target: "أدخل أداة الجزم (لَمْ) واعد كتابة الجملة",
                 prompt: "أدخل أداة الجزم (لَمْ) على الفعل المضارع واعد كتابة الجملة كاملة:",
                 sentence: "يَكْتُبُ الطَّالِبُ الدَّرْسَ",
-                validAnswers: ["لم يكتب الطالب الدرس"],
+                validAnswers: [
+                    "لم يكتب الطالب الدرس"
+                ],
                 sampleCorrect: "لَمْ يَكْتُبْ الطَّالِبُ الدَّرْسَ.",
                 ruleExp: "تنزع (لَمْ) الضمة وتجزم المضارع صحيح الآخر بالسكون (يَكْتُبْ)."
             },
@@ -1171,7 +868,9 @@
                 target: "أدخل أداة النصب (لَنْ) واعد كتابة الجملة",
                 prompt: "أدخل أداة النصب (لَنْ) على الجملة واعد كتابتها كاملة مع فتح آخر الفعل:",
                 sentence: "يُهْمِلُ الْمُسْلِمُ وَاجِبَهُ",
-                validAnswers: ["لن يهمل المسلم واجبه"],
+                validAnswers: [
+                    "لن يهمل المسلم واجبه"
+                ],
                 sampleCorrect: "لَنْ يُهْمِلَ المُسْلِمُ وَاجِبَهُ.",
                 ruleExp: "تنصب (لَنْ) الفعل المضارع بالفتحة الظاهرة (يُهْمِلَ)."
             },
@@ -1179,7 +878,9 @@
                 target: "أدخل (لَمْ) على فعل معتل الآخر واعد كتابة الجملة",
                 prompt: "أدخل أداة الجزم (لَمْ) واحذف حرف العلة (الألف) واعد كتابة الجملة كاملة (يسع):",
                 sentence: "يَسْعَى الْمُؤْمِنُ فِي الشَّرِّ",
-                validAnswers: ["لم يسع المؤمن في الشر"],
+                validAnswers: [
+                    "لم يسع المؤمن في الشر"
+                ],
                 sampleCorrect: "لَمْ يَسْعَ المُؤْمِنُ فِي الشَّرِّ.",
                 ruleExp: "تُجزم الأفعال معتلة الآخر بحذف حرف العلة فيصير (يسعَ)."
             },
@@ -1187,7 +888,9 @@
                 target: "أدخل (لَمْ) على الأفعال الخمسة واعد كتابة الجملة",
                 prompt: "أدخل (لَمْ) واحذف النون من الأفعال الخمسة واعد كتابة الجملة كاملة (يهملوا):",
                 sentence: "الطُّلَّابُ يُهْمِلُونَ الدَّرْسَ",
-                validAnswers: ["الطلاب لم يهملوا الدرس", "لم يهمل الطلاب الدرس"],
+                validAnswers: [
+                    "الطلاب لم يهملوا الدرس", "لم يهمل الطلاب الدرس"
+                ],
                 sampleCorrect: "الطُّلَّابُ لَمْ يُهْمِلُوا الدَّرْسَ.",
                 ruleExp: "تُجزم الأفعال الخمسة بحذف النون وتُعوض بألف الجماعة (يُهْمِلُوا)."
             },
@@ -1195,7 +898,9 @@
                 target: "أدخل (لَنْ) على الأفعال الخمسة واعد كتابة الجملة",
                 prompt: "أدخل (لَنْ) واحذف النون واعد كتابة الجملة كاملة (تتأخروا):",
                 sentence: "أَنْتُمْ تَتَأَخَّرُونَ عَنِ الْمَوْعِدِ",
-                validAnswers: ["أنتم لن تتأخروا عن الموعد", "انتم لن تتأخروا عن الموعد", "لن تتأخروا عن الموعد"],
+                validAnswers: [
+                    "أنتم لن تتأخروا عن الموعد", "انتم لن تتأخروا عن الموعد", "لن تتأخروا عن الموعد"
+                ],
                 sampleCorrect: "أَنْتُمْ لَنْ تَتَأَخَّرُوا عَنِ المَوْعِدِ.",
                 ruleExp: "تُنصب الأفعال الخمسة بحذف النون مع أداة النصب لن (تَتَأَخَّرُوا)."
             },
@@ -1203,7 +908,9 @@
                 target: "أدخل (كَيْ) واعد كتابة الجملة",
                 prompt: "أدخل أداة النصب (كَيْ) على الفعل المضارع الصحيح واعد كتابة الجملة واضبط الفعل بالفتح:",
                 sentence: "تَنْجَحُ فِي الْحَيَاةِ",
-                validAnswers: ["كي تنجح في الحياة", "لكي تنجح في الحياة"],
+                validAnswers: [
+                    "كي تنجح في الحياة", "لكي تنجح في الحياة"
+                ],
                 sampleCorrect: "كَيْ تَفُوزَ / كَيْ تَنْجَحَ فِي الحَيَاةِ.",
                 ruleExp: "تنصب (كي) المضارع صحيح الآخر بالفتحة الظاهرة (تَنْجَحَ)."
             },
@@ -1211,7 +918,9 @@
                 target: "أدخل (لَمْ) واعد كتابة الجملة",
                 prompt: "أدخل أداة الجزم (لَمْ) واعد كتابة الجملة الجازمة واضبط حركة الفعل بالسكون:",
                 sentence: "يَحْضُرُ الْمُعَلِّمُ الْيَوْمَ",
-                validAnswers: ["لم يحضر المعلم اليوم"],
+                validAnswers: [
+                    "لم يحضر المعلم اليوم"
+                ],
                 sampleCorrect: "لَمْ يَحْضُرْ المَعَلِّمُ اليَوْمَ.",
                 ruleExp: "يجزم المضارع صحيح الآخر بالسكون الظاهر عند دخول لم."
             },
@@ -1219,7 +928,9 @@
                 target: "أدخل (لَنْ) واعد كتابة الجملة",
                 prompt: "أدخل (لَنْ) واعد كتابة الجملة مع فتح آخر الفعل المضارع:",
                 sentence: "يَخِيبُ السَّاعِي لِلْخَيْرِ",
-                validAnswers: ["لن يخيب الساعي للخير"],
+                validAnswers: [
+                    "لن يخيب الساعي للخير"
+                ],
                 sampleCorrect: "لَنْ يَخِيبَ السَّاعِي لِلْخَيْرِ.",
                 ruleExp: "ينصب الفعل المضارع بلن بالفتحة الظاهرة (يَخِيبَ)."
             },
@@ -1227,7 +938,9 @@
                 target: "أدخل (لَمْ) على فعل معتل بالياء واعد كتابة الجملة",
                 prompt: "أدخل (لَمْ) واحذف الياء واعد كتابة الجملة كاملة (يرم):",
                 sentence: "يَرْمِي اللاَّعِبُ الْكُرَةَ",
-                validAnswers: ["لم يرم اللاعب الكرة"],
+                validAnswers: [
+                    "لم يرم اللاعب الكرة"
+                ],
                 sampleCorrect: "لَمْ يَرْمِ اللاَّعِبُ الكُرَةَ.",
                 ruleExp: "يجزم المعتل الآخر بالياء بحذف حرف العلة الياء وتوضع الكسرة دليلاً عليه (يَرْمِ)."
             },
@@ -1235,7 +948,9 @@
                 target: "أدخل (لَمْ) على فعل معتل بالواو واعد كتابة الجملة",
                 prompt: "أدخل (لَمْ) واحذف الواو واعد كتابة الجملة كاملة (يدع):",
                 sentence: "يَدْعُو الْمُسْلِمُ لِلشَّرِّ",
-                validAnswers: ["لم يدع المسلم للشر"],
+                validAnswers: [
+                    "لم يدع المسلم للشر"
+                ],
                 sampleCorrect: "لَمْ يَدْعُ المُسْلِمُ لِلشَّرِّ.",
                 ruleExp: "يجزم الفعل المعتل بالواو بحذف الواو وتوضع الضمة دليلاً عليه (يَدْعُ)."
             },
@@ -1243,15 +958,19 @@
                 target: "أدخل (كَيْ) على الأفعال الخمسة واعد كتابة الجملة",
                 prompt: "أدخل (كَيْ) واحذف النون واعد كتابة الجملة كاملة (تفوزوا):",
                 sentence: "تَفُوزُونَ فِي الْمُسَابَقَةِ",
-                validAnswers: ["كي تفوزوا في المسابقة", "لكي تفوزوا في المسابقة"],
-                sampleCorrect: "كَيْ تَفُوزُوا فِي الْمُسَابَقَةِ.",
+                validAnswers: [
+                    "كي تفوزوا في المسابقة", "لكي تفوزوا في المسابقة"
+                ],
+                sampleCorrect: "كَيْ تَفُوزُوا فِي المُسَابَقَةِ.",
                 ruleExp: "تُنصب الأفعال الخمسة بكَيْ وعلامة النصب حذف النون."
             },
             {
                 target: "أدخل (لَمْ) واعد كتابة الجملة",
                 prompt: "أدخل أداة الجزم (لَمْ) واعد كتابة الجملة كاملة واضبط الفعل:",
                 sentence: "يَفْهَمُ الطَّالِبُ السُّؤَالَ",
-                validAnswers: ["لم يفهم الطالب السؤال"],
+                validAnswers: [
+                    "لم يفهم الطالب السؤال"
+                ],
                 sampleCorrect: "لَمْ يَفْهَمْ الطَّالِبُ السُّؤَالَ.",
                 ruleExp: "يجزم المضارع صحيح الآخر بالسكون عند دخول أداة الجزم لم."
             },
@@ -1259,7 +978,9 @@
                 target: "أدخل (لَنْ) واعد كتابة الجملة",
                 prompt: "أدخل (لَنْ) على الجملة واعد كتابتها كاملة واضبط حركة الفعل المضارع بالفتحة:",
                 sentence: "يَرْسُبُ الْمُجْتَهِدُ",
-                validAnswers: ["لن يرسب المجتهد"],
+                validAnswers: [
+                    "لن يرسب المجتهد"
+                ],
                 sampleCorrect: "لَنْ يَرْسُبَ المُجْتَهِدُ.",
                 ruleExp: "ينصب الفعل المضارع بالفتحة الظاهرة إذا سبق بأداة نصب."
             },
@@ -1267,17 +988,21 @@
                 target: "أدخل (لَمْ) واعد كتابة الجملة",
                 prompt: "أدخل (لَمْ) واعد كتابة الجملة واضبط الفعل بالسكون:",
                 sentence: "تَتَأَخَّرُ الحَافِلَةُ",
-                validAnswers: ["لم تتأخر الحافلة"],
+                validAnswers: [
+                    "لم تتأخر الحافلة"
+                ],
                 sampleCorrect: "لَمْ تَتَأَخَّرْ الحَافِلَةُ.",
                 ruleExp: "يجزم الفعل بالسكون الظاهر عند دخول لم الجازمة."
             },
 
-            // --- تحويل المبني للمعلوم إلى مبني للمجهول ---
+            // --- تحويل المبني للمعلوم إلى مبني للمجهول (14 سؤال جملة كاملة) ---
             {
                 target: "حوّل الجملة للمجهول واعد كتابتها كاملة",
                 prompt: "احذف الفاعل (المدير) وابن الماضي للمجهول (كُرِّمَ) وارفع المفعول به بالواو لجمع المذكر السالم (الفائزون):",
                 sentence: "كَرَّمَ الْمُدِيرُ الْفَائِزِينَ",
-                validAnswers: ["كرم الفائزون", "كُرِّمَ الفائزون"],
+                validAnswers: [
+                    "كرم الفائزون", "كُرِّمَ الفائزون"
+                ],
                 sampleCorrect: "كُرِّمَ الفَائِزُونَ.",
                 ruleExp: "نحذف الفاعل، ونضم أول الماضي ونكسر ما قبل آخره، ونرفع المفعول به ليكون نائب فاعل بالواو (الفائزون)."
             },
@@ -1285,7 +1010,9 @@
                 target: "حوّل الجملة للمجهول واعد كتابتها كاملة",
                 prompt: "احذف الفاعل وابن الفعل للمجهول (شُرِبَ) وارفع نائب الفاعل بالضمة واعد كتابة الجملة كاملة:",
                 sentence: "شَرِبَ الطَِّفْلُ الْحَلِيبَ",
-                validAnswers: ["شرب الحليب", "شُرِبَ الحليب"],
+                validAnswers: [
+                    "شرب الحليب", "شُرِبَ الحليب"
+                ],
                 sampleCorrect: "شُرِبَ الحَلِيبُ.",
                 ruleExp: "يبنى الماضي للمجهول بضم أوله وكسر ما قبل آخره ويصير الحليب نائب فاعل مرفوعاً بالضمة."
             },
@@ -1293,7 +1020,9 @@
                 target: "حوّل الجملة للمجهول واعد كتابتها كاملة",
                 prompt: "احذف الفاعل وابن المضارع للمجهول (يُشْرَحُ) وارفع المفعول به ليكون نائب فاعل واعد كتابة الجملة:",
                 sentence: "يَشْرَحُ الْمُعَلِّمُ الدَّرْسَ",
-                validAnswers: ["يشرح الدرس", "يُشْرَحُ الدرس"],
+                validAnswers: [
+                    "يشرح الدرس", "يُشْرَحُ الدرس"
+                ],
                 sampleCorrect: "يُشْرَحُ الدَّرْسُ.",
                 ruleExp: "يبنى المضارع للمجهول بضم أوله وفتح ما قبل آخره (يُشْرَحُ) ويرفع نائب الفاعل بالضمة."
             },
@@ -1301,7 +1030,9 @@
                 target: "حوّل الجملة للمجهول واعد كتابتها كاملة",
                 prompt: "احذف الفاعل (المدير) وحوّل المثنى المنصوب ليكون نائب فاعل مرفوعاً بالألف (التقريران):",
                 sentence: "سَلَّمَ الْمُدِيرُ التَّقْرِيرَيْنِ",
-                validAnswers: ["سلم التقريران", "سُلِّمَ التقريران", "ستلم التقريران"],
+                validAnswers: [
+                    "سلم التقريران", "سُلِّمَ التقريران", "ستلم التقريران"
+                ],
                 sampleCorrect: "سُتْلِمَ / سُلِّمَ التَّقْرِيرَانِ.",
                 ruleExp: "يرفع نائب الفاعل بالألف لأنه مثنى (التقريران) بعد حذف الفاعل وبناء الفعل للمجهول."
             },
@@ -1309,7 +1040,9 @@
                 target: "حوّل الجملة للمجهول واعد كتابتها كاملة",
                 prompt: "احذف الفاعل وابن الماضي للمجهول (فُتِحَ) واضبط نائب الفاعل بالرفع بالضمة واعد كتابة الجملة:",
                 sentence: "فَتَحَ الْحَارِسُ الْبَابَ",
-                validAnswers: ["فتح الباب", "فُتِحَ الباب"],
+                validAnswers: [
+                    "فتح الباب", "فُتِحَ الباب"
+                ],
                 sampleCorrect: "فُتِحَ البَابُ.",
                 ruleExp: "يضم أول الماضي ويكسر ما قبل آخره (فُتِحَ) ويرفع نائب الفاعل بالضمة (البَابُ)."
             },
@@ -1317,7 +1050,9 @@
                 target: "حوّل الجملة للمجهول واعد كتابتها كاملة",
                 prompt: "احذف الفاعل وابن الفعل للمجهول وتأنيث الفعل للمؤنث (كُتِبَتْ) واعد كتابة الجملة كاملة:",
                 sentence: "كَتَبَ الطَّالِبُ الْقَصِيدَةَ",
-                validAnswers: ["كتبت القصيدة", "كُتِبَتِ القصيدة", "كتبت القصيده"],
+                validAnswers: [
+                    "كتبت القصيدة", "كُتِبَتِ القصيدة", "كتبت القصيده"
+                ],
                 sampleCorrect: "كُتِبَتِ القَصِيدَةُ.",
                 ruleExp: "تضاف تاء التأنيث للفعل المبني للمجهول لأن نائب الفاعل (القصيدة) مؤنث."
             },
@@ -1325,7 +1060,9 @@
                 target: "حوّل الجملة للمجهول واعد كتابتها كاملة",
                 prompt: "احذف الفاعل وابن المضارع للمجهول (يُقَدَّرُ) وارفع جمع المذكر السالم بالواو (المجتهدون):",
                 sentence: "يُقَدِّرُ الْمُجْتَمَعُ الْمُجْتَهِدِينَ",
-                validAnswers: ["يقدر المجتهدون", "يُقَدَّرُ المجتهدون"],
+                validAnswers: [
+                    "يقدر المجتهدون", "يُقَدَّرُ المجتهدون"
+                ],
                 sampleCorrect: "يُقَدَّرُ المُجْتَهِدُونَ.",
                 ruleExp: "يبنى المضارع للمجهول بضم أوله وفتح ما قبل آخره ويرفع نائب الفاعل بالواو."
             },
@@ -1333,7 +1070,9 @@
                 target: "حوّل الجملة للمجهول واعد كتابتها كاملة",
                 prompt: "احذف الفاعل وابن الماضي للمجهول (صُمِّمَ) واضبط نائب الفاعل واعد كتابة الجملة:",
                 sentence: "صَمَّمَ الْمُهَنْدِسُ الْمَشْرُوعَ",
-                validAnswers: ["صمم المشروع", "صُمِّمَ المشروع"],
+                validAnswers: [
+                    "صمم المشروع", "صُمِّمَ المشروع"
+                ],
                 sampleCorrect: "صُمِّمَ المَشْرُوعُ.",
                 ruleExp: "يضم أول الماضي ويكسر ما قبل آخره ويصير المفعول به نائب فاعل مرفوعاً."
             },
@@ -1341,7 +1080,9 @@
                 target: "حوّل الجملة للمجهول واعد كتابتها كاملة",
                 prompt: "احذف الفاعل وابن الفعل للمجهول (حُفِظَ) واضبط نائب الفاعل بالضمة واعد كتابة الجملة:",
                 sentence: "حَفِظَ الطَّالِبُ الْقُرْآنَ",
-                validAnswers: ["حفظ القرآن", "حُفِظَ القرآن", "حفظ القران"],
+                validAnswers: [
+                    "حفظ القرآن", "حُفِظَ القرآن", "حفظ القران"
+                ],
                 sampleCorrect: "حُفِظَ القُرْآنُ.",
                 ruleExp: "يبنى الماضي للمجهول بضم أوله وكسر ما قبل آخره (حُفِظَ)."
             },
@@ -1349,7 +1090,9 @@
                 target: "حوّل الجملة للمجهول واعد كتابتها كاملة",
                 prompt: "احذف الفاعل وابن المضارع للمجهول (يُبْنَى) واضبط نائب الفاعل واعد كتابة الجملة:",
                 sentence: "يَبْنِي الْمُوَاطِنُ الْمَجْدَ",
-                validAnswers: ["يبنى المجد", "يُبْنَى المجد"],
+                validAnswers: [
+                    "يبنى المجد", "يُبْنَى المجد"
+                ],
                 sampleCorrect: "يُبْنَى المَجْدُ.",
                 ruleExp: "ضم أول المضارع وفتح ما قبل آخره وترفع نائب الفاعل بالضمة."
             },
@@ -1357,7 +1100,9 @@
                 target: "حوّل الجملة للمجهول واعد كتابتها كاملة",
                 prompt: "احذف الفاعل وابن الفعل للمجهول (سُلِّمَتْ) واضبط نائب الفاعل واعد كتابة الجملة:",
                 sentence: "سَلَّمَ الْمُدِيرُ الْجَائِزَةَ",
-                validAnswers: ["سلمت الجائزة", "سُلِّمَت الجائزة", "سلمت الجائزه"],
+                validAnswers: [
+                    "سلمت الجائزة", "سُلِّمَت الجائزة", "سلمت الجائزه"
+                ],
                 sampleCorrect: "سُلِّمَتِ الجَائِزَةُ.",
                 ruleExp: "يبنى الفعل الماضي للمجهول وتلحقه تاء التأنيث لأن نائب الفاعل مؤنث."
             },
@@ -1365,7 +1110,9 @@
                 target: "حوّل الجملة للمجهول واعد كتابتها كاملة",
                 prompt: "احذف الفاعل وابن الفعل للمجهول (تُكَرَّمُ) واعد كتابة الجملة:",
                 sentence: "تُكَرِّمُ الْمَدْرَسَةُ الأُمَّهَاتِ",
-                validAnswers: ["تكرم الأمهات", "تُكَرَّمُ الأمهات", "تكرم الامهات"],
+                validAnswers: [
+                    "تكرم الأمهات", "تُكَرَّمُ الأمهات", "تكرم الامهات"
+                ],
                 sampleCorrect: "تُكَرَّمُ الأُمَّهَاتُ.",
                 ruleExp: "ضم أول المضارع وفتح ما قبل آخره ويرفع جمع المؤنث السالم بالضمة."
             },
@@ -1373,7 +1120,9 @@
                 target: "حوّل الجملة للمجهول واعد كتابتها كاملة",
                 prompt: "احذف الفاعل وابن الفعل للمجهول (أُكْرِمَ) وارفع جمع المذكر بالواو واعد كتابة الجملة:",
                 sentence: "أَكْرَمَ الْمَلِكُ الْمُعَلِّمِينَ",
-                validAnswers: ["أكرم المعلمون", "أُكْرِمَ المعلمون", "اكرم المعلمون"],
+                validAnswers: [
+                    "أكرم المعلمون", "أُكْرِمَ المعلمون", "اكرم المعلمون"
+                ],
                 sampleCorrect: "أُكْرِمَ المَعَلِّمُونَ.",
                 ruleExp: "يضم أول الماضي ويكسر ما قبل آخره ويرفع نائب الفاعل بالواو."
             },
@@ -1381,7 +1130,9 @@
                 target: "حوّل الجملة للمجهول واعد كتابتها كاملة",
                 prompt: "احذف الفاعل وابن الماضي للمجهول (كُوفِئَ) وارفع الفائزين بالواو واعد كتابة الجملة:",
                 sentence: "كَافَأَ الْمُدِيرُ الْفَائِزِينَ",
-                validAnswers: ["كوفئ الفائزون", "كُوفِئَ الفائزون"],
+                validAnswers: [
+                    "كوفئ الفائزون", "كُوفِئَ الفائزون"
+                ],
                 sampleCorrect: "كُوفِئَ الفَائِزُونَ.",
                 ruleExp: "تحول الهمزة المتطرفة على ياء (كوفئ) لكسر ما قبلها ويرفع نائب الفاعل بالواو (الفائزون)."
             }
@@ -1522,7 +1273,6 @@
             activeBtn.classList.remove('text-slateNavy-700');
 
             if(tabName === 'game') initGame();
-            if(tabName === 'matching') initMatchingSection();
             if(tabName === 'fillin') initFillInSection();
         }
 
@@ -1598,7 +1348,7 @@
         }
 
         /* ------------------------------------------------------------- */
-        /* TAB 5: REWRITE & STRICT GRAMMAR GRADER ENGINE (40 QUESTIONS)  */
+        /* TAB 4: ADVANCED FLEXIBLE GRAMMAR GRADER ENGINE (40 QUESTIONS) */
         /* ------------------------------------------------------------- */
         let fillInIndex = 0;
         let fillInScore = 0;
@@ -1608,14 +1358,19 @@
             if (!text) return "";
             return text
                 .trim()
+                // Remove Tashkeel / Diacritics (Except retain Tanween Al-Fath character explicitly)
                 .replace(/[\u064C-\u0652\u0670]/g, "")
+                // Normalize Alef forms (أ, إ, آ => ا)
                 .replace(/[أإآ]/g, "ا")
+                // Normalize Teh Marbuta to Heh (ة => ه)
                 .replace(/ة/g, "ه")
+                // Clean extra spaces and punctuation dots
                 .replace(/[.\s]+/g, " ")
                 .toLowerCase();
         }
 
         function initFillInSection() {
+            // Shuffle the fill-in questions array randomly on every start/restart!
             fillInList = [...fillInQuestions].sort(() => Math.random() - 0.5);
             fillInIndex = 0;
             fillInScore = 0;
@@ -1662,6 +1417,7 @@
             inputEl.disabled = true;
             document.getElementById('fillin-check-btn').disabled = true;
 
+            // Strict evaluation algorithm checking actual correct grammatical transformations
             const isCorrect = q.validAnswers.some(ans => normalizeArabicTextStrict(ans) === normalizedUserAns);
 
             if (isCorrect) {
@@ -1704,6 +1460,7 @@
             confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
         }
 
+        // Allow pressing Enter key to check answer in Tab 4
         document.getElementById('fillin-input').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 if (!document.getElementById('fillin-check-btn').disabled) {
