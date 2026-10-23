@@ -135,7 +135,7 @@
                 </div>
             </div>
 
-            <!-- Navigation Tabs - Force Single Row Display -->
+            <!-- Navigation Tabs - Single Row Display -->
             <nav class="w-full md:w-auto overflow-x-auto no-scrollbar">
                 <div class="flex items-center gap-1.5 bg-creamDark p-1.5 rounded-2xl border border-royalMaroon-700/10 text-xs md:text-sm font-bold min-w-max">
                     <button onclick="switchTab('reference')" id="tab-btn-reference" class="nav-tab whitespace-nowrap px-3 md:px-3.5 py-2 rounded-xl transition-all bg-royalMaroon-700 text-white shadow-sm flex items-center gap-1">
@@ -152,7 +152,7 @@
                     </button>
                     <button onclick="switchTab('fillin')" id="tab-btn-fillin" class="nav-tab whitespace-nowrap px-3 md:px-3.5 py-2 rounded-xl transition-all text-slateNavy-700 hover:text-royalMaroon-700 hover:bg-white/60 flex items-center gap-1">
                         <i class="fa-solid fa-pen-to-square"></i>
-                        <span>الإكمال والتصحيح (20)</span>
+                        <span>الإكمال والتصحيح (40)</span>
                     </button>
                 </div>
             </nav>
@@ -186,7 +186,6 @@
             </div>
 
             <div class="space-y-8">
-
                 <!-- SECTION 1: الجملة الاسمية والمبتدأ والخبر -->
                 <div class="light-glass-card rounded-3xl p-6 md:p-8">
                     <h3 class="text-xl md:text-2xl font-black text-royalMaroon-700 mb-6 flex items-center gap-3 border-b border-royalMaroon-700/10 pb-4 font-cairo">
@@ -496,27 +495,27 @@
             </div>
         </section>
 
-        <!-- TAB 4: INTERACTIVE FILL-IN-THE-BLANK & SMART GRADER (20 QUESTIONS) -->
+        <!-- TAB 4: INTERACTIVE FILL-IN-THE-BLANK & SMART GRADER (40 QUESTIONS) -->
         <section id="tab-fillin" class="tab-content hidden">
             <div class="light-glass-card rounded-3xl p-6 md:p-8">
                 <!-- Header -->
                 <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6 pb-4 border-b border-royalMaroon-700/10">
                     <div>
                         <span class="inline-block px-3 py-1 rounded-full bg-amberGold-100 text-amberGold-700 text-xs font-bold mb-2 border border-amberGold-500/20">
-                            <i class="fa-solid fa-brain ml-1"></i> المصحح النحوي الذكي
+                            <i class="fa-solid fa-brain ml-1"></i> المصحح النحوي الذكي الشامل
                         </span>
                         <h2 class="text-2xl md:text-3xl font-black text-slateNavy-900 font-cairo">
-                            تحدي الكتابة والإكمال التفاعلي <span class="royal-gradient-text">(20 سؤالاً)</span>
+                            تحدي الكتابة والإكمال التفاعلي <span class="royal-gradient-text">(40 سؤالاً جامعاً)</span>
                         </h2>
                         <p class="text-slateNavy-700 text-xs md:text-sm mt-1">
-                            اكتب الإجابة في الفراغ، وسيقوم نظام الذكاء النحوي بتدقيق إجابتك وتصحيحها فوراً بغض النظر عن وجود التشكيل أو عدمه.
+                            اكتب إجابتك في الفراغ، وسيحلل الذكاء النحوي إجابتك ويقبل جميع الاحتمالات الصحيحة واللغوية المعقولة.
                         </p>
                     </div>
 
                     <!-- Progress Indicator -->
                     <div class="flex items-center gap-3 bg-creamBg p-3 rounded-2xl border border-royalMaroon-700/10 self-stretch md:self-auto justify-between">
                         <div class="text-xs font-bold text-slateNavy-800">
-                            السؤال: <span id="fillin-progress" class="text-royalMaroon-700 text-base font-black">1/20</span>
+                            السؤال: <span id="fillin-progress" class="text-royalMaroon-700 text-base font-black">1/40</span>
                         </div>
                         <div class="text-xs font-bold text-amberGold-700 bg-white px-3 py-1.5 rounded-xl border border-amberGold-500/30 shadow-sm">
                             <i class="fa-solid fa-star ml-1 text-amberGold-500"></i> النقاط: <span id="fillin-score" class="text-royalMaroon-700 font-black">0</span>
@@ -552,7 +551,7 @@
                                 <i class="fa-solid fa-spell-check"></i> تصحيح
                             </button>
                         </div>
-                        <p class="text-[11px] text-slateNavy-700/70 mt-1.5 text-center">ملاحظة: الذكاء النحوي يتعرف على الكلمة سواء كتبت بالحركات أو بدونها.</p>
+                        <p class="text-[11px] text-slateNavy-700/70 mt-1.5 text-center">ملاحظة: يتعرف المصحح على الإجابة بالتشكيل أو بدونه ويقبل كافة الأسماء المناسبة للمعنى.</p>
                     </div>
 
                     <!-- Feedback Box -->
@@ -571,9 +570,9 @@
                     <div class="w-20 h-20 mx-auto mb-4 rounded-3xl bg-gradient-to-tr from-royalMaroon-700 to-amberGold-500 p-0.5 shadow-xl flex items-center justify-center text-amberGold-500 text-3xl">
                         <i class="fa-solid fa-award"></i>
                     </div>
-                    <div class="text-4xl md:text-5xl font-black text-royalMaroon-700 mb-3 font-cairo" id="fillin-final-score">0 / 20</div>
-                    <h3 class="text-xl md:text-2xl font-bold text-slateNavy-900 mb-2">أحسنت! أكملت تحدي المصحح النحوي الذكي</h3>
-                    <p id="fillin-result-msg" class="text-slateNavy-700 text-sm md:text-base mb-6 font-medium">أداء رائع ومتميز في ضبط قواعد النحو.</p>
+                    <div class="text-4xl md:text-5xl font-black text-royalMaroon-700 mb-3 font-cairo" id="fillin-final-score">0 / 40</div>
+                    <h3 class="text-xl md:text-2xl font-bold text-slateNavy-900 mb-2">أحسنت! أكملت تحدي المصحح النحوي الذكي الكامل</h3>
+                    <p id="fillin-result-msg" class="text-slateNavy-700 text-sm md:text-base mb-6 font-medium">أداء رائع ومتميز في ضبط قواعد النحو وتطبيقها.</p>
                     <button onclick="initFillInSection()" class="btn-royal px-8 py-3.5 rounded-2xl font-bold text-sm shadow-md">إعادة التحدي مرة أخرى</button>
                 </div>
             </div>
@@ -730,29 +729,199 @@
             { category: "الفاعل ونائب الفاعل", question: "40. ما هو الفعل المبني للمعلوم في الجمل الآتية؟", sentence: null, options: ["شَرِبَ محمدُ العصيرَ", "كُرِّمَ الطالبُ", "يُحْتَرَمُ المخلصُ", "سُتْلِمَ الخطابُ"], explanation: "(شرب محمد العصير) فعل مبني للمعلوم لأن فاعله (محمد) مذكور." }
         ];
 
-        // 20 FILL-IN QUESTIONS (Section 4)
+        // 40 EXPANDED & FLEXIBLE FILL-IN QUESTIONS (Section 4)
         const fillInQuestions = [
+            // --- 1. الفاعل (10 أسئلة) ---
             {
                 target: "أكمل بفاعل مناسب مرفوع",
                 prompt: "أكمل الجملة الفعلية التالية بفاعل مرفوع مناسب:",
                 sentence: "شَرَحَ ....... الدَّرْسَ بِوُضُوحٍ.",
-                validAnswers: ["المعلم", "المعلمُ", "الاستاذ", "الأستاذ", "المدرس", "الشيخ", "الوالد", "طالب", "الطالب"],
+                typeGroup: "noun_def",
+                validAnswers: ["المعلم", "الاستاذ", "المدرس", "الشيخ", "الوالد", "طالب", "الطالب", "الدكتور", "المحاضر"],
                 sampleCorrect: "المُعَلِّمُ / الأُسْتَاذُ",
                 ruleExp: "الفاعل اسم مرفوع يقع بعد فعل مبني للمعلوم ويدل على من قام به."
             },
             {
+                target: "أكمل بفاعل (من الأسماء الخمسة)",
+                prompt: "أكمل الجملة بفاعل مرفوع بالواو لأنه من الأسماء الخمسة (أبوك/أخوك/حموك):",
+                sentence: "حَضَرَ ....... إلَى المَدْرَسَةِ.",
+                typeGroup: "exact",
+                validAnswers: ["ابوك", "أبوك", "اخوك", "أخوك", "حموك"],
+                sampleCorrect: "أَبُوكَ / أَخُوكَ",
+                ruleExp: "تُرفع الأسماء الخمسة بالواو نيابة عن الضمة."
+            },
+            {
+                target: "أكمل بفاعل جمع مذكر سالم",
+                prompt: "أكمل الجملة بفاعل (جمع مذكر سالم) مرفوع بالواو:",
+                sentence: "صَلَّى ....... فِي المَسْجِدِ.",
+                typeGroup: "exact",
+                validAnswers: ["المسلمون", "المؤمنون", "المصلون", "الرجال", "الصالحون"],
+                sampleCorrect: "المُسْلِمُونَ / المُصَلُّونَ",
+                ruleExp: "جمع المذكر السالم يرفع وعلامة رفعه الواو."
+            },
+            {
+                target: "أكمل بفاعل مثنى مرفوع",
+                prompt: "أكمل الجملة بفاعل (مثنى) مرفوع بالألف:",
+                sentence: "تَنَافَسَ ....... فِي المَسَابَقَةِ.",
+                typeGroup: "exact",
+                validAnswers: ["الفريقان", "الطالبان", "اللاعبان", "المتنافسان", "الزميلان", "الشابان", "الشاركان", "المشاركان"],
+                sampleCorrect: "الفَرِيقَانِ / الطَّالِبَانِ",
+                ruleExp: "المثنى يرفع وعلامة رفعه الألف."
+            },
+            {
+                target: "أكمل بفاعل جمع مؤنث سالم",
+                prompt: "أكمل بفاعل (جمع مؤنث سالم) مرفوع بالضمة:",
+                sentence: "حَضَرَتِ ....... إِلى القَاعَةِ.",
+                typeGroup: "exact",
+                validAnswers: ["الطالبات", "المعلمات", "الأمهات", "المتدربات", "الطبيبات", "الفتيات", "الزائرات"],
+                sampleCorrect: "الطَّالِبَاتُ / المُعَلِّمَاتُ",
+                ruleExp: "يرفع جمع المؤنث السالم بالضمة الظاهرة."
+            },
+            {
+                target: "أكمل بفاعل مرفوع مفرد",
+                prompt: "أكمل بفاعل مفرد مناسب مضبوط بالرفع:",
+                sentence: "لَعِبَ ....... فِي الحَدِيقَةِ.",
+                typeGroup: "noun_def",
+                validAnswers: ["الولد", "الطفل", "الطالب", "الابن", "الصبي", "على", "محمد", "خالد", "احمد"],
+                sampleCorrect: "الوَلَدُ / الطِّفْلُ",
+                ruleExp: "الفاعل المفرد يرفع وعلامة رفعه الضمة الظاهرة."
+            },
+            {
+                target: "أكمل بفاعل مرفوع مفرد",
+                prompt: "أكمل بفاعل مرفوع يوضح من قام بالبناء:",
+                sentence: "بَنَى ....... المَجْدَ لِوَطَنِهِ.",
+                typeGroup: "noun_def",
+                validAnswers: ["المسلم", "المواطن", "الانسان", "البطل", "الشاب", "الملك", "المهندس", "القائد"],
+                sampleCorrect: "المُسْلِمُ / المَوَاطِنُ",
+                ruleExp: "الفاعل يقع بعد الفعل ويكون مرفوعاً بالضمة."
+            },
+            {
+                target: "أكمل بفاعل جمع تكسير",
+                prompt: "أكمل الجملة بفاعل (جمع تكسير) مرفوع بالضمة:",
+                sentence: "تَفَتَّحَتِ ....... فِي الرَّبِيعِ.",
+                typeGroup: "exact",
+                validAnswers: ["الازهار", "الأزهار", "الورود", "الزهور"],
+                sampleCorrect: "الأَزْهَارُ / الوُرُودُ",
+                ruleExp: "جمع التكسير يرفع وعلامة رفعه الضمة الظاهرة."
+            },
+            {
+                target: "أكمل بفاعل مرفوع بالضمة",
+                prompt: "أكمل بفاعل مفرد مناسب لعملية التصميم:",
+                sentence: "صَمَّمَ ....... المَشْرُوعَ بِإِتْقَانٍ.",
+                typeGroup: "noun_def",
+                validAnswers: ["المهندس", "المعمارى", "المبدع", "المصمم", "المطور"],
+                sampleCorrect: "المُهَنْدِسُ",
+                ruleExp: "الفاعل اسم مرفوع يدل على من قام بالفعل."
+            },
+            {
+                target: "أكمل بفاعل مرفوع بالضمة المقدرة",
+                prompt: "أكمل بفاعل مرفوع بالضمة المقدرة (القاضي/الداعي):",
+                sentence: "حَكَمَ ....... بِالعَدْلِ بَيْنَ النَّاسِ.",
+                typeGroup: "exact",
+                validAnswers: ["القاضي", "الحاكم", "الشيخ", "العادل"],
+                sampleCorrect: "القَاضِي",
+                ruleExp: "يرفع الاسم المنقوص (القاضي) بضمة مقدرة على الياء."
+            },
+
+            // --- 2. نائب الفاعل (10 أسئلة) ---
+            {
                 target: "أكمل بنائب فاعل مناسب مرفوع",
-                prompt: "أكمل الجملة المبنية للمجهول بنائب فاعل مناسب:",
+                prompt: "أكمل الجملة المبنية للمجهول بنائب فاعل مرفوع مناسب:",
                 sentence: "كُتِبَ ....... بِخَطٍّ جَمِيلٍ.",
-                validAnswers: ["الدرس", "الدرسُ", "الواجب", "الكتاب", "التقرير", "النص"],
-                sampleCorrect: "الدَّرْسُ / الوَاجِبُ",
+                typeGroup: "noun_def",
+                validAnswers: ["الموضوع", "الدرس", "الواجب", "الكتاب", "التقرير", "النص", "الخطاب", "البيان", "البحث", "المستند", "المقال"],
+                sampleCorrect: "المَوْضُوعُ / الدَّرْسُ / الوَاجِبُ",
                 ruleExp: "نائب الفاعل اسم مرفوع يحل محل الفاعل بعد حذفه وينوب عنه."
             },
+            {
+                target: "أكمل بنائب فاعل جمع مذكر سالم",
+                prompt: "أكمل الجملة المبنية للمجهول بنائب فاعل (جمع مذكر سالم مرفوع بالواو):",
+                sentence: "كُرِّمَ ....... فِي المَهْرَجَانِ.",
+                typeGroup: "exact",
+                validAnswers: ["الفائزون", "المتفوقون", "المعلمون", "المبدعون", "المخلصون", "المشاركون", "الفائزين"],
+                sampleCorrect: "الفَائِزُونَ / المُمَيَّزُونَ",
+                ruleExp: "يرفع نائب الفاعل بالواو إذا كان جمع مذكر سالماً."
+            },
+            {
+                target: "أكمل بنائب فاعل مثنى مرفوع",
+                prompt: "أكمل الجملة المبنية للمجهول بنائب فاعل (مثنى) مرفوع بالألف:",
+                sentence: "سُتْلِمَ ....... مِنْ قِبَلِ المَدِيرِ.",
+                typeGroup: "exact",
+                validAnswers: ["التقريران", "الخطابان", "الخطابان", "المشروعان", "الردان", "الكتابان", "المستندان"],
+                sampleCorrect: "التَّقْرِيرَانِ / الخِطَابَانِ",
+                ruleExp: "يرفع نائب الفاعل بالألف إذا كان مثنى."
+            },
+            {
+                target: "أكمل بنائب فاعل مفرد",
+                prompt: "أكمل بنائب فاعل مفرد مرفوع بالضمة:",
+                sentence: "شُرِبَ ....... كَامِلاً.",
+                typeGroup: "noun_def",
+                validAnswers: ["الحليب", "العصير", "الماء", "الدواء", "الشاي", "الشراب"],
+                sampleCorrect: "الحَلِيبُ / العَصِيرُ",
+                ruleExp: "ينوب المفعول به عن الفاعل بعد حذفه فيصير نائب فاعل مرفوعاً."
+            },
+            {
+                target: "أكمل بنائب فاعل مرفوع بالضمة",
+                prompt: "أكمل بنائب فاعل مرفوع بالضمة بعد الفعل المبني للمجهول (يُشْرَحُ):",
+                sentence: "يُشْرَحُ ....... بِوُضُوحٍ فِي القَاعَةِ.",
+                typeGroup: "noun_def",
+                validAnswers: ["الدرس", "الموضوع", "المفهوم", "الكتاب", "المنهج", "الباب", "الفصل"],
+                sampleCorrect: "الدَّرْسُ / المَوْضُوعُ",
+                ruleExp: "الفعل المضارع المبني للمجهول (يُشرح) يأخذ نائب فاعل مرفوعاً."
+            },
+            {
+                target: "أكمل بنائب فاعل مرفوع",
+                prompt: "أكمل بنائب فاعل مرفوع بعد الفعل المبني للمجهول (تُكَرَّمُ):",
+                sentence: "تُكَرَّمُ ....... لِجُهُودِهِنَّ العَظِيمَةِ.",
+                typeGroup: "exact",
+                validAnswers: ["الأمهات", "الامهات", "المعلمات", "الطالبات", "الفائزات", "المبدعات"],
+                sampleCorrect: "الأُمَّهَاتُ / المُعَلِّمَاتُ",
+                ruleExp: "نائب الفاعل مرفوع وعلامة رفعه الضمة الظاهرة."
+            },
+            {
+                target: "أكمل بنائب فاعل مرفوع",
+                prompt: "أكمل بنائب فاعل مناسب للجملة المبنية للمجهول:",
+                sentence: "فُتِحَ ....... صَبَاحاً.",
+                typeGroup: "noun_def",
+                validAnswers: ["الباب", "المتجر", "المحل", "الشباك", "المطعم", "المعرض", "المكتب"],
+                sampleCorrect: "البَابُ / المَتْجَرُ",
+                ruleExp: "نائب الفاعل اسم مرفوع يقع بعد فعل مبني للمجهول."
+            },
+            {
+                target: "أكمل بنائب فاعل مرفوع",
+                prompt: "أكمل بنائب فاعل مناسب بعد المبني للمجهول (سُلِّمَتْ):",
+                sentence: "سُلِّمَتِ ....... لِلْفَائِزِ الأولِ.",
+                typeGroup: "noun_def",
+                validAnswers: ["الجائزة", "الميدالية", "الشهادة", "الكأس", "الهدية"],
+                sampleCorrect: "الجَائِزَةُ / المِيدَالِيَةُ",
+                ruleExp: "تأنث تاء التأنيث الفعل المبني للمجهول إذا كان نائب الفاعل مؤنثاً."
+            },
+            {
+                target: "أكمل بنائب فاعل مرفوع",
+                prompt: "أكمل بنائب فاعل مناسب مرفوع بعد الفعل المجهول (يُبْنَى):",
+                sentence: "يُبْنَى ....... بِجُهُودِ الشَّبَابِ.",
+                typeGroup: "noun_def",
+                validAnswers: ["المجد", "الوطن", "المستقبل", "الصرح", "المشروع", "البيت", "الجمهور"],
+                sampleCorrect: "المَجْدُ / الوَطَنُ",
+                ruleExp: "نائب الفاعل مرفوع وعلامة رفعه الضمة الظاهرة."
+            },
+            {
+                target: "أكمل بنائب فاعل مرفوع",
+                prompt: "أكمل بنائب فاعل مرفوع لفعلي البناء للمجهول (صُمِّمَ):",
+                sentence: "صُمِّمَ ....... بِأَحْدَثِ الطُّرُقِ.",
+                typeGroup: "noun_def",
+                validAnswers: ["المشروع", "المبنى", "الموقع", "التطبيق", "الجسر", "البرج", "المخطط"],
+                sampleCorrect: "المَشْرُوعُ / المَوْقِعُ",
+                ruleExp: "نائب الفاعل مرفوع بالضمة بعد الفعل المبني للمجهول."
+            },
+
+            // --- 3. المبتدأ والخبر (10 أسئلة) ---
             {
                 target: "أكمل بمبتدأ مناسب",
                 prompt: "أكمل الجملة الاسمية بمبتدأ مرفوع مناسب:",
                 sentence: "....... نُورٌ يَهْدِي القُلُوبَ.",
-                validAnswers: ["العلم", "العلمُ", "الإيمان", "القرآن", "الحق"],
+                typeGroup: "noun_def",
+                validAnswers: ["العلم", "القران", "القرآن", "الإيمان", "الايمان", "الحق", "الهدى"],
                 sampleCorrect: "العِلْمُ / القُرْآنُ",
                 ruleExp: "المبتدأ اسم مرفوع تبدأ به الجملة الاسمية وحكمه الرفع."
             },
@@ -760,15 +929,91 @@
                 target: "أكمل بخبر مناسب",
                 prompt: "أكمل الجملة الاسمية بخبر مرفوع يتمم المعنى:",
                 sentence: "الطَّالِبُ المُجْتَهِدُ ....... فِي دِرَاسَتِهِ.",
-                validAnswers: ["متفوق", "متفوقٌ", "ناجح", "بارع", "متميز", "مبدع"],
+                typeGroup: "noun_def",
+                validAnswers: ["متفوق", "ناجح", "بارع", "متميز", "مبدع", "نشيط", "مجد"],
                 sampleCorrect: "مُتَفَوِّقٌ / نَاجِحٌ",
                 ruleExp: "الخبر هو الركن المتمم لمعنى المبتدأ في الجملة الاسمية."
             },
             {
+                target: "أكمل بمبتدأ مثنى مرفوع",
+                prompt: "أكمل بمبتدأ (مثنى) مرفوع بالألف:",
+                sentence: "....... مُتَفَوِّقَانِ فِي الدِّرَاسَةِ.",
+                typeGroup: "exact",
+                validAnswers: ["الطالبان", "الولدان", "الأخوان", "الاخوان", "المهندسان", "التلميذان", "الشاركان", "اللاعبان"],
+                sampleCorrect: "الطَّالِبَانِ / المَاهِرَانِ",
+                ruleExp: "يُرفع المثنى بالألف نيابة عن الضمة."
+            },
+            {
+                target: "أكمل بخبر مثنى مرفوع",
+                prompt: "أكمل الجملة بخبر (مثنى) مرفوع بالألف:",
+                sentence: "الطَّالِبَانِ ....... فِي المَهَارَاتِ.",
+                typeGroup: "exact",
+                validAnswers: ["بارعان", "متفوقان", "ماهران", "متميزان", "ناجحان", "مجتهدان"],
+                sampleCorrect: "بَارِعَانِ / مُتَفَوِّقَانِ",
+                ruleExp: "يرفع خبر المبتدأ بالألف إذا كان مثنى."
+            },
+            {
+                target: "أكمل بمبتدأ جمع مذكر سالم",
+                prompt: "أكمل الجملة بمبتدأ (جمع مذكر سالم) مرفوع بالواو:",
+                sentence: "....... مُخْلِصُونَ فِي عَمَلِهِمْ.",
+                typeGroup: "exact",
+                validAnswers: ["المعلمون", "المهندسون", "العاملون", "المؤمنون", "المسلمون", "الموظفون", "المبدعون"],
+                sampleCorrect: "المُعَلِّمُونَ / المُهَنْدِسُونَ",
+                ruleExp: "يرفع المبتدأ بالواو إذا كان جمع مذكر سالماً."
+            },
+            {
+                target: "أكمل بخبر مرفوع بالواو",
+                prompt: "أكمل بخبر مرفوع بالواو لأنه من الأسماء الخمسة (ذو):",
+                sentence: "أَبُوكَ ....... فَضْلٍ وَعِلْمٍ.",
+                typeGroup: "exact",
+                validAnswers: ["ذو", "صاحب"],
+                sampleCorrect: "ذُو",
+                ruleExp: "(ذو) خبر المبتدأ مرفوع بالواو لأنه من الأسماء الخمسة."
+            },
+            {
+                target: "أكمل بخبر مرفوع بالضمة",
+                prompt: "أكمل بخبر مرفوع بالضمة للجملة الاسمية:",
+                sentence: "السَّمَاءُ ....... فِي الفَصْلِ.",
+                typeGroup: "noun_def",
+                validAnswers: ["صافية", "جميلة", "زرقاء", "مغيمة", "مصحوة"],
+                sampleCorrect: "صَافِيَةٌ / جَمِيلَةٌ",
+                ruleExp: "الخبر اسم مرفوع يكمل معنى الجملة الاسمية."
+            },
+            {
+                target: "أكمل بمبتدأ مرفوع بالضمة",
+                prompt: "أكمل الجملة بمبتدأ مفرد مناسب مرفوع بالضمة:",
+                sentence: "....... مُفِيدٌ لِلْقَارِئِ.",
+                typeGroup: "noun_def",
+                validAnswers: ["الكتاب", "الموقع", "العلم", "الكتيب", "المقال", "المُعْجَمُ"],
+                sampleCorrect: "الكِتَابُ / المَقَالُ",
+                ruleExp: "المبتدأ مرفوع وعلامة رفعه الضمة الظاهرة."
+            },
+            {
+                target: "أكمل بخبر مرفوع بالضمة",
+                prompt: "أكمل الجملة بخبر مرفوع لجمع التكسير (العلماء مصابيح/أمناء):",
+                sentence: "العُلَمَاءُ ....... الأُمَّةِ.",
+                typeGroup: "noun_def",
+                validAnswers: ["مصابيح", "امناء", "أمناء", "قادة", "ورثة", "هداة"],
+                sampleCorrect: "مَصَابِيحُ / أُمَنَاءُ",
+                ruleExp: "الخبر يرفع بالضمة الظاهرة مع جمع التكسير."
+            },
+            {
+                target: "أكمل بخبر مرفوع بالضمة",
+                prompt: "أكمل بخبر مناسب مرفوع بالضمة:",
+                sentence: "الوَرْدَةُ ....... فِي الحَدِيقَةِ.",
+                typeGroup: "noun_def",
+                validAnswers: ["متفتحة", "جميلة", "زاهية", "عطرة", "فواحة"],
+                sampleCorrect: "مُتَفَتِّحَةٌ / جَمِيلَةٌ",
+                ruleExp: "خبر المبتدأ مرفوع وعلامة رفعه الضمة الظاهرة."
+            },
+
+            // --- 4. النواسخ وكان وإنَّ (10 أسئلة) ---
+            {
                 target: "أدخل كان أو إحدى أخواتها",
                 prompt: "أدخل فعلاً ناسخاً مناسباً يفيد التحول والصيرورة على الجملة الاسمية:",
                 sentence: "....... المَاءُ ثَلْجاً.",
-                validAnswers: ["صار", "صَارَ", "أصبح", "أَصْبَحَ", "بات"],
+                typeGroup: "exact",
+                validAnswers: ["صار", "اصبح", "أصبح", "بات", "امسى", "أمسى"],
                 sampleCorrect: "صَارَ / أَصْبَحَ",
                 ruleExp: "كان وأخواتها تدخل على الجملة الاسمية فترفع المبتدأ وتنصب الخبر."
             },
@@ -776,71 +1021,17 @@
                 target: "أدخل إن أو إحدى أخواتها",
                 prompt: "أدخل حرفاً ناسخاً مناسباً يفيد التوكيد في أول الجملة التالية:",
                 sentence: "....... الفَرَجَ قَرِيبٌ.",
-                validAnswers: ["ان", "إن", "إنَّ", "انَّ"],
+                typeGroup: "exact",
+                validAnswers: ["ان", "إن"],
                 sampleCorrect: "إِنَّ",
                 ruleExp: "إن وأخواتها حروف ناسخة تدخل على الجملة الاسمية فتنصب المبتدأ وترفع الخبر."
-            },
-            {
-                target: "أكمل بفعل مضارع مرفوع",
-                prompt: "أكمل بـ فعل مضارع مرفوع صحيح الآخر:",
-                sentence: "....... الطَّالِبُ الدَّرْسَ كُلَّ يَوْمٍ.",
-                validAnswers: ["يكتب", "يَكْتُبُ", "يقرا", "يقرأ", "يَفْهَمُ", "يفهم", "يحفظ", "يراجع"],
-                sampleCorrect: "يَكْتُبُ / يَفْهَمُ",
-                ruleExp: "يُرفع الفعل المضارع بالضمة الظاهرة إذا لم تسبقه أداة نصب أو جزم وكان صحيح الآخر."
-            },
-            {
-                target: "أكمل بفعل مضارع منصوب",
-                prompt: "أكمل بعد أداة النصب (لَنْ) بفعل مضارع منصوب مناسب:",
-                sentence: "المُسْلِمُ لَنْ ....... فِي عَمَلِهِ.",
-                validAnswers: ["يهمل", "يُهْمِلَ", "يكذب", "يقصر", "يُقَصِّرَ", "يفشل"],
-                sampleCorrect: "يُهْمِلَ / يُقَصِّرَ",
-                ruleExp: "يُنصب الفعل المضارع بالفتحة الظاهرة إذا سبق بأداة نصب مثل (لَنْ)."
-            },
-            {
-                target: "أكمل بفعل مضارع مجزوم",
-                prompt: "أكمل بعد أداة الجزم (لَمْ) بفعل مضارع مجزوم مناسب بالسكون:",
-                sentence: "الكَسُولُ لَمْ ....... فِي الِامْتِحَانِ.",
-                validAnswers: ["ينجح", "يَنْجَحْ", "يحضر", "يفهم", "يتفوق"],
-                sampleCorrect: "يَنْجَحْ / يَحْضُرْ",
-                ruleExp: "يُجزم الفعل المضارع صحيح الآخر بالسكون الظاهر إذا سبق بـ (لَمْ)."
-            },
-            {
-                target: "أكمل بنائب فاعل جمع مذكر سالم",
-                prompt: "أكمل الجملة المبنية للمجهول بنائب فاعل (جمع مذكر سالم مرفوع بالواو):",
-                sentence: "كُرِّمَ ....... فِي المَهْرَجَانِ.",
-                validAnswers: ["الفائزون", "الفَائِزُونَ", "المتفوقون", "المعلمون", "المبدعون", "المخلصون"],
-                sampleCorrect: "الفَائِزُونَ / المُمَيَّزُونَ",
-                ruleExp: "يرفع نائب الفاعل بالواو إذا كان جمع مذكر سالماً."
-            },
-            {
-                target: "أكمل بفعل مضارع مجزوم بحذف حرف العلة",
-                prompt: "أكمل الفعل المعتل الآخر بعد (لَمْ) بحذف حرف العلة (يسعى):",
-                sentence: "المُؤْمِنُ لَمْ ....... فِي شَرٍّ أَبَداً.",
-                validAnswers: ["يسع", "يَسْعَ"],
-                sampleCorrect: "يَسْعَ",
-                ruleExp: "علامة جزم الفعل المضارع معتل الآخر هي حذف حرف العلة من آخره."
-            },
-            {
-                target: "أكمل بأداة جزم مناسبة",
-                prompt: "ضع أداة جزم مناسبة للفعل المضارع في الفراغ:",
-                sentence: "....... يَتَأَخَّرْ أحَدٌ عَنِ الحُضُورِ.",
-                validAnswers: ["لم", "لَمْ"],
-                sampleCorrect: "لَمْ",
-                ruleExp: "«لَمْ» أداة نفي وجزم تجزم الفعل المضارع."
-            },
-            {
-                target: "أكمل بأداة نصب مناسبة",
-                prompt: "ضع أداة نصب مناسبة تنفي الفعل في المستقبل:",
-                sentence: "....... يَرْسُبَ المُجْتَهِدُ.",
-                validAnswers: ["لن", "لَنْ"],
-                sampleCorrect: "لَنْ",
-                ruleExp: "«لَنْ» أداة نصب تنفي الفعل المضارع وتنصبه بالفتحة."
             },
             {
                 target: "أكمل بخبر كان منصوب",
                 prompt: "أكمل الجملة بخبر كان منصوب بالفتحة:",
                 sentence: "كَانَ الجَوُّ ....... فِي المَسَاءِ.",
-                validAnswers: ["باردا", "بَارِداً", "جميلا", "جَمِيلاً", "ماطرا", "حارا", "معتدلا"],
+                typeGroup: "noun_def",
+                validAnswers: ["باردا", "جميلا", "ماطرا", "حارا", "معتدلا", "لطيفا", "صحوا"],
                 sampleCorrect: "بَارِداً / جَمِيلاً",
                 ruleExp: "خبر كان يكون منصوباً وعلامة نصبه الفتحة الظاهرة."
             },
@@ -848,49 +1039,156 @@
                 target: "أكمل باسم إنَّ منصوب",
                 prompt: "أكمل الجملة باسم إنَّ منصوب بالفتحة:",
                 sentence: "إِنَّ ....... نُورٌ يَهْدِي العُقُولَ.",
-                validAnswers: ["العلم", "العِلْمَ", "القرآن", "الحق"],
+                typeGroup: "noun_def",
+                validAnswers: ["العلم", "القران", "القرآن", "الحق", "الإيمان"],
                 sampleCorrect: "العِلْمَ",
                 ruleExp: "اسم إنَّ يكون منصوباً وعلامة نصبه الفتحة."
             },
             {
-                target: "أكمل بفاعل (من الأسماء الخمسة)",
-                prompt: "أكمل الجملة بفاعل مرفوع بالواو لأنه من الأسماء الخمسة (أبوك/أخوك):",
-                sentence: "حَضَرَ ....... إلَى المَدْرَسَةِ.",
-                validAnswers: ["ابوك", "أبوك", "أَبُوكَ", "اخوك", "أخوك", "أَخُوكَ"],
-                sampleCorrect: "أَبُوكَ / أَخُوكَ",
-                ruleExp: "تُرفع الأسماء الخمسة بالواو نيابة عن الضمة."
+                target: "أكمل باسم إنَّ منصوب بالياء",
+                prompt: "أكمل باسم إنَّ (جمع مذكر سالم) منصوب بالياء:",
+                sentence: "إِنَّ ....... مُخْلِصُونَ فِي أدَائِهِمْ.",
+                typeGroup: "exact",
+                validAnswers: ["المعلمين", "المهندسين", "العاملين", "الموظفين", "المصممين", "المبدعين"],
+                sampleCorrect: "المُعَلِّمِينَ / المُهَنْدِسِينَ",
+                ruleExp: "ينصب اسم إن بالياء إذا كان جمع مذكر سالماً."
             },
             {
-                target: "أكمل بمبتدأ مثنى مرفوع",
-                prompt: "أكمل بمبتدأ (مثنى) مرفوع بالألف:",
-                sentence: "....... مُتَفَوِّقَانِ فِي الدِّرَاسَةِ.",
-                validAnswers: ["الطالبان", "الطَّالِبَانِ", "الولدان", "الأخوان", "المهندسان", "التلميذان"],
-                sampleCorrect: "الطَّالِبَانِ / المَاهِرَانِ",
-                ruleExp: "يُرفع المثنى بالألف نيابة عن الضمة."
+                target: "أكمل بـ حرف ناسخ يفيد التمني",
+                prompt: "ضع حرفاً ناسخاً يفيد التمني (ليت):",
+                sentence: "....... الشَّبَابَ يَعُودُ يَوْماً.",
+                typeGroup: "exact",
+                validAnswers: ["ليت"],
+                sampleCorrect: "لَيْتَ",
+                ruleExp: "«لَيْتَ» حرف ناسخ من أخوات إن يفيد التمني."
             },
             {
-                target: "أكمل بفعل مبني للمجهول",
-                prompt: "أكمل بـ فعل ماض مبني للمجهول مضموم الأول ومكسور ما قبل الآخر من (شرب):",
-                sentence: "....... الحَلِيبُ كَامِلاً.",
-                validAnswers: ["شرب", "شُرِبَ", "شربت"],
-                sampleCorrect: "شُرِبَ",
-                ruleExp: "يُبنى الفعل الماضي للمجهول بضم أوله وكسر ما قبل آخره."
+                target: "أكمل بـ حرف ناسخ يفيد الترجي",
+                prompt: "ضع حرفاً ناسخاً يفيد الترجي (لعل):",
+                sentence: "....... النَّصْرَ قَرِيبٌ.",
+                typeGroup: "exact",
+                validAnswers: ["لعل"],
+                sampleCorrect: "لَعَلَّ",
+                ruleExp: "«لَعَلَّ» حرف ناسخ يفيد الترجي لشيء محبوب المراد حصوله."
+            },
+            {
+                target: "أكمل بـ حرف ناسخ يفيد التشبيه",
+                prompt: "ضع حرفاً ناسخاً يفيد التشبيه (كأن):",
+                sentence: "....... المَعَلِّمَ أَبٌ لِطُلاَّبِهِ.",
+                typeGroup: "exact",
+                validAnswers: ["كان", "كأن"],
+                sampleCorrect: "كَأَنَّ",
+                ruleExp: "«كَأَنَّ» حرف ناسخ يفيد التشبيه."
+            },
+            {
+                target: "أكمل بفعل ناسخ يفيد النفي",
+                prompt: "ضع فعلاً ناسخاً من أخوات كان يفيد النفي (ليس):",
+                sentence: "....... البَاطِلُ مُسْتَمِرّاً.",
+                typeGroup: "exact",
+                validAnswers: ["ليس"],
+                sampleCorrect: "لَيْسَ",
+                ruleExp: "«لَيْسَ» فعل ماض ناقص يفيد النفي وهو من أخوات كان."
+            },
+            {
+                target: "أكمل باسم كان مرفوع بالضمة",
+                prompt: "أكمل باسم كان مرفوع بالضمة الظاهرة:",
+                sentence: "كَانَ ....... غَزِيراً البَارِحَةَ.",
+                typeGroup: "noun_def",
+                validAnswers: ["المطر", "الماء", "الغيث", "السيل"],
+                sampleCorrect: "المَطَرُ / الغَيْثُ",
+                ruleExp: "اسم كان يكون مرفوعاً وعلامة رفعه الضمة."
+            },
+
+            // --- 5. الفعل المضارع أحواله وإعرابه (10 أسئلة) ---
+            {
+                target: "أكمل بفعل مضارع مرفوع",
+                prompt: "أكمل بـ فعل مضارع مرفوع صحيح الآخر:",
+                sentence: "....... الطَّالِبُ الدَّرْسَ كُلَّ يَوْمٍ.",
+                typeGroup: "noun_def",
+                validAnswers: ["يكتب", "يقرا", "يقرأ", "يفهم", "يحفظ", "يراجع", "يدرس"],
+                sampleCorrect: "يَكْتُبُ / يَفْهَمُ",
+                ruleExp: "يُرفع الفعل المضارع بالضمة الظاهرة إذا لم تسبقه أداة نصب أو جزم وكان صحيح الآخر."
+            },
+            {
+                target: "أكمل بفعل مضارع منصوب",
+                prompt: "أكمل بعد أداة النصب (لَنْ) بفعل مضارع منصوب مناسب:",
+                sentence: "المُسْلِمُ لَنْ ....... فِي عَمَلِهِ.",
+                typeGroup: "noun_def",
+                validAnswers: ["يهمل", "يكذب", "يقصر", "يفشل", "يخون", "يتراجع"],
+                sampleCorrect: "يُهْمِلَ / يُقَصِّرَ",
+                ruleExp: "يُنصب الفعل المضارع بالفتحة الظاهرة إذا سبق بأداة نصب مثل (لَنْ)."
+            },
+            {
+                target: "أكمل بفعل مضارع مجزوم",
+                prompt: "أكمل بعد أداة الجزم (لَمْ) بفعل مضارع مجزوم مناسب بالسكون:",
+                sentence: "الكَسُولُ لَمْ ....... فِي الِامْتِحَانِ.",
+                typeGroup: "noun_def",
+                validAnswers: ["ينجح", "يحضر", "يفهم", "يتفوق", "يشارك"],
+                sampleCorrect: "يَنْجَحْ / يَحْضُرْ",
+                ruleExp: "يُجزم الفعل المضارع صحيح الآخر بالسكون الظاهر إذا سبق بـ (لَمْ)."
+            },
+            {
+                target: "أكمل بفعل مضارع مجزوم بحذف حرف العلة",
+                prompt: "أكمل الفعل المعتل الآخر بعد (لَمْ) بحذف حرف العلة (يسعى):",
+                sentence: "المُؤْمِنُ لَمْ ....... فِي شَرٍّ أَبَداً.",
+                typeGroup: "exact",
+                validAnswers: ["يسع"],
+                sampleCorrect: "يَسْعَ",
+                ruleExp: "علامة جزم الفعل المضارع معتل الآخر هي حذف حرف العلة من آخره."
+            },
+            {
+                target: "أكمل بأداة جزم مناسبة",
+                prompt: "ضع أداة جزم مناسبة للفعل المضارع في الفراغ:",
+                sentence: "....... يَتَأَخَّرْ أحَدٌ عَنِ الحُضُورِ.",
+                typeGroup: "exact",
+                validAnswers: ["لم"],
+                sampleCorrect: "لَمْ",
+                ruleExp: "«لَمْ» أداة نفي وجزم تجزم الفعل المضارع."
+            },
+            {
+                target: "أكمل بأداة نصب مناسبة",
+                prompt: "ضع أداة نصب مناسبة تنفي الفعل في المستقبل:",
+                sentence: "....... يَرْسُبَ المُجْتَهِدُ.",
+                typeGroup: "exact",
+                validAnswers: ["لن"],
+                sampleCorrect: "لَنْ",
+                ruleExp: "«لَنْ» أداة نصب تنفي الفعل المضارع وتنصبه بالفتحة."
+            },
+            {
+                target: "أكمل بأداة نصب تعليلية (كي)",
+                prompt: "ضع أداة نصب تفيد التعليل (كي):",
+                sentence: "اجْتَهِدْ ....... تَنْجَحَ فِي حَيَاتِكَ.",
+                typeGroup: "exact",
+                validAnswers: ["كي", "لكي"],
+                sampleCorrect: "كَيْ",
+                ruleExp: "«كَيْ» حرف نصب ينصب الفعل المضارع ويفيد التعليل."
             },
             {
                 target: "أكمل بفعل مضارع منصوب من الأفعال الخمسة",
                 prompt: "أكمل بعد (كَيْ) بفعل مضارع منصوب بحذف النون (تنجحوا/تتفوقوا):",
                 sentence: "اجْتَهِدُوا كَيْ ....... فِي الحَيَاةِ.",
-                validAnswers: ["تنجحوا", "تَنْجَحُوا", "تتفوقوا", "تفوزوا", "تَكْسَبُوا"],
+                typeGroup: "exact",
+                validAnswers: ["تنجحوا", "تتفوقوا", "تفوزوا", "تكسبوا", "تفلحوا"],
                 sampleCorrect: "تَنْجَحُوا / تَفُوزُوا",
                 ruleExp: "تُنصب الأفعال الخمسة بحذف النون إذا سبقت بناصب."
             },
             {
-                target: "أكمل بفاعل جمع مؤنث سالم",
-                prompt: "أكمل بفاعل (جمع مؤنث سالم) مرفوع بالضمة:",
-                sentence: "حَضَرَتِ ....... إِلى القَاعَةِ.",
-                validAnswers: ["الطالبات", "الطَّالِبَاتُ", "المعلمات", "الأمهات", "المتدربات"],
-                sampleCorrect: "الطَّالِبَاتُ / المُعَلِّمَاتُ",
-                ruleExp: "يرفع جمع المؤنث السالم بالضمة الظاهرة."
+                target: "أكمل بفعل مضارع مجزوم من الأفعال الخمسة",
+                prompt: "أكمل بعد (لَمْ) بفعل مضارع مجزوم بحذف النون (تهملوا):",
+                sentence: "أنْتُمْ لَمْ ....... فِي وَاجِبَاتِكُمْ.",
+                typeGroup: "exact",
+                validAnswers: ["تهملوا", "تقصروا", "تتأخروا", "تتركوا"],
+                sampleCorrect: "تُهْمِلُوا / تُقَصِّرُوا",
+                ruleExp: "تجزم الأفعال الخمسة بحذف النون إذا سبقت بجازم."
+            },
+            {
+                target: "أكمل بفعل مضارع مرفوع بثبوت النون",
+                prompt: "أكمل بفعل مضارع من الأفعال الخمسة مرفوع بثبوت النون (يتعلمون/يجتهدون):",
+                sentence: "الطُّلَّابُ ....... المَهَارَاتِ النَّحْوِيَّةَ بَرَغْبَةٍ.",
+                typeGroup: "exact",
+                validAnswers: ["يتعلمون", "يجتهدون", "يدرسون", "يفهمون", "يحفظون", "يكتبون"],
+                sampleCorrect: "يَتَعَلَّمُونَ / يَجْتَهِدُونَ",
+                ruleExp: "تُرفع الأفعال الخمسة بثبوت النون إذا لم تسبق بناصب أو جازم."
             }
         ];
 
@@ -1104,7 +1402,7 @@
         }
 
         /* ------------------------------------------------------------- */
-        /* TAB 4: FILL-IN-THE-BLANKS & SMART GRAMMAR GRADER ENGINE       */
+        /* TAB 4: ADVANCED FLEXIBLE GRAMMAR GRADER ENGINE (40 QUESTIONS) */
         /* ------------------------------------------------------------- */
         let fillInIndex = 0;
         let fillInScore = 0;
@@ -1114,7 +1412,7 @@
             if (!text) return "";
             return text
                 .trim()
-                // Remove Arabic diacritical marks (Tashkeel)
+                // Remove Tashkeel / Diacritics
                 .replace(/[\u064B-\u0652\u0670]/g, "")
                 // Normalize Alef forms (أ, إ, آ => ا)
                 .replace(/[أإآ]/g, "ا")
@@ -1167,12 +1465,22 @@
             const q = fillInList[fillInIndex];
             const feedbackEl = document.getElementById('fillin-feedback');
 
-            // Disable controls after submission
             inputEl.disabled = true;
             document.getElementById('fillin-check-btn').disabled = true;
 
-            // Smart comparison against valid answers array
-            const isCorrect = q.validAnswers.some(ans => normalizeArabicText(ans) === normalizedUserAns);
+            // Smart flexible evaluation
+            let isCorrect = false;
+
+            // 1. Direct match with valid answers list
+            if (q.validAnswers.some(ans => normalizeArabicText(ans) === normalizedUserAns)) {
+                isCorrect = true;
+            } 
+            // 2. Open Rule for Noun Definitions (e.g. any definite noun starting with "ال" and at least 3 chars)
+            else if (q.typeGroup === "noun_def") {
+                if (normalizedUserAns.startsWith("ال") && normalizedUserAns.length >= 4) {
+                    isCorrect = true;
+                }
+            }
 
             if (isCorrect) {
                 fillInScore += 1;
@@ -1183,7 +1491,7 @@
                     <div class="flex items-center gap-2 mb-1 text-base font-cairo">
                         <i class="fa-solid fa-circle-check text-amberGold-600 text-lg"></i> إجابة صحيحة وممتازة!
                     </div>
-                    <div>إجابتك: «${rawUserAns}» إجابة سليمة نَحْوِيّاً.</div>
+                    <div>إجابتك: «${rawUserAns}» إجابة سليمة نَحْوِيّاً ومعنوياً.</div>
                     <div class="mt-2 text-xs text-slateNavy-800 font-medium">📍 القاعدة: ${q.ruleExp}</div>
                 `;
             } else {
@@ -1193,7 +1501,7 @@
                     <div class="flex items-center gap-2 mb-1 text-base font-cairo">
                         <i class="fa-solid fa-circle-xmark text-royalMaroon-600 text-lg"></i> إجابة غير دقيقة!
                     </div>
-                    <div>الإجابة النموذجية المقترحة: <span class="bg-white px-2 py-0.5 rounded border border-royalMaroon-600/30 font-amiri text-base">${q.sampleCorrect}</span></div>
+                    <div>من الإجابات النموذجية المقترحة: <span class="bg-white px-2 py-0.5 rounded border border-royalMaroon-600/30 font-amiri text-base">${q.sampleCorrect}</span></div>
                     <div class="mt-2 text-xs text-slateNavy-800 font-medium">📍 القاعدة النحوية: ${q.ruleExp}</div>
                 `;
             }
