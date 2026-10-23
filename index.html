@@ -127,7 +127,7 @@
             </div>
 
             <!-- Navigation Tabs -->
-            <nav class="flex items-center gap-1 bg-creamDark p-1.5 rounded-2xl border border-royalMaroon-700/10 text-xs md:text-sm font-bold flex-wrap">
+            <nav class="flex items-center gap-1 bg-creamDark p-1.5 rounded-2xl border border-royalMaroon-700/10 text-xs md:text-sm font-bold">
                 <button onclick="switchTab('reference')" id="tab-btn-reference" class="nav-tab px-3.5 py-2 rounded-xl transition-all bg-royalMaroon-700 text-white shadow-sm">
                     <i class="fa-solid fa-book-bookmark ml-1"></i> الملخص الموسوعي الشامل
                 </button>
@@ -136,9 +136,6 @@
                 </button>
                 <button onclick="switchTab('game')" id="tab-btn-game" class="nav-tab px-3.5 py-2 rounded-xl transition-all text-slateNavy-700 hover:text-royalMaroon-700 hover:bg-white/60">
                     <i class="fa-solid fa-bolt ml-1"></i> تحدي التصنيف (70)
-                </button>
-                <button onclick="switchTab('completion')" id="tab-btn-completion" class="nav-tab px-3.5 py-2 rounded-xl transition-all text-slateNavy-700 hover:text-royalMaroon-700 hover:bg-white/60">
-                    <i class="fa-solid fa-pen-to-square ml-1"></i> الإكمال والتصحيح التفاعلي (20)
                 </button>
             </nav>
         </div>
@@ -416,7 +413,7 @@
             </div>
         </section>
 
-        <!-- TAB 3: SORTING MINI-GAME -->
+        <!-- TAB 3: SORTING MINI-GAME (UNIFORM EVEN SIZED BUTTONS) -->
         <section id="tab-game" class="tab-content hidden">
             <div class="light-glass-card rounded-3xl p-6 md:p-8">
                 <div class="flex items-center justify-between mb-6 flex-wrap gap-4">
@@ -478,98 +475,6 @@
                     <h3 class="text-xl font-bold text-slateNavy-900 mb-4">انتهى تحدي التصنيف السريع الشامل بنجاح!</h3>
                     <button onclick="initGame()" class="btn-royal px-8 py-3 rounded-xl font-bold text-sm shadow-md">إعادة التحدي</button>
                 </div>
-            </div>
-        </section>
-
-        <!-- TAB 4: FILL-IN-THE-BLANK INTELLIGENT CORRECTION SECTION (20 QUESTIONS) -->
-        <section id="tab-completion" class="tab-content hidden">
-            <!-- Header Banner -->
-            <div class="light-glass-card rounded-3xl p-6 md:p-8 mb-6 border-r-8 border-r-amberGold-500 relative overflow-hidden bg-gradient-to-l from-white via-amberGold-100/30 to-creamBg">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                    <div>
-                        <span class="inline-block px-3.5 py-1 rounded-full bg-amberGold-100 text-amberGold-700 text-xs font-bold mb-2 border border-amberGold-500/20">
-                            <i class="fa-solid fa-brain ml-1"></i> المصحح الذكي التفاعلي
-                        </span>
-                        <h2 class="text-2xl md:text-3xl font-black text-slateNavy-900 font-cairo">
-                            تحدي الكتابة والإكمال <span class="royal-gradient-text">(20 سؤالاً تفاعلياً)</span>
-                        </h2>
-                        <p class="text-slateNavy-700 text-xs md:text-sm mt-1">
-                            اكتب الإجابة المناسبة في الفراغ، وسيقوم المصحح الذكي بالتحقق من صحتها فورياً وتصحيحها ذكياً (سواء كتبت مع التشكيل أو بدونه).
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-3 bg-white/90 p-4 rounded-2xl border border-royalMaroon-700/10 shadow-sm text-xs font-bold">
-                        <div class="text-center">
-                            <span class="block text-slateNavy-700">الإنجاز:</span>
-                            <span id="comp-progress" class="text-royalMaroon-700 font-black text-base">1 / 20</span>
-                        </div>
-                        <div class="w-px h-8 bg-slateNavy-700/10"></div>
-                        <div class="text-center">
-                            <span class="block text-slateNavy-700">النتيجة:</span>
-                            <span id="comp-score-display" class="text-amberGold-600 font-black text-base">0</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Question Card Container -->
-            <div id="comp-card" class="light-glass-card rounded-3xl p-6 md:p-8 mb-6">
-                <!-- Question Category & Title -->
-                <div class="flex items-center justify-between gap-2 mb-4">
-                    <span id="comp-tag" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-royalMaroon-50 text-royalMaroon-700 border border-royalMaroon-700/10">
-                        الفئة
-                    </span>
-                    <span id="comp-num-badge" class="text-slateNavy-700 text-xs font-bold">
-                        السؤال 1 من 20
-                    </span>
-                </div>
-
-                <h3 id="comp-prompt" class="text-lg md:text-xl font-bold text-slateNavy-900 mb-4 font-cairo leading-relaxed">
-                    السؤال يجري تحميله...
-                </h3>
-
-                <!-- Sentence Display Box -->
-                <div class="bg-creamBg p-6 rounded-2xl border border-amberGold-500/30 text-center text-xl md:text-2xl font-bold font-amiri text-royalMaroon-700 shadow-inner mb-6 leading-loose" id="comp-sentence-display">
-                    ...
-                </div>
-
-                <!-- Input Box Area -->
-                <div class="space-y-4">
-                    <div class="flex flex-col sm:flex-row gap-3">
-                        <div class="relative flex-grow">
-                            <input type="text" id="comp-user-input" placeholder="اكتب الكلمة أو العبارة المناسبة هنا..." class="w-full px-5 py-4 rounded-2xl border-2 border-slateNavy-700/20 focus:border-royalMaroon-700 focus:outline-none text-base md:text-lg font-bold text-slateNavy-900 bg-white transition shadow-sm" onkeypress="handleCompKeyPress(event)" />
-                        </div>
-                        <button id="comp-submit-btn" onclick="submitCompAnswer()" class="btn-royal px-8 py-4 rounded-2xl font-bold text-base flex items-center justify-center gap-2 min-w-[140px]">
-                            <i class="fa-solid fa-check-double text-lg"></i> تصحيح إجابتي
-                        </button>
-                    </div>
-
-                    <!-- Instant Feedback Message -->
-                    <div id="comp-feedback" class="hidden p-5 rounded-2xl border text-sm leading-relaxed transition-all duration-300">
-                        <!-- Dynamic Content Inserted via JavaScript -->
-                    </div>
-                </div>
-
-                <!-- Next Button -->
-                <div class="flex justify-end mt-6">
-                    <button id="comp-next-btn" onclick="nextCompQuestion()" class="hidden btn-royal px-8 py-3.5 rounded-2xl font-bold text-base flex items-center gap-2">
-                        السؤال التالي <i class="fa-solid fa-arrow-left"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Result Box -->
-            <div id="comp-result-box" class="hidden light-glass-card rounded-3xl p-8 md:p-10 text-center">
-                <div class="w-20 h-20 mx-auto mb-4 rounded-3xl bg-gradient-to-tr from-royalMaroon-700 to-amberGold-500 flex items-center justify-center text-white text-3xl shadow-xl border border-amberGold-400">
-                    <i class="fa-solid fa-award"></i>
-                </div>
-                <h2 class="text-2xl md:text-3xl font-black text-slateNavy-900 mb-2 font-cairo">نتيجة تحدي الإكمال والتصحيح الذكي</h2>
-                <div class="max-w-md mx-auto bg-creamBg p-6 rounded-2xl border border-royalMaroon-700/10 mb-6 shadow-inner">
-                    <div class="text-4xl md:text-5xl font-black text-royalMaroon-700 mb-2 font-cairo" id="comp-final-score">0 / 20</div>
-                    <p class="text-slateNavy-800 font-bold text-sm md:text-base" id="comp-result-msg">أداء رائع في كتابة وقواعد النحو!</p>
-                </div>
-                <button onclick="resetCompQuiz()" class="btn-royal px-8 py-3.5 rounded-2xl font-bold text-base shadow-md">
-                    إعادة التحدي من جديد
-                </button>
             </div>
         </section>
 
@@ -859,7 +764,6 @@
             activeBtn.classList.remove('text-slateNavy-700');
 
             if(tabName === 'game') initGame();
-            if(tabName === 'completion') initCompQuiz();
         }
 
         let gameQuestions = [];
@@ -931,297 +835,6 @@
             document.getElementById('game-results').classList.remove('hidden');
             document.getElementById('game-final-score').innerText = `${gameScore} / ${gameQuestions.length}`;
             confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
-        }
-
-        /* -------------------------------------------------------------
-           TAB 4: FILL-IN-THE-BLANK INTELLIGENT CORRECTION DATA & LOGIC
-           ------------------------------------------------------------- */
-        
-        // 20 Questions covering all requested grammar topics
-        const completionQuestionsData = [
-            {
-                tag: "المبتدأ والخبر",
-                prompt: "أكمل الجملة بمبتدأ مرفوع مناسب:",
-                sentenceDisplay: "( ....... ) نورٌ يضيء العقول.",
-                validAnswers: ["العلم", "العلمُ", "علم", "التعلم"],
-                displayAnswer: "العِلْمُ",
-                explanation: "«العِلْمُ» مبتدأ مرفوع وعلامة رفعه الضمة الظاهرة في أول الجملة الاسمية."
-            },
-            {
-                tag: "المبتدأ والخبر",
-                prompt: "أكمل الجملة بخبر مرفوع مناسب:",
-                sentenceDisplay: "الطالبُ المجتهدُ ( ....... ).",
-                validAnswers: ["متفوق", "متفوقٌ", "بارع", "محبوب", "ناجح"],
-                displayAnswer: "مُتَفَوِّقٌ",
-                explanation: "«مُتَفَوِّقٌ» خبر المبتدأ مرفوع وعلامة رفعه الضمة الظاهرة المتمم لمعنى الجملة."
-            },
-            {
-                tag: "الجملة الفعلية (الفاعل)",
-                prompt: "أكمل الفراغ بفاعل مرفوع مناسب:",
-                sentenceDisplay: "يحرصُ ( ....... ) على تفوق طلابه.",
-                validAnswers: ["المعلم", "المعلمُ", "الأستاذ", "أستاذ", "معلم"],
-                displayAnswer: "المُعَلِّمُ",
-                explanation: "«المُعَلِّمُ» فاعل مرفوع وعلامة رفعه الضمة الظاهرة، لأنه هو من قام بالفعل."
-            },
-            {
-                tag: "الجملة الفعلية (الفاعل)",
-                prompt: "أكمل بفاعل مرفوع وعلامة رفعه الواو (جمع مذكر سالم):",
-                sentenceDisplay: "يصلي ( ....... ) في المسجد جماعةً.",
-                validAnswers: ["المسلمون", "المؤمنون", "المصلون"],
-                displayAnswer: "المُسْلِمُونَ",
-                explanation: "«المُسْلِمُونَ» فاعل مرفوع وعلامة رفعه الواو لأنه جمع مذكر سالم."
-            },
-            {
-                tag: "نائب الفاعل",
-                prompt: "أكمل بنائب فاعل مرفوع بالضمة ضبطاً صحيحاً:",
-                sentenceDisplay: "كُتِبَ ( ....... ) بوضوح.",
-                validAnswers: ["الدرس", "الدرسُ", "التقرير", "التقريرُ", "الكتاب", "الكتابُ"],
-                displayAnswer: "الدَّرْسُ",
-                explanation: "«الدَّرْسُ» نائب فاعل مرفوع بالضمة بعد الفعل المبني للمجهول (كُتِبَ)."
-            },
-            {
-                tag: "نائب الفاعل",
-                prompt: "أكمل بنائب فاعل مرفوع وعلامة رفعه الألف (مثنى):",
-                sentenceDisplay: "سُتْلِمَ ( ....... ) من قبل الإدارة.",
-                validAnswers: ["التقريران", "المشروعان", "الخطابان", "الرسالتان"],
-                displayAnswer: "التَّقْرِيرَانِ",
-                explanation: "«التَّقْرِيرَانِ» نائب فاعل مرفوع وعلامة رفعه الألف لأنه مثنى."
-            },
-            {
-                tag: "كان وأخواتها",
-                prompt: "أدخل (كان أو إحدى أخواتها) المناسبة لتفييد التوقيت بالماضي:",
-                sentenceDisplay: "( ....... ) الجوُّ بارداً يوم أمس.",
-                validAnswers: ["كان", "كانت", "اصبح", "أصبح"],
-                displayAnswer: "كَانَ",
-                explanation: "«كَانَ» فعل ماض ناسخ يرفع المبتدأ وينصب الخبر، ويفيد التوقيت بالماضي."
-            },
-            {
-                tag: "كان وأخواتها",
-                prompt: "أدخل فعلاً ناسخاً يفيد التحوّل والصيرورة:",
-                sentenceDisplay: "( ....... ) الماءُ ثلجاً.",
-                validAnswers: ["صار", "صارَ", "اصبح", "أصبح"],
-                displayAnswer: "صَارَ",
-                explanation: "«صَارَ» فعل ناسخ يفيد التحول والصيرورة من حال إلى حال."
-            },
-            {
-                tag: "إن وأخواتها",
-                prompt: "أدخل حرفاً ناسخاً يفيد التوكيد في بداية الجملة:",
-                sentenceDisplay: "( ....... ) العلمَ نورٌ.",
-                validAnswers: ["ان", "إن", "إنَّ", "انَّ"],
-                displayAnswer: "إِنَّ",
-                explanation: "«إِنَّ» حرف ناسخ يفيد التوكيد تنصب المبتدأ اسمًا لها وترفع الخبر خبراً لها."
-            },
-            {
-                tag: "إن وأخواتها",
-                prompt: "أدخل حرفاً ناسخاً يفيد التمني:",
-                sentenceDisplay: "( ....... ) الشبابَ يعودُ يوماً.",
-                validAnswers: ["ليت", "ليتَ"],
-                displayAnswer: "لَيْتَ",
-                explanation: "«لَيْتَ» حرف ناسخ من أخوات إنّ يفيد التمني."
-            },
-            {
-                tag: "المضارع المرفوع",
-                prompt: "أكمل بفعل مضارع مرفوع صحيح الآخر مناسب:",
-                sentenceDisplay: "( ....... ) الطالبُ دروسه بجدٍ كل يوم.",
-                validAnswers: ["يكتب", "يكتبُ", "يذاكر", "يذاكرُ", "يحفظ", "يحفظُ", "يقرا", "يقرأ"],
-                displayAnswer: "يَكْتُبُ",
-                explanation: "«يَكْتُبُ» فعل مضارع مرفوع بالضمة الظاهرة لأنه لم يسبق بناصب ولا جازم."
-            },
-            {
-                tag: "المضارع المرفوع",
-                prompt: "أكمل بفعل مضارع مرفوع معتل الآخر بالألف:",
-                sentenceDisplay: "المؤمنُ ( ....... ) في الخير دائماً.",
-                validAnswers: ["يسعى", "يسعي"],
-                displayAnswer: "يَسْعَى",
-                explanation: "«يَسْعَى» فعل مضارع مرفوع وعلامة رفعه الضمة المقدرة على الألف منع من ظهورها التعذر."
-            },
-            {
-                tag: "المضارع المنصوب",
-                prompt: "ضع أداة النصب المناسبة المقررة لتنصب الفعل المضارع:",
-                sentenceDisplay: "اجتهدْ ( ....... ) تنجحَ في الامتحان.",
-                validAnswers: ["كي", "كيْ", "لكي", "لن"],
-                displayAnswer: "كَيْ",
-                explanation: "«كَيْ» حرف نصب تنصب الفعل المضارع بعدها (تنجحَ)."
-            },
-            {
-                tag: "المضارع المنصوب",
-                prompt: "أكمل بأداة النصب التي تفيد نفي الفعل في المستقبل:",
-                sentenceDisplay: "( ....... ) يهملَ المخلصُ واجباته.",
-                validAnswers: ["لن", "لَنْ"],
-                displayAnswer: "لَنْ",
-                explanation: "«لَنْ» أداة نصب تنفي الفعل المضارع في المستقبل وتنصبه بالفتحة."
-            },
-            {
-                tag: "المضارع المنصوب (الأفعال الخمسة)",
-                prompt: "أكمل بفعل مضارع منصوب من الأفعال الخمسة بعد (كي):",
-                sentenceDisplay: "استمعوا للدليل كي ( ....... ) الطريقَ.",
-                validAnswers: ["تعرفوا", "تفهموا", "تصلوا", "تجدوا"],
-                displayAnswer: "تَعْرِفُوا",
-                explanation: "«تَعْرِفُوا» فعل مضارع منصوب بـ (كي) وعلامة نصبه حذف النون لأنه من الأفعال الخمسة."
-            },
-            {
-                tag: "المضارع المجزوم",
-                prompt: "ضع أداة الجزم المناسبة المقررة للجزم والنفي:",
-                sentenceDisplay: "( ....... ) يتأخرْ أحمدُ عن موعد الحافلة.",
-                validAnswers: ["لم", "لَمْ"],
-                displayAnswer: "لَمْ",
-                explanation: "«لَمْ» أداة جزم ونفي تجزم الفعل المضارع صحيح الآخر بالسكون."
-            },
-            {
-                tag: "المضارع المجزوم",
-                prompt: "أكمل بفعل مضارع مجزوم بالكسرة أو السكون المقدر بعد (لم):",
-                sentenceDisplay: "المؤمنُ لم ( ....... ) في عمل الخير.",
-                validAnswers: ["يقصر", "يقصرْ", "يهمل", "يهملْ"],
-                displayAnswer: "يُقَصِّرْ",
-                explanation: "«يُقَصِّرْ» فعل مضارع مجزوم بـ (لم) وعلامة جزمه السكون الظاهر."
-            },
-            {
-                tag: "المضارع المجزوم (معتل الآخر)",
-                prompt: "أكمل بالفعل المضارع (يسعى) بعد جزمه بـ (لم) مع حذف حرف العلة:",
-                sentenceDisplay: "المسلمُ لم ( ....... ) إلى الشرِّ قط.",
-                validAnswers: ["يسع", "يسَع", "يسعى"],
-                displayAnswer: "يَسْعَ",
-                explanation: "«يَسْعَ» فعل مضارع مجزوم بـ (لم) وعلامة جزمه حذف حرف العلة (الألف) والفتحة دليل عليها."
-            },
-            {
-                tag: "تطبيق النواسخ الشامل",
-                prompt: "أكمل باسم (إنَّ) منصوب وعلامة نصبه الياء (جمع مذكر سالم):",
-                sentenceDisplay: "إنَّ ( ....... ) مخلصون في عملهم.",
-                validAnswers: ["المعلمين", "المهندسين", "المؤمنين", "العاملين", "المحاضرين"],
-                displayAnswer: "المُعَلِّمِينَ",
-                explanation: "«المُعَلِّمِينَ» اسم إنَّ منصوب وعلامة نصبه الياء لأنه جمع مذكر سالم."
-            },
-            {
-                tag: "تطبيق النواسخ الشامل",
-                prompt: "أكمل بـ (خبر كان) منصوب بالفتحة الظاهرة:",
-                sentenceDisplay: "كان الطالبُ ( ....... ) بالنجاح.",
-                validAnswers: ["سعيدا", "سعِيداً", "فرحا", "فَرِحاً", "مسرورا", "مَسْرُوراً"],
-                displayAnswer: "سَعِيداً",
-                explanation: "«سَعِيداً» خبر كان منصوب وعلامة نصبه الفتحة الظاهرة."
-            }
-        ];
-
-        let compIndex = 0;
-        let compScore = 0;
-
-        // Normalizer function to enable flexible & forgiving Arabic text matching
-        function normalizeArabicText(str) {
-            if (!str) return "";
-            return str
-                .trim()
-                // Strip all Tashkeel / Diacritics
-                .replace(/[\u064B-\u0652\u0670]/g, "")
-                // Normalize Alef forms
-                .replace(/[إأآٱ]/g, "ا")
-                // Normalize Taa Marbouta / Haa
-                .replace(/ة/g, "ه")
-                // Remove extra spaces
-                .replace(/\s+/g, " ")
-                .toLowerCase();
-        }
-
-        function initCompQuiz() {
-            compIndex = 0;
-            compScore = 0;
-            document.getElementById('comp-score-display').innerText = compScore;
-            document.getElementById('comp-card').classList.remove('hidden');
-            document.getElementById('comp-result-box').classList.add('hidden');
-            showCompQuestion();
-        }
-
-        function showCompQuestion() {
-            const current = completionQuestionsData[compIndex];
-            document.getElementById('comp-progress').innerText = `${compIndex + 1} / ${completionQuestionsData.length}`;
-            document.getElementById('comp-num-badge').innerText = `السؤال ${compIndex + 1} من ${completionQuestionsData.length}`;
-            document.getElementById('comp-tag').innerText = current.tag;
-            document.getElementById('comp-prompt').innerText = current.prompt;
-            document.getElementById('comp-sentence-display').innerText = current.sentenceDisplay;
-
-            const inputEl = document.getElementById('comp-user-input');
-            inputEl.value = "";
-            inputEl.disabled = false;
-            inputEl.className = "w-full px-5 py-4 rounded-2xl border-2 border-slateNavy-700/20 focus:border-royalMaroon-700 focus:outline-none text-base md:text-lg font-bold text-slateNavy-900 bg-white transition shadow-sm";
-            inputEl.focus();
-
-            document.getElementById('comp-submit-btn').disabled = false;
-            document.getElementById('comp-feedback').classList.add('hidden');
-            document.getElementById('comp-next-btn').classList.add('hidden');
-        }
-
-        function handleCompKeyPress(e) {
-            if (e.key === 'Enter') {
-                submitCompAnswer();
-            }
-        }
-
-        function submitCompAnswer() {
-            const inputEl = document.getElementById('comp-user-input');
-            const userRawVal = inputEl.value;
-            if (!userRawVal.trim()) return;
-
-            const current = completionQuestionsData[compIndex];
-            const normalizedUserVal = normalizeArabicText(userRawVal);
-            
-            // Check if user input matches any valid answers flexibly
-            const isCorrect = current.validAnswers.some(ans => normalizeArabicText(ans) === normalizedUserVal);
-
-            inputEl.disabled = true;
-            document.getElementById('comp-submit-btn').disabled = true;
-
-            const feedbackEl = document.getElementById('comp-feedback');
-
-            if (isCorrect) {
-                compScore++;
-                document.getElementById('comp-score-display').innerText = compScore;
-                playCorrectSound();
-
-                inputEl.className = "w-full px-5 py-4 rounded-2xl border-2 border-amberGold-500 bg-amberGold-100/40 text-base md:text-lg font-bold text-amberGold-700 transition shadow-sm";
-
-                feedbackEl.className = "p-5 rounded-2xl bg-amberGold-100 border border-amberGold-500 text-amberGold-700 text-sm leading-relaxed";
-                feedbackEl.innerHTML = `
-                    <div class="font-bold text-base flex items-center gap-2 mb-1">
-                        <i class="fa-solid fa-circle-check text-amberGold-600 text-xl"></i> إجابة صحيحة وممتازة!
-                    </div>
-                    <p><strong>الإجابة النموذجية المضبوطة:</strong> <span class="grammar-example">${current.displayAnswer}</span></p>
-                    <p class="mt-1 text-slateNavy-800">📌 <strong>التوضيح النحوي:</strong> ${current.explanation}</p>
-                `;
-            } else {
-                playWrongSound();
-
-                inputEl.className = "w-full px-5 py-4 rounded-2xl border-2 border-royalMaroon-600 bg-royalMaroon-50 text-base md:text-lg font-bold text-royalMaroon-700 transition shadow-sm";
-
-                feedbackEl.className = "p-5 rounded-2xl bg-royalMaroon-50 border border-royalMaroon-600 text-royalMaroon-700 text-sm leading-relaxed";
-                feedbackEl.innerHTML = `
-                    <div class="font-bold text-base flex items-center gap-2 mb-1 text-royalMaroon-700">
-                        <i class="fa-solid fa-circle-xmark text-royalMaroon-600 text-xl"></i> إجابة غير دقيقة!
-                    </div>
-                    <p><strong>الإجابة النموذجية الصحيحة:</strong> <span class="grammar-example">${current.displayAnswer}</span></p>
-                    <p class="mt-1 text-slateNavy-800">📌 <strong>الشرح النحوي والتصحيح:</strong> ${current.explanation}</p>
-                `;
-            }
-
-            feedbackEl.classList.remove('hidden');
-            document.getElementById('comp-next-btn').classList.remove('hidden');
-        }
-
-        function nextCompQuestion() {
-            compIndex++;
-            if (compIndex < completionQuestionsData.length) {
-                showCompQuestion();
-            } else {
-                showCompResults();
-            }
-        }
-
-        function showCompResults() {
-            document.getElementById('comp-card').classList.add('hidden');
-            document.getElementById('comp-result-box').classList.remove('hidden');
-            document.getElementById('comp-final-score').innerText = `${compScore} / ${completionQuestionsData.length}`;
-            confetti({ particleCount: 130, spread: 85, origin: { y: 0.6 } });
-        }
-
-        function resetCompQuiz() {
-            initCompQuiz();
         }
 
         window.onload = () => {
