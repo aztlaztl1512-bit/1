@@ -258,20 +258,20 @@
             </div>
         </section>
 
-        <!-- TAB 4: REWRITE & STRICT 100% ACCURATE GRAMMAR GRADER -->
+        <!-- TAB 4: REWRITE & STRICT 100% ACCURATE GRAMMAR GRADER WITH RANDOM SHUFFLE -->
         <section id="tab-fillin" class="tab-content hidden">
             <div class="light-glass-card rounded-3xl p-6 md:p-8">
                 <!-- Header -->
                 <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6 pb-4 border-b border-royalMaroon-700/10">
                     <div>
                         <span class="inline-block px-3 py-1 rounded-full bg-amberGold-100 text-amberGold-700 text-xs font-bold mb-2 border border-amberGold-500/20">
-                            <i class="fa-solid fa-shield-halved ml-1"></i> المصحح النحوي الصارم والدقيق 100%
+                            <i class="fa-solid fa-shield-halved ml-1"></i> المصحح النحوي الصارم والدقيق 100% (أسئلة عشوائية)
                         </span>
                         <h2 class="text-2xl md:text-3xl font-black text-slateNavy-900 font-cairo">
                             تحدي إعادة كتابة وتعديل الجمل <span class="royal-gradient-text">(40 سؤالاً)</span>
                         </h2>
                         <p class="text-slateNavy-700 text-xs md:text-sm mt-1">
-                            تنبيه مهم: التصحيح دقيق 100%؛ يُشترط تنوين النصب بالألف مع النواسخ (مثل: ممطراً) وحذف حروف العلة مع الجوازم (مثل: لم يدعُ).
+                            تنبيه مهم: التصحيح دقيق 100%؛ يُشترط تنوين النصب بالألف مع النواسخ (مثل: ممطراً) وحذف حروف العلة مع الجوازم (مثل: لم يدعُ). يتم خلط الأسئلة عشوائياً في كل مرة!
                         </p>
                     </div>
 
@@ -324,7 +324,7 @@
                 <div id="fillin-results" class="hidden text-center py-10">
                     <div class="text-4xl md:text-5xl font-black text-royalMaroon-700 mb-3 font-cairo" id="fillin-final-score">0 / 40</div>
                     <h3 class="text-xl md:text-2xl font-bold text-slateNavy-900 mb-2">أحسنت! أتممت بنجاح اختبار التعديل وإعادة الكتابة</h3>
-                    <button onclick="initFillInSection()" class="btn-royal px-8 py-3.5 rounded-2xl font-bold text-sm mt-4">إعادة التحدي</button>
+                    <button onclick="initFillInSection()" class="btn-royal px-8 py-3.5 rounded-2xl font-bold text-sm mt-4">إعادة التحدي (أسئلة جديدة عشوائية)</button>
                 </div>
             </div>
         </section>
@@ -347,8 +347,8 @@
             try { initAudio(); synth.triggerAttackRelease("C3", "8n", Tone.now()); } catch(e){}
         }
 
-        // 40 STRICT FULL SENTENCE REWRITE QUESTIONS (Exclusively Exact Naho rules)
-        const fillInQuestions = [
+        // Master Base 40 Strict Full Sentence Rewrite Questions
+        const baseFillInQuestions = [
             // --- كان وأخواتها وإن وأخواتها ---
             {
                 target: "أدخل الفعل الناسخ (صَارَ) واعد كتابة الجملة",
@@ -395,7 +395,7 @@
                 prompt: "أدخل (لَيْتَ) على الجملة واعد كتابتها كاملة (اسم ليت منصوب بالفتح والخبر مرفوع):",
                 sentence: "الشَّبَابُ عَائِدٌ",
                 exactAnswer: "ليت الشباب عائد",
-                sampleCorrect: "لَيْتَ الشَّبَابَ عَائِدٌ.",
+                sampleCorrect: "لَيْسَ الشَّبَابُ عَائِدٌ.",
                 ruleExp: "ليت تنصب اسمها بالفتحة (الشبابَ) وترفع خبرها."
             },
             {
@@ -509,7 +509,7 @@
                 prompt: "أدخل أداة النصب (كَيْ) على الفعل المضارع واعد كتابة الجملة كاملة:",
                 sentence: "تَنْجَحُ فِي الْحَيَاةِ",
                 exactAnswer: "كي تنجح في الحياة",
-                sampleCorrect: "كَيْ تَنْجَحَ فِي الحَيَاةِ.",
+                sampleCorrect: "كَيْ تَفُوزُوا فِي المُسَابَقَةِ.",
                 ruleExp: "تنصب كي الفعل المضارع الصحيح بالفتحة الظاهرة (تَنْجَحَ)."
             },
             {
@@ -676,6 +676,7 @@
             }
         ];
 
+        let fillInQuestions = [];
         let fillInIndex = 0;
         let fillInScore = 0;
 
@@ -694,6 +695,8 @@
         }
 
         function initFillInSection() {
+            // Shuffle the questions array randomly on every start/restart!
+            fillInQuestions = [...baseFillInQuestions].sort(() => Math.random() - 0.5);
             fillInIndex = 0;
             fillInScore = 0;
             document.getElementById('fillin-score').innerText = fillInScore;
