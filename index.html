@@ -174,7 +174,7 @@
                         <span class="inline-block px-3.5 py-1 rounded-full bg-royalMaroon-50 text-royalMaroon-700 text-xs font-bold mb-3 border border-royalMaroon-700/10">
                             <i class="fa-solid fa-book-open ml-1"></i> المرجع الموحد والكامل للوحدة النحوية
                         </span>
-                        <h2 class="text-2xl md:text-4xl font-black mb-3 text-slateNavy-900 font-cairo">
+                        <h2 class="text-2xl md:text-4xl font-black mb-3 text-slateNavy-900 font-cairo leading-tight">
                             الشرح التفصيلي والتطبيقي الشامل <span class="royal-gradient-text">لأبواب النحو الأساسية</span>
                         </h2>
                         <p class="text-slateNavy-700 text-sm md:text-base leading-relaxed max-w-3xl">
@@ -662,7 +662,7 @@
                                 <i class="fa-solid fa-spell-check"></i> تصحيح الجملة
                             </button>
                         </div>
-                        <p class="text-[11px] text-slateNavy-700/70 mt-1.5 text-center">تنبيـه: يشترط كتابة تنوين النصب بالألف (مثال: ممطراً) لضمان صحة الإجابة الدقيقة 100%.</p>
+                        <p class="text-[11px] text-slateNavy-700/70 mt-1.5 text-center">تنبيـه: يشترط كتابة تنوين النصب بالألف (مثال: ممطراً) وحركات الإعراب بدقة لضمان صحة الإجابة.</p>
                     </div>
 
                     <!-- Feedback Box -->
@@ -2089,29 +2089,26 @@
         }
 
         /* ------------------------------------------------------------- */
-        /* TAB 4: ADVANCED FLEXIBLE GRAMMAR GRADER ENGINE (40 QUESTIONS) */
+        /* TAB 4: ADVANCED STRICT GRAMMAR GRADER ENGINE (40 QUESTIONS)   */
         /* ------------------------------------------------------------- */
         let fillInIndex = 0;
         let fillInScore = 0;
         let fillInList = [];
 
+        // دالة التطهير المحدثة (تتحقق من الحركات والتنوين بدقة وصارمـة)
         function normalizeArabicTextStrict(text) {
             if (!text) return "";
             return text
                 .trim()
-                // Remove Tashkeel / Diacritics (Except retain Tanween Al-Fath character explicitly)
-                .replace(/[\u064C-\u0652\u0670]/g, "")
-                // Normalize Alef forms (أ, إ, آ => ا)
+                // توحيد صور الهمزات والألفات
                 .replace(/[أإآ]/g, "ا")
-                // Normalize Teh Marbuta to Heh (ة => ه)
+                // توحيد التاء المربوطة والهاء
                 .replace(/ة/g, "ه")
-                // Clean extra spaces and punctuation dots
-                .replace(/[.\s]+/g, " ")
-                .toLowerCase();
+                // إزالة الفراغات الزائدة والنقاط
+                .replace(/[.\s]+/g, " ");
         }
 
         function initFillInSection() {
-            // Shuffle the fill-in questions array randomly on every start/restart!
             fillInList = [...fillInQuestions].sort(() => Math.random() - 0.5);
             fillInIndex = 0;
             fillInScore = 0;
@@ -2158,7 +2155,7 @@
             inputEl.disabled = true;
             document.getElementById('fillin-check-btn').disabled = true;
 
-            // Strict evaluation algorithm checking actual correct grammatical transformations
+            // مقارنة صارمة تشترط تطابق الحركات والتنوين بدقة تامة
             const isCorrect = q.validAnswers.some(ans => normalizeArabicTextStrict(ans) === normalizedUserAns);
 
             if (isCorrect) {
@@ -2170,7 +2167,7 @@
                     <div class="flex items-center gap-2 mb-1 text-base font-cairo">
                         <i class="fa-solid fa-circle-check text-amberGold-600 text-lg"></i> إجابة صحيحة وممتازة!
                     </div>
-                    <div>جملتك المعدلة: «${rawUserAns}» جملة سليمة وصحيحة نَحْوِيّاً.</div>
+                    <div>جملتك المعدلة: «${rawUserAns}» جملة سليمة وصحيحة نَحْوِيّاً وتشكيلًا.</div>
                     <div class="mt-2 text-xs text-slateNavy-800 font-medium">📍 الشرح والقاعدة النحوية: ${q.ruleExp}</div>
                 `;
             } else {
@@ -2178,9 +2175,9 @@
                 feedbackEl.className = "max-w-2xl mx-auto mb-6 p-5 rounded-2xl bg-royalMaroon-50 border-2 border-royalMaroon-600 text-royalMaroon-700 text-sm font-bold shadow-sm";
                 feedbackEl.innerHTML = `
                     <div class="flex items-center gap-2 mb-1 text-base font-cairo">
-                        <i class="fa-solid fa-circle-xmark text-royalMaroon-600 text-lg"></i> إجابة غير دقيقة!
+                        <i class="fa-solid fa-circle-xmark text-royalMaroon-600 text-lg"></i> إجابة غير دقيقة أو حركة الإعراب غير صحيحة!
                     </div>
-                    <div>الجملة النموذجية التعديلية: <span class="bg-white px-2 py-0.5 rounded border border-royalMaroon-600/30 font-amiri text-base">${q.sampleCorrect}</span></div>
+                    <div>الجملة النموذجية التعديلية بدقة: <span class="bg-white px-2 py-0.5 rounded border border-royalMaroon-600/30 font-amiri text-base">${q.sampleCorrect}</span></div>
                     <div class="mt-2 text-xs text-slateNavy-800 font-medium">📍 الشرح والقاعدة النحوية: ${q.ruleExp}</div>
                 `;
             }
